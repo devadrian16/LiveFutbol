@@ -74,7 +74,7 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th colspan="4">Segunda Division</th>
+                    <th colspan="5">Segunda Division</th>
                 </tr>
             </thead>
             <tbody>
@@ -133,7 +133,7 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th colspan="4">Premier League</th>
+                    <th colspan="5">Premier League</th>
                 </tr>
             </thead>
             <tbody>
