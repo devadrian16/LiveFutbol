@@ -14,16 +14,16 @@ asistencias.addEventListener("click", function (e) {
     ocultar(table);
 });
 
-let rojas = document.getElementById("rojas");
-rojas.addEventListener("click", function (e) {
+let amarillas = document.getElementById("amarillas");
+amarillas.addEventListener("click", function (e) {
     e.preventDefault();
 
     let table = document.getElementById("tamarillas");
     ocultar(table);
 });
 
-let amarillas = document.getElementById("amarillas");
-amarillas.addEventListener("click", function (e) {
+let rojas = document.getElementById("rojas");
+rojas.addEventListener("click", function (e) {
     e.preventDefault();
 
     let table = document.getElementById("trojas");
