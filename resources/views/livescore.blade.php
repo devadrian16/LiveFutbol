@@ -78,7 +78,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($laliga as $match)
+                @foreach($segunda as $match)
                 @if($match['fixture']['status']['short'] != '1H' || $match['fixture']['status']['short'] != 'HT' || $match['fixture']['status']['short'] != '2H' || $match['fixture']['status']['short'] != 'ET' || $match['fixture']['status']['short'] != 'P')
                 <tr>
                     <td class="text-center">{{ date('H:i', strtotime($match['fixture']['date'])) }}</td>
@@ -137,7 +137,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($laliga as $match)
+                @foreach($premier as $match)
                 @if($match['fixture']['status']['short'] != '1H' || $match['fixture']['status']['short'] != 'HT' || $match['fixture']['status']['short'] != '2H' || $match['fixture']['status']['short'] != 'ET' || $match['fixture']['status']['short'] != 'P')
                 <tr>
                     <td class="text-center">{{ date('H:i', strtotime($match['fixture']['date'])) }}</td>
