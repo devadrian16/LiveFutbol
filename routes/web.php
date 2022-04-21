@@ -5,6 +5,8 @@ use App\Http\Controllers\LigaController;
 use App\Http\Controllers\LiveScoreController;
 use App\Http\Controllers\EquipoController;
 use App\Http\Controllers\PruebasController;
+use App\Http\Controllers\FavoritosController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +19,19 @@ use App\Http\Controllers\PruebasController;
 |
 */
 
-//[--HOME--]
-Route::get('/', function () { return view('home'); });
+/*
+|--------------------------------------------------------------------------
+| Helps
+|--------------------------------------------------------------------------
+|
+| Fortify.php to redirect after login.
+|
+*/
 
+//[--HOME--]
+Route::get('/', function () { return view('home'); })->name('home');
+
+//[--JETSTREAM--]
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -30,8 +42,13 @@ Route::middleware([
     })->name('dashboard');
 });
 
+require_once __DIR__ . '/jetstream.php';
+
 //[--LIVESCORE--]
 Route::get('/livescore', [LiveScoreController::class, 'verLiveScore']);
+
+//[--LIVESCORE--]
+Route::get('/favoritos', [FavoritosController::class, 'verFavoritos']);
 
 //[--LIGAS--]
 Route::get('/liga/{league}', [LigaController::class, 'verLiga']);
@@ -41,3 +58,5 @@ Route::get('/equipo/{team}', [EquipoController::class, 'verEquipo']);
 
 //[--PRUEBAS--]
 Route::get('/pruebas', [PruebasController::class, 'verPruebas']);
+
+

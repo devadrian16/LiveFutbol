@@ -1,9 +1,9 @@
 @extends('layouts.api')
 
-@section('title', $team['name'])
+@section('title', 'Favoritos')
 
 @section('content')
 <div class="container">
-
+    
 </div>  
 @endsection

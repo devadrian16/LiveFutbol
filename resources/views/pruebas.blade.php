@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.api')
 
 @section('title', 'Pruebas')
 
@@ -8,7 +8,23 @@
 
 @section('content')
 <div class="container">
-    
+    <div class="row">
+        <div class="col">
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            
+        </div>
+    </div>
 </div>
 @endsection
 

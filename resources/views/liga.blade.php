@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.api')
 
 @section('title', $league['name'])
 
