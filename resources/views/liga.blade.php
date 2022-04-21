@@ -3,7 +3,7 @@
 @section('title', $league['name'])
 
 @section('css')
-<link rel="stylesheet" href="{{ asset('css/app.css') }}">
+<link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
 @endsection
 
 @section('content')
@@ -20,15 +20,15 @@
         </thead>
         <tbody>
             @foreach($rounds as $round)
-            <tr class="text-center">
-                <td>{{ date('j F, Y', strtotime($round['fixture']['date'])) }}</td>
-                <td class="text-rigth">
+            <tr>
+                <td class="text-center">{{ date('j F, Y', strtotime($round['fixture']['date'])) }}</td>
+                <td class="text-end">
                     {{ $round['teams']['home']['name'] }}
                     <a style="text-decoration: none; color: black;">
                         <img src="{{ $round['teams']['home']['logo'] }}" alt="{{ $round['teams']['home']['name'] }}" style="width: 25px; height: 25px;">
                     </a>
                 </td>
-                <td>{{ $round['goals']['home'] }} - {{ $round['goals']['away'] }}</td>
+                <td class="text-center">{{ $round['goals']['home'] }} - {{ $round['goals']['away'] }}</td>
                 <td class="text-left">
                     <a style="text-decoration: none; color: black;">
                         <img src="{{ $round['teams']['away']['logo'] }}" alt="{{ $round['teams']['away']['name'] }}" style="width: 25px; height: 25px;">
@@ -273,5 +273,5 @@
 @endsection
 
 @section('js')
-<script src="{{ asset('js/app.js') }}"></script>
+<script src="{{ asset('js/scripts.js') }}"></script>
 @endsection

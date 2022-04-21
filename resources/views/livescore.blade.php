@@ -3,7 +3,7 @@
 @section('title', 'LiveScore')
 
 @section('css')
-<link rel="stylesheet" href="{{ asset('css/app.css') }}">
+<link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
 @endsection
 
 @section('content')

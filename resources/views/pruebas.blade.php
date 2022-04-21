@@ -3,7 +3,7 @@
 @section('title', 'Pruebas')
 
 @section('css')
-<link rel="stylesheet" href="{{ asset('css/app.css') }}">
+<link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
 @endsection
 
 @section('content')
@@ -13,5 +13,5 @@
 @endsection
 
 @section('js')
-<script src="{{ asset('js/app.js') }}"></script>
+<script src="{{ asset('js/scripts.js') }}"></script>
 @endsection
