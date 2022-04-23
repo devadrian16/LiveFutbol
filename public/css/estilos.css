@@ -10,7 +10,9 @@
 .livescore {
     background-color: forestgreen;
     color: white;
-    padding: 0 5px;
+    border-radius:  5px;
+    width: 75px;
+    margin: 0 auto;
 }
 
 .parpadeo {
@@ -28,3 +30,14 @@
         opacity: 1.0; 
     }
 }
+
+.anchos td {
+    width: 75px;
+}
+.anchos td:nth-of-type(3) {
+    width: 150px;
+}
+.anchos td:nth-of-type(4) {
+    width: 150px;
+}
+
