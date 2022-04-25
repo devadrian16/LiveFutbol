@@ -10,7 +10,11 @@
 <div class="container">
     {{-- header('Refresh: 5'); --}}
 
-    <h2>PARTIDOS {{ $fecha }}</h2>
+    <?php 
+        $semana = ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'];
+        $mes = ['-', 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+    ?>
+    <h2>PARTIDOS {{ $semana[date('w', strtotime($fecha))] }}, {{ $dia }} {{ $mes[date('n', strtotime($fecha))] }} {{ $anno }} </h2>
 
     @if(count($laliga) != 0)
     <div>
