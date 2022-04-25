@@ -20,11 +20,10 @@ class LiveScoreController extends Controller
         $laliga = $this->api->getMatchesTodayLeague(140);
         $segunda = $this->api->getMatchesTodayLeague(141);
         $premier = $this->api->getMatchesTodayLeague(39);
-        $seriea = $this->api->getMatchesTodayLeague(135);
 
         $now = new \DateTime();
 
         return view('livescore', ['fecha' => $now->format('l, j F Y'), 'dia' => $now->format('j'), 'anno' => $now->format('Y'),
-            'laliga' => $laliga, 'segunda' => $segunda, 'premier' => $premier, 'seriea' => $seriea]);
+            'laliga' => $laliga, 'segunda' => $segunda, 'premier' => $premier]);
     }
 }

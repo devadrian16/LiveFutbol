@@ -1,9 +1,18 @@
+/* COMUN */
+li:hover {
+    cursor: hand;	
+}
+
 /* LIGAS */
 .redondeo {
     border-radius: 5px;
     width: 25px;
     margin: auto;
     color: white;
+}
+
+.activo {
+    border-bottom: 1px solid black;
 }
 
 /* LIVESCORE */
