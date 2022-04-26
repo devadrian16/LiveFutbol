@@ -7,36 +7,30 @@
 @endsection
 
 @section('content')
-<div class="container">
-    <div class="card my-4">
-        <div class="card-header">JORNADAS</div>
+<div class="container my-4">
+    {{ $i = 1; }}
+    @foreach($jornadas as $jornada)
+    <div class="card">
+        <div class="card-header">Jornada {{ i++; }}</div>
 
         <div class="card-body">
             <table class="table">
-                <thead>
-                    <tr class="text-center">
-                        <th>FECHA</th>
-                        <th>LOCAL</th>
-                        <th>RESULTADO</th>
-                        <th>VISITANTE</th>
-                    </tr>
-                </thead>
                 <tbody>
-                    @foreach($rounds as $round)
+                    @foreach($jornada as $match)
                     <tr>
-                        <td class="text-center">{{ date('j F, Y', strtotime($round['fixture']['date'])) }}</td>
+                        <td class="text-center">{{ date('j F, Y', strtotime($match['fixture']['date'])) }}</td>
                         <td class="text-end">
-                            {{ $round['teams']['home']['name'] }}
+                            {{ $match['teams']['home']['name'] }}
                             <a style="text-decoration: none; color: black;">
-                                <img src="{{ $round['teams']['home']['logo'] }}" alt="{{ $round['teams']['home']['name'] }}" style="width: 25px; height: 25px;">
+                                <img src="{{ $match['teams']['home']['logo'] }}" alt="" style="width: 25px; height: 25px;">
                             </a>
                         </td>
-                        <td class="text-center">{{ $round['goals']['home'] }} - {{ $round['goals']['away'] }}</td>
+                        <td class="text-center">{{ $match['goals']['home'] }} - {{ $match['goals']['away'] }}</td>
                         <td class="text-left">
                             <a style="text-decoration: none; color: black;">
-                                <img src="{{ $round['teams']['away']['logo'] }}" alt="{{ $round['teams']['away']['name'] }}" style="width: 25px; height: 25px;">
+                                <img src="{{ $match['teams']['away']['logo'] }}" alt="" style="width: 25px; height: 25px;">
                             </a>
-                            {{ $round['teams']['away']['name'] }}
+                            {{ $match['teams']['away']['name'] }}
                         </td>
                     </tr>
                     @endforeach
@@ -44,6 +38,7 @@
             </table>
         </div>
     </div>
+    @endforeach
 </div>
 
 <div class="container">
@@ -105,7 +100,7 @@
 
                         <td class="text-left">
                             <a style="text-decoration: none; color: black;" href="/equipo/{{ $team['team']['id'] }}">
-                                <img src="{{ $team['team']['logo'] }}" alt="{{ $team['team']['name'] }}" style="width: 25px; height: 25px;">
+                                <img src="{{ $team['team']['logo'] }}" alt="" style="width: 25px; height: 25px;">
                                 {{ $team['team']['name'] }}
                             </a>
                         </td>
@@ -165,7 +160,7 @@
                             <td class="text-center">{{ $i + 1 }}</td>
                             <td>
                                 <a style="text-decoration: none; color: black;">
-                                    <img src="{{ $goals[$i]['player']['photo'] }}" alt="{{ $goals[$i]['player']['name'] }}" style="width: 35px; height: 35px;">
+                                    <img src="{{ $goals[$i]['player']['photo'] }}" alt="" style="width: 35px; height: 35px;">
                                 </a>
                                 {{ $goals[$i]['player']['name'] }}
                             </td>
@@ -174,7 +169,7 @@
                             <td>
                                 {{ $goals[$i]['statistics'][0]['team']['name'] }}
                                 <a style="text-decoration: none; color: black;">
-                                    <img src="{{ $goals[$i]['statistics'][0]['team']['logo'] }}" alt="{{ $goals[$i]['statistics'][0]['team']['name'] }}" style="width: 25px; height: 25px;">
+                                    <img src="{{ $goals[$i]['statistics'][0]['team']['logo'] }}" alt="" style="width: 25px; height: 25px;">
                                 </a>
                             </td>
                             </tr>
@@ -198,7 +193,7 @@
                             <td class="text-center">{{ $i + 1 }}</td>
                             <td>
                                 <a style="text-decoration: none; color: black;">
-                                    <img src="{{ $assists[$i]['player']['photo'] }}" alt="{{ $assists[$i]['player']['name'] }}" style="width: 35px; height: 35px;">
+                                    <img src="{{ $assists[$i]['player']['photo'] }}" alt="" style="width: 35px; height: 35px;">
                                 </a>
                                 {{ $assists[$i]['player']['name'] }}
                             </td>
@@ -207,7 +202,7 @@
                             <td>
                                 {{ $assists[$i]['statistics'][0]['team']['name'] }}
                                 <a style="text-decoration: none; color: black;">
-                                    <img src="{{ $assists[$i]['statistics'][0]['team']['logo'] }}" alt="{{ $assists[$i]['statistics'][0]['team']['name'] }}" style="width: 25px; height: 25px;">
+                                    <img src="{{ $assists[$i]['statistics'][0]['team']['logo'] }}" alt="" style="width: 25px; height: 25px;">
                                 </a>
                             </td>
                             </tr>
@@ -231,7 +226,7 @@
                             <td class="text-center">{{ $i + 1 }}</td>
                             <td>
                                 <a style="text-decoration: none; color: black;">
-                                    <img src="{{ $yellowcards[$i]['player']['photo'] }}" alt="{{ $yellowcards[$i]['player']['name'] }}" style="width: 35px; height: 35px;">
+                                    <img src="{{ $yellowcards[$i]['player']['photo'] }}" alt="" style="width: 35px; height: 35px;">
                                 </a>
                                 {{ $yellowcards[$i]['player']['name'] }}
                             </td>
@@ -240,7 +235,7 @@
                             <td>
                                 {{ $yellowcards[$i]['statistics'][0]['team']['name'] }}
                                 <a style="text-decoration: none; color: black;">
-                                    <img src="{{ $yellowcards[$i]['statistics'][0]['team']['logo'] }}" alt="{{ $yellowcards[$i]['statistics'][0]['team']['name'] }}" style="width: 25px; height: 25px;">
+                                    <img src="{{ $yellowcards[$i]['statistics'][0]['team']['logo'] }}" alt="" style="width: 25px; height: 25px;">
                                 </a>
                             </td>
                             </tr>
@@ -264,7 +259,7 @@
                             <td class="text-center">{{ $i + 1 }}</td>
                             <td>
                                 <a style="text-decoration: none; color: black;">
-                                    <img src="{{ $redcards[$i]['player']['photo'] }}" alt="{{ $redcards[$i]['player']['name'] }}" style="width: 35px; height: 35px;">
+                                    <img src="{{ $redcards[$i]['player']['photo'] }}" alt="" style="width: 35px; height: 35px;">
                                 </a>
                                 {{ $redcards[$i]['player']['name'] }}
                             </td>
@@ -273,7 +268,7 @@
                             <td>
                                 {{ $redcards[$i]['statistics'][0]['team']['name'] }}
                                 <a style="text-decoration: none; color: black;">
-                                    <img src="{{ $redcards[$i]['statistics'][0]['team']['logo'] }}" alt="{{ $redcards[$i]['statistics'][0]['team']['name'] }}" style="width: 25px; height: 25px;">
+                                    <img src="{{ $redcards[$i]['statistics'][0]['team']['logo'] }}" alt="" style="width: 25px; height: 25px;">
                                 </a>
                             </td>
                             </tr>

@@ -12,26 +12,28 @@ class EquipoController extends Controller
 {
     private $api;
 
-	public function __construct(Client $client) 
-    {	
-		$this->api = new ApiController($client);
-	}
+    public function __construct(Client $client)
+    {
+        $this->api = new ApiController($client);
+    }
 
-    public function verEquipo($id) {
+    public function verEquipo($id)
+    {
         //Equipo
         $team = $this->api->getTeam($id);
-        
-        if(Auth::check()) {
-            //Favoritos
-            $favoritos = Favorito::where('id_user', Auth::user()->id);
 
-		    return view('equipo', ['team' => $team['team'], 'favoritos' => $favoritos]);
+        if (Auth::check()) {
+            //Favoritos
+            $favorito = Favorito::where('id_user', Auth::user()->id)->where('id_team', $id);
+
+            return view('equipo', ['team' => $team['team'], 'favorito' => $favorito]);
         } else {
             return view('equipo', ['team' => $team['team']]);
         }
     }
 
-    public function guardarEquipo($id) {
+    public function guardarEquipoFav($id)
+    {
         $favorito = new Favorito();
 
         $favorito->id_user = Auth::user()->id;
@@ -44,4 +46,10 @@ class EquipoController extends Controller
         return redirect()->route('verEquipo', ['team' => $id]);
     }
 
+    public function eliminarEquipoFav($id) {
+        $favorito = Favorito::where('id_user', Auth::user()->id)->where('id_team', $id);
+        $favorito->delete();
+
+        return redirect()->route('verEquipo', ['team' => $id]);
+    }
 }

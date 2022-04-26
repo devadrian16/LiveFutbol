@@ -129,9 +129,9 @@ class ApiController extends Controller
 	}
 
 	//[--PARTIDOS--] 
-	public function getMatchesLeague($idLeague) 
+	public function getMatchesLeague($idLeague, $round) 
 	{
-		$filter = ['league' => $idLeague, 'season' => self::SEASON];
+		$filter = ['league' => $idLeague, 'season' => self::SEASON, 'round' => $round];
 		$matches = $this->run('fixtures'.'?'.http_build_query($filter));
 		return $matches['response'];
 	}
@@ -173,5 +173,12 @@ class ApiController extends Controller
 		$filter = ['league' => $idLeague, 'season' => self::SEASON];
 		$ranking = $this->run('standings'.'?'.http_build_query($filter));
 		return $ranking['response'][0];
+	}
+
+	//[--RONDAS--]
+	public function getRounds($idLeague) {
+		$filter = ['league' => $idLeague, 'season' => self::SEASON];
+		$rounds = $this->run('fixtures/rounds'.'?'.http_build_query($filter));
+		return $rounds['response'];
 	}
 }

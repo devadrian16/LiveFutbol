@@ -20,7 +20,12 @@ class LigaController extends Controller
 		$league = $this->api->getLeague($id);
 
 		//Jornadas
-		$rounds = $this->api->getMatchesLeague($id);
+		$jornadas = [];
+		$rounds = $this->api->getRounds($id);
+		foreach($rounds as $round) {
+			$jornada = $this->api->getMatchesLeague($id, $round);
+			array_push($jornadas, $jornada);
+		}
 
 		//Clasificacion
 		$ranking = $this->api->getRanking($id);
@@ -31,7 +36,7 @@ class LigaController extends Controller
 		$yellowcards = $this->api->getTopYellowCardsLeague($id);
 		$redcards = $this->api->getTopRedCardsLeague($id);
 
-		return view('liga', ['league' => $league['league'], 'ranking' => $ranking['league']['standings'], 'rounds' => $rounds, 
+		return view('liga', ['league' => $league['league'], 'ranking' => $ranking['league']['standings'], 'jornadas' => $jornadas, 
 		'goals' => $goals, 'assists' => $assists, 'yellowcards' => $yellowcards, 'redcards' => $redcards]);
 	}
 }

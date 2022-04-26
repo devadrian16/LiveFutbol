@@ -37,7 +37,7 @@
                                     <td class="text-end">
                                         {{ $match['teams']['home']['name'] }}
                                         <a style="text-decoration: none; color: black;">
-                                            <img src="{{ $match['teams']['home']['logo'] }}" alt="{{ $match['teams']['home']['name'] }}" style="width: 25px; height: 25px;">
+                                            <img src="{{ $match['teams']['home']['logo'] }}" alt="" style="width: 25px; height: 25px;">
                                         </a>
                                     </td>
                                     <td class="text-center">
@@ -47,7 +47,7 @@
                                     </td>
                                     <td>
                                         <a style="text-decoration: none; color: black;">
-                                            <img src="{{ $match['teams']['away']['logo'] }}" alt="{{ $match['teams']['away']['name'] }}" style="width: 25px; height: 25px;">
+                                            <img src="{{ $match['teams']['away']['logo'] }}" alt="" style="width: 25px; height: 25px;">
                                         </a>
                                         {{ $match['teams']['away']['name'] }}
                                     </td>
@@ -59,7 +59,7 @@
                                     <td class="text-end">
                                         {{ $match['teams']['home']['name'] }}
                                         <a style="text-decoration: none; color: black;">
-                                            <img src="{{ $match['teams']['home']['logo'] }}" alt="{{ $match['teams']['home']['name'] }}" style="width: 25px; height: 25px;">
+                                            <img src="{{ $match['teams']['home']['logo'] }}" alt="" style="width: 25px; height: 25px;">
                                         </a>
                                     </td>
                                     <td class="text-center">
@@ -67,7 +67,7 @@
                                     </td>
                                     <td>
                                         <a style="text-decoration: none; color: black;">
-                                            <img src="{{ $match['teams']['away']['logo'] }}" alt="{{ $match['teams']['away']['name'] }}" style="width: 25px; height: 25px;">
+                                            <img src="{{ $match['teams']['away']['logo'] }}" alt="" style="width: 25px; height: 25px;">
                                         </a>
                                         {{ $match['teams']['away']['name'] }}
                                     </td>
@@ -96,7 +96,7 @@
                                     <td class="text-end">
                                         {{ $match['teams']['home']['name'] }}
                                         <a style="text-decoration: none; color: black;">
-                                            <img src="{{ $match['teams']['home']['logo'] }}" alt="{{ $match['teams']['home']['name'] }}" style="width: 25px; height: 25px;">
+                                            <img src="{{ $match['teams']['home']['logo'] }}" alt="" style="width: 25px; height: 25px;">
                                         </a>
                                     </td>
                                     <td class="text-center">
@@ -106,7 +106,7 @@
                                     </td>
                                     <td>
                                         <a style="text-decoration: none; color: black;">
-                                            <img src="{{ $match['teams']['away']['logo'] }}" alt="{{ $match['teams']['away']['name'] }}" style="width: 25px; height: 25px;">
+                                            <img src="{{ $match['teams']['away']['logo'] }}" alt="" style="width: 25px; height: 25px;">
                                         </a>
                                         {{ $match['teams']['away']['name'] }}
                                     </td>
@@ -118,7 +118,7 @@
                                     <td class="text-end">
                                         {{ $match['teams']['home']['name'] }}
                                         <a style="text-decoration: none; color: black;">
-                                            <img src="{{ $match['teams']['home']['logo'] }}" alt="{{ $match['teams']['home']['name'] }}" style="width: 25px; height: 25px;">
+                                            <img src="{{ $match['teams']['home']['logo'] }}" alt="" style="width: 25px; height: 25px;">
                                         </a>
                                     </td>
                                     <td class="text-center">
@@ -126,7 +126,7 @@
                                     </td>
                                     <td>
                                         <a style="text-decoration: none; color: black;">
-                                            <img src="{{ $match['teams']['away']['logo'] }}" alt="{{ $match['teams']['away']['name'] }}" style="width: 25px; height: 25px;">
+                                            <img src="{{ $match['teams']['away']['logo'] }}" alt="" style="width: 25px; height: 25px;">
                                         </a>
                                         {{ $match['teams']['away']['name'] }}
                                     </td>
@@ -155,7 +155,7 @@
                                     <td class="text-end">
                                         {{ $match['teams']['home']['name'] }}
                                         <a style="text-decoration: none; color: black;">
-                                            <img src="{{ $match['teams']['home']['logo'] }}" alt="{{ $match['teams']['home']['name'] }}" style="width: 25px; height: 25px;">
+                                            <img src="{{ $match['teams']['home']['logo'] }}" alt="" style="width: 25px; height: 25px;">
                                         </a>
                                     </td>
                                     <td class="text-center">
@@ -165,7 +165,7 @@
                                     </td>
                                     <td>
                                         <a style="text-decoration: none; color: black;">
-                                            <img src="{{ $match['teams']['away']['logo'] }}" alt="{{ $match['teams']['away']['name'] }}" style="width: 25px; height: 25px;">
+                                            <img src="{{ $match['teams']['away']['logo'] }}" alt="" style="width: 25px; height: 25px;">
                                         </a>
                                         {{ $match['teams']['away']['name'] }}
                                     </td>
@@ -177,7 +177,7 @@
                                     <td class="text-end">
                                         {{ $match['teams']['home']['name'] }}
                                         <a style="text-decoration: none; color: black;">
-                                            <img src="{{ $match['teams']['home']['logo'] }}" alt="{{ $match['teams']['home']['name'] }}" style="width: 25px; height: 25px;">
+                                            <img src="{{ $match['teams']['home']['logo'] }}" alt="" style="width: 25px; height: 25px;">
                                         </a>
                                     </td>
                                     <td class="text-center">
@@ -185,7 +185,7 @@
                                     </td>
                                     <td>
                                         <a style="text-decoration: none; color: black;">
-                                            <img src="{{ $match['teams']['away']['logo'] }}" alt="{{ $match['teams']['away']['name'] }}" style="width: 25px; height: 25px;">
+                                            <img src="{{ $match['teams']['away']['logo'] }}" alt="" style="width: 25px; height: 25px;">
                                         </a>
                                         {{ $match['teams']['away']['name'] }}
                                     </td>

@@ -55,7 +55,8 @@ Route::get('/liga/{league}', [LigaController::class, 'verLiga']);
 
 //[--EQUIPOS--]
 Route::get('/equipo/{team}', [EquipoController::class, 'verEquipo'])->name('verEquipo');
-Route::get('/favorito/{team}', [EquipoController::class, 'guardarEquipo']);
+Route::get('/save/{team}', [EquipoController::class, 'guardarEquipoFav']);
+Route::get('/delete/{team}', [EquipoController::class, 'eliminarEquipoFav']);
 
 //[--PRUEBAS--]
 Route::get('/pruebas', [PruebasController::class, 'verPruebas']);

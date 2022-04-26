@@ -47,6 +47,10 @@ li:hover {
 }
 
 #favorito:hover {
-    cursor: hand;	
+    cursor: pointer;	
+}
+
+#nofavorito:hover {
+    cursor: pointer;	
 }
 
