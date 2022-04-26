@@ -70,10 +70,11 @@ class ApiController extends Controller
 	}
 
 	//[--LIGAS--] 
-	public function getLeaguesCountry($country) 
+	public function getLeagueTeam($idTeam) 
 	{
-		$filter = ['season' => self::SEASON, 'country' => $country, 'type' => self::LEAGUE];
-		return $this->run('leagues'.'?'.http_build_query($filter));
+		$filter = ['season' => self::SEASON, 'team' => $idTeam, 'type' => self::LEAGUE];
+		$league = $this->run('leagues'.'?'.http_build_query($filter));
+		return $league['response'][0];
 	}
 
 	public function getLeague($idLeague) 

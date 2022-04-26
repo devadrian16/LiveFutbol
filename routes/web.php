@@ -47,14 +47,15 @@ require_once __DIR__ . '/jetstream.php';
 //[--LIVESCORE--]
 Route::get('/livescore', [LiveScoreController::class, 'verLiveScore']);
 
-//[--LIVESCORE--]
+//[--FAVORITOS--]
 Route::get('/favoritos', [FavoritosController::class, 'verFavoritos']);
 
 //[--LIGAS--]
 Route::get('/liga/{league}', [LigaController::class, 'verLiga']);
 
 //[--EQUIPOS--]
-Route::get('/equipo/{team}', [EquipoController::class, 'verEquipo']);
+Route::get('/equipo/{team}', [EquipoController::class, 'verEquipo'])->name('verEquipo');
+Route::get('/favorito/{team}', [EquipoController::class, 'guardarEquipo']);
 
 //[--PRUEBAS--]
 Route::get('/pruebas', [PruebasController::class, 'verPruebas']);
