@@ -40,3 +40,13 @@ li:hover {
     }
 }
 
+/* EQUIPOS */
+.bi {
+    width: 1em;
+    height: 1em;
+}
+
+#favorito:hover {
+    cursor: hand;	
+}
+

@@ -11,7 +11,3 @@
     
 </div>
 @endsection
-
-@section('js')
-<script src="{{ asset('js/scripts.js') }}"></script>
-@endsection

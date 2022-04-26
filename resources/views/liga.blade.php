@@ -287,5 +287,5 @@
 @endsection
 
 @section('js')
-<script src="{{ asset('js/scripts.js') }}"></script>
+<script src="{{ asset('js/scriptsLigas.js') }}"></script>
 @endsection

@@ -11,11 +11,11 @@ class FavoritosController extends Controller
     private $api;
 
 	public function __construct(Client $client) 
-    {	
+  {	
 		$this->api = new ApiController($client);
 	}
 
-    public function verFavoritos() {
+  public function verFavoritos() {
 		return view('favoritos');
-    }
+  }
 }

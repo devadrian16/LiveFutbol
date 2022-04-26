@@ -2,6 +2,10 @@
 
 @section('title', 'Home')
 
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
+@endsection
+
 @section('content')
 <div class="container">
     

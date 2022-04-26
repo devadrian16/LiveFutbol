@@ -16,7 +16,7 @@ class LigaController extends Controller
 	}
 
     public function verLiga($id) {
-		//League
+		//Liga
 		$league = $this->api->getLeague($id);
 
 		//Jornadas

@@ -16,7 +16,7 @@ class EquipoController extends Controller
 	}
 
     public function verEquipo($id) {
-        //Team
+        //Equipo
         $team = $this->api->getTeam($id);
 
 		return view('equipo', ['team' => $team['team']]);
