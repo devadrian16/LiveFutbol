@@ -22,8 +22,8 @@ class LigaController extends Controller
 		//Jornadas
 		$jornadas = [];
 		$rounds = $this->api->getRounds($id);
-		foreach($rounds as $round) {
-			$jornada = $this->api->getMatchesLeague($id, $round);
+		for($i = 0; $i < 3; $i++) {
+			$jornada = $this->api->getMatchesLeague($id, $rounds[$i]);
 			array_push($jornadas, $jornada);
 		}
 

@@ -7,18 +7,20 @@
 @endsection
 
 @section('content')
-<div class="container my-4">
-    {{ $i = 1; }}
-    @foreach($jornadas as $jornada)
-    <div class="card">
-        <div class="card-header">Jornada {{ i++; }}</div>
+<?php
+    $mes = ['-', 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+?>
+<div class="container mt-4 mb-3">
+    @for($i = 0; $i < count($jornadas); $i++)
+    <div class="card mb-1">
+        <div class="card-header">Jornada {{ $i + 1 }}</div>
 
         <div class="card-body">
             <table class="table">
                 <tbody>
-                    @foreach($jornada as $match)
+                    @foreach($jornadas[$i] as $match)
                     <tr>
-                        <td class="text-center">{{ date('j F, Y', strtotime($match['fixture']['date'])) }}</td>
+                        <td class="text-center">{{ date('j', strtotime($match['fixture']['date'])) }} {{ $mes[date('n', strtotime($match['fixture']['date']))] }} {{ date('Y', strtotime($match['fixture']['date'])) }}</td>
                         <td class="text-end">
                             {{ $match['teams']['home']['name'] }}
                             <a style="text-decoration: none; color: black;">
@@ -38,11 +40,11 @@
             </table>
         </div>
     </div>
-    @endforeach
+    @endfor
 </div>
 
-<div class="container">
-    <div class="card my-4">
+<div class="container my-4">
+    <div class="card">
         <div class="card-header">CLASIFICACION</div>
 
         <div class="card-body">
@@ -62,7 +64,6 @@
                 <tbody>
                     @foreach($ranking[0] as $team)
                     <tr>
-
                         @switch($team['rank'])
                         @case(1) @case(2) @case(3) @case(4)
                         <td class="text-center">
@@ -119,8 +120,8 @@
     </div>
 </div>
 
-<div class="container">
-    <div class="card my-4">
+<div class="container my-4">
+    <div class="card">
         <div class="card-header">
             DESTACADOS
             <nav class="navbar navbar-expand-lg navbar-light bg-light my-0">
