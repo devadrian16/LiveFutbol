@@ -1,6 +1,6 @@
 /* COMUN */
-li:hover {
-    cursor: hand;	
+li:hover, a:hover {
+    cursor: pointer;	
 }
 
 /* LIGAS */

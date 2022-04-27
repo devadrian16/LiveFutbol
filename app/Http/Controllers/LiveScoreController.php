@@ -17,6 +17,7 @@ class LiveScoreController extends Controller
 
     public function verLiveScore() {
         //LiveScore
+        $champions = $this->api->getMatchesTodayLeague(2);
         $laliga = $this->api->getMatchesTodayLeague(140);
         $segunda = $this->api->getMatchesTodayLeague(141);
         $premier = $this->api->getMatchesTodayLeague(39);
@@ -24,6 +25,6 @@ class LiveScoreController extends Controller
         $now = new \DateTime();
 
         return view('livescore', ['fecha' => $now->format('l, j F Y'), 'dia' => $now->format('j'), 'anno' => $now->format('Y'),
-            'laliga' => $laliga, 'segunda' => $segunda, 'premier' => $premier]);
+            'laliga' => $laliga, 'segunda' => $segunda, 'premier' => $premier, 'champions' => $champions]);
     }
 }
