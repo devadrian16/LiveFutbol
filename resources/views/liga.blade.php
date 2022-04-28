@@ -11,7 +11,7 @@
     $mes = ['-', 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
 ?>
 <div class="container mt-4 mb-3">
-    @foreach($i = 0; $i < count($jornadas); $i++) 
+    @for($i = 0; $i < count($jornadas); $i++) 
     <div class="card mb-1">
         <div class="card-header">Jornada {{ $rounds[$i] }}</div>
 
@@ -40,7 +40,7 @@
             </table>
         </div>
     </div>
-    @endforeach
+    @endfor
 </div>
 
 <div class="container my-4">

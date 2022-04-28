@@ -57,8 +57,14 @@ class ApiController extends Controller
 	}
 
 	//[--JUGADORES--]
-	public function getPlayersTeam($idTeam) {
-		$filter = ['team' => $idTeam, 'season' => self::SEASON];
+	public function getPlayersTeam($idTeam, $idLeague) {
+		$filter = ['team' => $idTeam, 'season' => self::SEASON, 'league' => $idLeague];
+		$players = $this->run('players'.'?'.http_build_query($filter));
+		return $players;
+	}
+
+	public function getPlayersTeamPage($idTeam, $idLeague, $page) {
+		$filter = ['team' => $idTeam, 'season' => self::SEASON, 'league' => $idLeague, 'page' => $page];
 		$players = $this->run('players'.'?'.http_build_query($filter));
 		return $players;
 	}

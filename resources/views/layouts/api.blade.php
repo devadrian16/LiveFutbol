@@ -17,18 +17,20 @@
 	<!-- Styles -->
 	<style>
 		body {
-			/*background-color: #010a0f;*/
 			height: 100%;
 		}
-		nav, footer {
-			margin: 15px 0;
-			background-color: #001E28;
+		
+		#header {
+			background-color: #010a0f;
 			font-family: 'Roboto', 'Signika', sans-serif;
 		}
-		main {
+		#content {
 			height: 75vh;
-			/*background-color: #001E28;*/
 			font-family: 'Signika', 'Roboto', sans-serif;
+		}
+		#footer {
+			background-color: #010a0f;
+			font-family: 'Roboto', 'Signika', sans-serif;
 		}
 	</style>
 	@yield('css')
@@ -37,9 +39,9 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </head>
 
-<body class="container">
-	<div class="row">
-		<nav class="navbar navbar-expand-lg navbar-dark rounded">
+<body>
+	<div class="row rounded" id="header">
+		<nav class="navbar navbar-expand-lg navbar-dark" style="margin: 0 auto; width: 75%;">
 			<div class="container-fluid">
 				<a class="navbar-brand" href="/">App Name</a>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -105,13 +107,13 @@
 			</div>
 		</nav>
 	</div>
-	<div class="row">
-		<main class="rounded">
+	<div class="row rounded my-2" id="content">
+		<main style="margin: 0 auto; width: 75%;">
 			@yield('content')
 		</main>
 	</div>
-	<div class="row">
-		<footer class="rounded">
+	<div class="row rounded" id="footer">
+		<footer style="margin: 0 auto; width: 75%;">
 
 		</footer>
 	</div>
