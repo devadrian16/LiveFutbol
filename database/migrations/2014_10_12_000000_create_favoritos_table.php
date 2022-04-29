@@ -16,8 +16,10 @@ return new class extends Migration
         Schema::create('favoritos', function (Blueprint $table) {
             $table->id('id_favorito');
             $table->integer('id_user');
-            $table->integer('id_league');
             $table->integer('id_team');
+            $table->string('name_team')->nullable();
+            $table->integer('id_league');
+            $table->string('name_league')->nullable();
             $table->date('fecha')->nullable();
             $table->timestamps();
         });

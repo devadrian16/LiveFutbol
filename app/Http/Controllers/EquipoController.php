@@ -72,9 +72,14 @@ class EquipoController extends Controller
         $favorito = new Favorito();
 
         $favorito->id_user = Auth::user()->id;
+
+        $team = $this->api->getTeam($id);
+        $favorito->id_team = $team['team']['id'];
+        $favorito->name_team = $team['team']['name'];
+
         $id_league = $this->api->getLeagueTeam($id);
         $favorito->id_league = $id_league['league']['id'];
-        $favorito->id_team = $id;
+        $favorito->name_league = $id_league['league']['name'];
 
         $favorito->save();
 

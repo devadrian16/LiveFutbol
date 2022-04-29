@@ -16,10 +16,6 @@
 
 	<!-- Styles -->
 	<style>
-		body {
-			height: 100%;
-		}
-		
 		#header {
 			background-color: #010a0f;
 			font-family: 'Roboto', 'Signika', sans-serif;

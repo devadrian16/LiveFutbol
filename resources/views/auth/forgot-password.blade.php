@@ -7,7 +7,7 @@
         <div class="card-body">
 
             <div class="mb-3">
-                {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+                {{ __('¿Olvidaste tu contraseña? No hay problema. Simplemente háganos saber su dirección de correo electrónico y le enviaremos un enlace de restablecimiento de contraseña que le permitirá elegir una nueva.') }}
             </div>
 
             @if (session('status'))
@@ -22,13 +22,13 @@
                 @csrf
 
                 <div class="mb-3">
-                    <x-jet-label value="Email" />
+                    <x-jet-label value="Correo electrónico" />
                     <x-jet-input type="email" name="email" :value="old('email')" required autofocus />
                 </div>
 
                 <div class="d-flex justify-content-end mt-4">
                     <x-jet-button>
-                        {{ __('Email Password Reset Link') }}
+                        {{ __('Restablecer') }}
                     </x-jet-button>
                 </div>
             </form>

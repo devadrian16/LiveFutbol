@@ -11,6 +11,7 @@ class ApiController extends Controller
 	const SEASON = 2021;
 	const CUP = 'cup';
 	const LEAGUE = 'league';
+	const TIMEZONE = 'Europe/Madrid';
 
 	public function __construct(Client $client) 
     {	
@@ -137,31 +138,43 @@ class ApiController extends Controller
 	//[--PARTIDOS--] 
 	public function getMatchesLeague($idLeague, $round) 
 	{
-		$filter = ['league' => $idLeague, 'season' => self::SEASON, 'round' => $round];
+		$filter = ['league' => $idLeague, 'season' => self::SEASON, 'round' => $round, 'timezone' => self::TIMEZONE];
 		$matches = $this->run('fixtures'.'?'.http_build_query($filter));
 		return $matches['response'];
 	}
 
 	public function getLiveScore() {
-		$filter = ['live' => 'all'];
+		$filter = ['live' => 'all', 'timezone' => self::TIMEZONE];
 		return $this->run('fixtures'.'?'.http_build_query($filter));
 	}
 
-	public function getLiveScoreLeagues($idleagues) {
-		$filter = ['live' => $idleagues];
+	public function getLiveScoreLeagues($idLeagues) {
+		$filter = ['live' => $idLeagues, 'timezone' => self::TIMEZONE];
 		$matches = $this->run('fixtures'.'?'.http_build_query($filter));
 		return $matches['response'];
 	}
 
 	public function getMatchesToday() {
 		$now = new \DateTime();
-		$filter = ['date' => $now->format('Y-m-d')];
+		$filter = ['date' => $now->format('Y-m-d'), 'timezone' => self::TIMEZONE];
 		return $this->run('fixtures'.'?'.http_build_query($filter));
 	}
 
-	public function getMatchesTodayLeague($idleague) {
+	public function getMatchesTodayLeague($idLeague) {
 		$now = new \DateTime();
-		$filter = ['date' => $now->format('Y-m-d'), 'season' => self::SEASON, 'league' => $idleague];
+		$filter = ['date' => $now->format('Y-m-d'), 'season' => self::SEASON, 'league' => $idLeague, 'timezone' => self::TIMEZONE];
+		$matches = $this->run('fixtures'.'?'.http_build_query($filter));
+		return $matches['response'];
+	}
+
+	public function getLastMatchesTeam($idTeam, $last) {
+		$filter = ['season' => self::SEASON, 'team' => $idTeam, 'last' => $last, 'timezone' => self::TIMEZONE];
+		$matches = $this->run('fixtures'.'?'.http_build_query($filter));
+		return $matches['response'];
+	}
+
+	public function getNextMatchesTeam($idTeam, $next) {
+		$filter = ['season' => self::SEASON, 'team' => $idTeam, 'next' => $next, 'timezone' => self::TIMEZONE];
 		$matches = $this->run('fixtures'.'?'.http_build_query($filter));
 		return $matches['response'];
 	}

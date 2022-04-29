@@ -159,7 +159,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @for ($i = 0; $i < count($goals); $i++) <tr>
+                        @for ($i = 0; $i < count($goals); $i++) 
+                        <tr>
                             <td class="text-center">{{ $i + 1 }}</td>
                             <td>
                                 <a style="text-decoration: none; color: black;">
@@ -175,8 +176,8 @@
                                     <img src="{{ $goals[$i]['statistics'][0]['team']['logo'] }}" alt="" style="width: 25px; height: 25px;">
                                 </a>
                             </td>
-                            </tr>
-                            @endfor
+                        </tr>
+                        @endfor
                     </tbody>
                 </table>
             </div>
@@ -192,7 +193,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @for ($i = 0; $i < count($assists); $i++) <tr>
+                        @for ($i = 0; $i < count($assists); $i++) 
+                        <tr>
                             <td class="text-center">{{ $i + 1 }}</td>
                             <td>
                                 <a style="text-decoration: none; color: black;">
@@ -208,8 +210,8 @@
                                     <img src="{{ $assists[$i]['statistics'][0]['team']['logo'] }}" alt="" style="width: 25px; height: 25px;">
                                 </a>
                             </td>
-                            </tr>
-                            @endfor
+                        </tr>
+                        @endfor
                     </tbody>
                 </table>
             </div>
@@ -225,7 +227,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @for ($i = 0; $i < count($yellowcards); $i++) <tr>
+                        @for ($i = 0; $i < count($yellowcards); $i++) 
+                        <tr>
                             <td class="text-center">{{ $i + 1 }}</td>
                             <td>
                                 <a style="text-decoration: none; color: black;">
@@ -241,8 +244,8 @@
                                     <img src="{{ $yellowcards[$i]['statistics'][0]['team']['logo'] }}" alt="" style="width: 25px; height: 25px;">
                                 </a>
                             </td>
-                            </tr>
-                            @endfor
+                        </tr>
+                        @endfor
                     </tbody>
                 </table>
             </div>
@@ -258,7 +261,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @for ($i = 0; $i < count($redcards); $i++) <tr>
+                        @for ($i = 0; $i < count($redcards); $i++) 
+                        <tr>
                             <td class="text-center">{{ $i + 1 }}</td>
                             <td>
                                 <a style="text-decoration: none; color: black;">
@@ -274,8 +278,8 @@
                                     <img src="{{ $redcards[$i]['statistics'][0]['team']['logo'] }}" alt="" style="width: 25px; height: 25px;">
                                 </a>
                             </td>
-                            </tr>
-                            @endfor
+                        </tr>
+                        @endfor
                     </tbody>
                 </table>
             </div>
