@@ -19,8 +19,6 @@
         </div>
 
         <div class="card-body">
-            @if(count($champions) != 0 && count($laliga) != 0 && count($segunda) != 0 && count($premier) != 0)
-
             @if(count($champions) != 0)
             <div class="card">
                 <div class="card-header">Champions League</div>
@@ -254,12 +252,6 @@
                         </table>
                     </div>
                 </div>
-            </div>
-            @endif
-
-            @else
-            <div class="text-center">
-                No hay partidos hoy.
             </div>
             @endif
         </div>

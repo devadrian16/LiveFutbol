@@ -11,7 +11,8 @@ class ApiController extends Controller
 	const SEASON = 2021;
 	const CUP = 'cup';
 	const LEAGUE = 'league';
-	const TIMEZONE = 'Europe/Madrid';
+	const TIMEZONE = '343';
+	//const TIMEZONE = 'Europe/Madrid';
 
 	public function __construct(Client $client) 
     {	
@@ -26,6 +27,14 @@ class ApiController extends Controller
 	public function getStatus() 
 	{
 		return $this->run('/status');
+	}
+
+	//[--TIMEZONE--]
+	public function getTimeZone($code) 
+	{
+		$filter = ['code' => $code];
+		$country = $this->run('timezone'.'?'.http_build_query($filter));
+		return $country['response'][0];
 	}
 
 	//[--PAISES--]
