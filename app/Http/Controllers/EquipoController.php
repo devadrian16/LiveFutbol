@@ -8,8 +8,6 @@ use GuzzleHttp\Client;
 use App\Models\Favorito;
 use Auth;
 
-use function Symfony\Component\String\b;
-
 class EquipoController extends Controller
 {
     private $api;
