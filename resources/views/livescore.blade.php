@@ -14,7 +14,7 @@
 ?>
 <div class="container">
     <div class="card">
-        <div class="card-header">
+        <div class="card-header fs-2 pb-0" style="border-bottom: none; background-color: white;">
             Partidos {{ $semana[date('w', strtotime($fecha))] }}, {{ $dia }} {{ $mes[date('n', strtotime($fecha))] }} {{ $anno }}
         </div>
 
@@ -52,7 +52,13 @@
                                 @else
                                 <tr>
                                     <td class="text-center">{{ date('H:i', strtotime($match['fixture']['date'])) }}</td>
-                                    <td>{{$match['fixture']['status']['short']}}</td>
+                                    <td>
+                                        @if($match['fixture']['status']['short'] == 'NS')
+                                        en {{ round( (strtotime( date('H:i', strtotime($match['fixture']['date'])) ) - strtotime($hora) ) / 3600, 0) }} h
+                                        @else
+                                        Finalizado
+                                        @endif
+                                    </td>
                                     <td class="text-end">
                                         <a style="text-decoration: none; color: black;" href="/equipo/{{ $match['teams']['home']['id'] }}">
                                             {{ $match['teams']['home']['name'] }}
