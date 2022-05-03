@@ -66,8 +66,17 @@
 								<li><a class="dropdown-item" href="/liga/61">Ligue 1</a></li>
 							</ul>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="/pruebas">Pruebas</a>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								Equipos
+							</a>
+							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<li><a class="dropdown-item" href="/equipo/529">FC Barcelona</a></li>
+								<li><a class="dropdown-item" href="/equipo/529">Burgos CF</a></li>
+								<li><a class="dropdown-item" href="/equipo/529">Manchester City</a></li>
+								<li><a class="dropdown-item" href="/equipo/529">Villareal CF</a></li>
+								<li><a class="dropdown-item" href="/equipo/529">Bayern de Múnich</a></li>
+							</ul>
 						</li>
 					</ul>
 				</div>
