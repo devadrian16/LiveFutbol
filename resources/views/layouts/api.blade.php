@@ -110,7 +110,7 @@
 	</div>
 	<div class="row rounded" id="footer">
 		<footer style="margin: 0 auto; width: 75%;">
-
+			<em>adri__16@hotmail.com</em>
 		</footer>
 	</div>
 	@yield('js')
