@@ -27,6 +27,8 @@
 		#footer {
 			background-color: #010a0f;
 			font-family: 'Roboto', 'Signika', sans-serif;
+			height: 55px;
+			color: #878c8e;
 		}
 	</style>
 	@yield('css')
@@ -78,6 +80,9 @@
 								<li><a class="dropdown-item" href="/equipo/529">Bayern de Múnich</a></li>
 							</ul>
 						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/pruebas">Pruebas</a>
+						</li>
 					</ul>
 				</div>
 				<div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
@@ -118,7 +123,7 @@
 		</main>
 	</div>
 	<div class="row rounded" id="footer">
-		<footer style="margin: 0 auto; width: 75%;">
+		<footer style="margin: 0 auto; width: 75%; padding: 0 40px;">
 			<em>adri__16@hotmail.com</em>
 		</footer>
 	</div>
