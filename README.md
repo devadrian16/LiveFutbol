@@ -30,4 +30,16 @@ El proyecto ya tiene los modelos, migraciones y seeders generados. Entonces lo Ã
  
 > php artisan migrate
 
+## Archivo .htaccess(para redirigir a public todas las peticiones)
+
+    IfModule mod_rewrite.c
+
+    RewriteEngine on
+    
+    RewriteCond %{REQUEST_URI} !^public
+    
+    RewriteRule ^(.*)$ public/$1 [L]
+    
+    IfModule
+
 
