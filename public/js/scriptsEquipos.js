@@ -20,13 +20,17 @@ document.addEventListener("DOMContentLoaded", function () {
         let id = window.location.pathname.split('/');
         let url = 'http://127.0.0.1:8000/save/'+id[2];
 
-        const res = await fetch(url, {
+        const response = await fetch(url, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
             },
         });
-        const data = await res.json();
+        if(!response.ok) {
+            const message = `Un error ha ocurrido: ${response.status}`;
+            throw new Error(message);
+        }
+        const data = await response.json();
         console.log(data);
     }
 
@@ -35,13 +39,17 @@ document.addEventListener("DOMContentLoaded", function () {
         let id = window.location.pathname.split('/');
         let url = 'http://127.0.0.1:8000/delete/'+id[2];
 
-        const res = await fetch(url, {
+        const response = await fetch(url, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
             },
         });
-        const data = await res.json();
+        if(!response.ok) {
+            const message = `Un error ha ocurrido: ${response.status}`;
+            throw new Error(message);
+        }
+        const data = await response.json();
         console.log(data);
     }
 
