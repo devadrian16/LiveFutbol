@@ -7,285 +7,299 @@
 @endsection
 
 @section('content')
+
 <?php
-    $mes = ['-', 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+$mes = ['-', 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
 ?>
-<div class="container mt-4 mb-3">
-    @for($i = 0; $i < count($jornadas); $i++) 
-    <div class="card mb-1">
-        <div class="card-header">Jornada {{ $rounds[$i] }}</div>
 
-        <div class="card-body">
-            <table class="table">
-                <tbody>
-                    @foreach($jornadas[$i] as $match)
-                    <tr>
-                        <td class="text-center">{{ date('j', strtotime($match['fixture']['date'])) }} {{ $mes[date('n', strtotime($match['fixture']['date']))] }} {{ date('Y', strtotime($match['fixture']['date'])) }}</td>
-                        <td class="text-end">
-                            <a style="text-decoration: none; color: black;" href="/equipo/{{ $match['teams']['home']['id'] }}">
-                                {{ $match['teams']['home']['name'] }}
-                                <img src="{{ $match['teams']['home']['logo'] }}" alt="" style="width: 25px; height: 25px;">
-                            </a>
-                        </td>
-                        <td class="text-center">{{ $match['goals']['home'] }} - {{ $match['goals']['away'] }}</td>
-                        <td class="text-left">
-                            <a style="text-decoration: none; color: black;" href="/equipo/{{ $match['teams']['away']['id'] }}">
-                                <img src="{{ $match['teams']['away']['logo'] }}" alt="" style="width: 25px; height: 25px;">
-                                {{ $match['teams']['away']['name'] }}
-                            </a>
-                        </td>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
-        </div>
-    </div>
-    @endfor
-</div>
+<div class="row justify-content-around">
+    <div class="col-lg-5 mt-4 mb-3">
+        @for($i = 0; $i < count($jornadas); $i++) 
+        <div class="card mb-3">
+            <div class="card-header fs-5">Jornada {{ $rounds[$i] }}</div>
 
-<div class="container my-4">
-    <div class="card">
-        <div class="card-header">CLASIFICACION</div>
-
-        <div class="card-body">
-            <table class="table">
-                <thead>
-                    <tr class="text-center">
-                        <th></th>
-                        <th style="text-align: left;">Equipos</th>
-                        <th>Puntos</th>
-                        <th>J.</th>
-                        <th>G.</th>
-                        <th>E.</th>
-                        <th>P.</th>
-                        <th>G.</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach($ranking[0] as $team)
-                    <tr>
-                        @switch($team['rank'])
-                        @case(1) @case(2) @case(3) @case(4)
-                        <td class="text-center">
-                            <div class="bg-primary redondeo">
-                                {{ $team['rank'] }}.
-                            </div>
-                        </td>
-                        @break
-                        @case(5)
-                        <td class="text-center">
-                            <div class="bg-danger redondeo">
-                                {{ $team['rank'] }}.
-                            </div>
-                        </td>
-                        @break
-                        @case(6)
-                        <td class="text-center">
-                            <div class="bg-warning redondeo">
-                                {{ $team['rank'] }}.
-                            </div>
-                        </td>
-                        @break
-                        @case(count($ranking[0])-2) @case(count($ranking[0])-1) @case(count($ranking[0]))
-                        <td class="text-center">
-                            <div style="background-color: #ff0000;" class="redondeo">
-                                {{ $team['rank'] }}.
-                            </div>
-                        </td>
-                        @break
-                        @default
-                        <td class="text-center">
-                            {{ $team['rank'] }}.
-                        </td>
-                        @endswitch
-
-                        <td class="text-left">
-                            <a style="text-decoration: none; color: black;" href="/equipo/{{ $team['team']['id'] }}">
-                                <img src="{{ $team['team']['logo'] }}" alt="" style="width: 25px; height: 25px;">
-                                {{ $team['team']['name'] }}
-                            </a>
-                        </td>
-
-                        <th class="text-center">{{ $team['points'] }}</th>
-                        <td class="text-center">{{ $team['all']['played'] }}</td>
-                        <td class="text-center">{{ $team['all']['win'] }}</td>
-                        <td class="text-center">{{ $team['all']['draw'] }}</td>
-                        <td class="text-center">{{ $team['all']['lose'] }}</td>
-                        <td class="text-center">{{ $team['all']['goals']['for'] }}:{{ $team['all']['goals']['against'] }}</td>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
-
-<div class="container my-4">
-    <div class="card">
-        <div class="card-header">
-            DESTACADOS
-            <nav class="navbar navbar-expand-lg navbar-light bg-light my-0">
-                <div>
-                    <ul class="nav">
-                        <li id="goles" class="nav-item activo">
-                            <a style="color: black;" class="nav-link" href="#">GOLES</a>
-                        </li>
-                        <li id="asistencias" class="nav-item">
-                            <a style="color: black;" class="nav-link" href="#">ASISTENCIAS</a>
-                        </li>
-                        <li id="amarillas" class="nav-item">
-                            <a style="color: black;" class="nav-link" href="#">TAR. AMARILLAS</a>
-                        </li>
-                        <li id="rojas" class="nav-item">
-                            <a style="color: black;" class="nav-link" href="#">TAR. ROJAS</a>
-                        </li>
-                    </ul>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <tbody>
+                            @foreach($jornadas[$i] as $match)
+                            <tr>
+                                <td class="text-center">{{ date('j', strtotime($match['fixture']['date'])) }} {{ $mes[date('n', strtotime($match['fixture']['date']))] }} {{ date('Y', strtotime($match['fixture']['date'])) }}</td>
+                                <td class="text-end">
+                                    <a style="text-decoration: none; color: black;" href="/equipo/{{ $match['teams']['home']['id'] }}">
+                                        {{ $match['teams']['home']['name'] }}
+                                        <img src="{{ $match['teams']['home']['logo'] }}" alt="" style="width: 25px; height: 25px;">
+                                    </a>
+                                </td>
+                                <td class="text-center">{{ $match['goals']['home'] }} - {{ $match['goals']['away'] }}</td>
+                                <td class="text-left">
+                                    <a style="text-decoration: none; color: black;" href="/equipo/{{ $match['teams']['away']['id'] }}">
+                                        <img src="{{ $match['teams']['away']['logo'] }}" alt="" style="width: 25px; height: 25px;">
+                                        {{ $match['teams']['away']['name'] }}
+                                    </a>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
-            </nav>
+            </div>
         </div>
-        <?php
-        $posicion = ['Attacker' => 'Delantero', 'Defender' => 'Defensa', 'Midfielder' => 'Centrocampista', 'Goalkeeper' => 'Portero'];
-        ?>
-        <div class="card-body">
-            <div id="tgoles">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th class="text-center"></th>
-                            <th class="text-left">Nombre</th>
-                            <th class="text-center">Goles</th>
-                            <th class="text-center">Posicion</th>
-                            <th class="text-left">Equipo</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @for ($i = 0; $i < count($goals); $i++) 
-                        <tr>
-                            <td class="text-center">{{ $i + 1 }}</td>
-                            <td>
-                                <a style="text-decoration: none; color: black;">
-                                    <img src="{{ $goals[$i]['player']['photo'] }}" alt="" style="width: 35px; height: 35px;">
-                                    {{ $goals[$i]['player']['name'] }}
-                                </a>
-                            </td>
-                            <th class="text-center">{{ $goals[$i]['statistics'][0]['goals']['total'] }}</th>
-                            <td class="text-center">{{ $posicion[ $goals[$i]['statistics'][0]['games']['position'] ] }}</td>
-                            <td>
-                                <a style="text-decoration: none; color: black;" href="/equipo/{{ $goals[$i]['statistics'][0]['team']['id'] }}">
-                                    {{ $goals[$i]['statistics'][0]['team']['name'] }}
-                                    <img src="{{ $goals[$i]['statistics'][0]['team']['logo'] }}" alt="" style="width: 25px; height: 25px;">
-                                </a>
-                            </td>
-                        </tr>
-                        @endfor
-                    </tbody>
-                </table>
+        @endfor
+    </div>
+
+    <div class="col-lg-5 my-4">
+        <div class="card">
+            <div class="card-header fs-3">CLASIFICACION</div>
+
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr class="text-center">
+                                <th></th>
+                                <th style="text-align: left;">Equipos</th>
+                                <th>Puntos</th>
+                                <th>J.</th>
+                                <th>G.</th>
+                                <th>E.</th>
+                                <th>P.</th>
+                                <th>G.</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($ranking[0] as $team)
+                            <tr>
+                                @switch($team['rank'])
+                                @case(1) @case(2) @case(3) @case(4)
+                                <td class="text-center">
+                                    <div class="bg-primary redondeo">
+                                        {{ $team['rank'] }}.
+                                    </div>
+                                </td>
+                                @break
+                                @case(5)
+                                <td class="text-center">
+                                    <div class="bg-danger redondeo">
+                                        {{ $team['rank'] }}.
+                                    </div>
+                                </td>
+                                @break
+                                @case(6)
+                                <td class="text-center">
+                                    <div class="bg-warning redondeo">
+                                        {{ $team['rank'] }}.
+                                    </div>
+                                </td>
+                                @break
+                                @case(count($ranking[0])-2) @case(count($ranking[0])-1) @case(count($ranking[0]))
+                                <td class="text-center">
+                                    <div style="background-color: #ff0000;" class="redondeo">
+                                        {{ $team['rank'] }}.
+                                    </div>
+                                </td>
+                                @break
+                                @default
+                                <td class="text-center">
+                                    {{ $team['rank'] }}.
+                                </td>
+                                @endswitch
+
+                                <td class="text-left">
+                                    <a style="text-decoration: none; color: black;" href="/equipo/{{ $team['team']['id'] }}">
+                                        <img src="{{ $team['team']['logo'] }}" alt="" style="width: 25px; height: 25px;">
+                                        {{ $team['team']['name'] }}
+                                    </a>
+                                </td>
+
+                                <th class="text-center">{{ $team['points'] }}</th>
+                                <td class="text-center">{{ $team['all']['played'] }}</td>
+                                <td class="text-center">{{ $team['all']['win'] }}</td>
+                                <td class="text-center">{{ $team['all']['draw'] }}</td>
+                                <td class="text-center">{{ $team['all']['lose'] }}</td>
+                                <td class="text-center">{{ $team['all']['goals']['for'] }}:{{ $team['all']['goals']['against'] }}</td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+
             </div>
-            <div id="tasistencias" class="d-none">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th class="text-center"></th>
-                            <th class="text-left">Nombre</th>
-                            <th class="text-center">Asistencias</th>
-                            <th class="text-center">Posicion</th>
-                            <th class="text-left">Equipo</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @for ($i = 0; $i < count($assists); $i++) 
-                        <tr>
-                            <td class="text-center">{{ $i + 1 }}</td>
-                            <td>
-                                <a style="text-decoration: none; color: black;">
-                                    <img src="{{ $assists[$i]['player']['photo'] }}" alt="" style="width: 35px; height: 35px;">
-                                    {{ $assists[$i]['player']['name'] }}
-                                </a>
-                            </td>
-                            <th class="text-center">{{ $assists[$i]['statistics'][0]['goals']['assists'] }}</th>
-                            <td class="text-center">{{ $posicion[ $assists[$i]['statistics'][0]['games']['position'] ] }}</td>
-                            <td>
-                                <a style="text-decoration: none; color: black;" href="/equipo/{{ $assists[$i]['statistics'][0]['team']['id'] }}">
-                                    {{ $assists[$i]['statistics'][0]['team']['name'] }}
-                                    <img src="{{ $assists[$i]['statistics'][0]['team']['logo'] }}" alt="" style="width: 25px; height: 25px;">
-                                </a>
-                            </td>
-                        </tr>
-                        @endfor
-                    </tbody>
-                </table>
+        </div>
+    </div>
+
+    <div class="col-lg-10 my-3">
+        <div class="card">
+            <div class="card-header fs-3">
+                DESTACADOS
+                <nav class="navbar navbar-expand-lg navbar-light bg-light my-0 fs-6">
+                    <div>
+                        <ul class="nav">
+                            <li id="goles" class="nav-item activo">
+                                <a style="color: black;" class="nav-link" href="#">GOLES</a>
+                            </li>
+                            <li id="asistencias" class="nav-item">
+                                <a style="color: black;" class="nav-link" href="#">ASISTENCIAS</a>
+                            </li>
+                            <li id="amarillas" class="nav-item">
+                                <a style="color: black;" class="nav-link" href="#">TAR. AMARILLAS</a>
+                            </li>
+                            <li id="rojas" class="nav-item">
+                                <a style="color: black;" class="nav-link" href="#">TAR. ROJAS</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
             </div>
-            <div id="tamarillas" class="d-none">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th class="text-center"></th>
-                            <th class="text-left">Nombre</th>
-                            <th class="text-center">Amarillas</th>
-                            <th class="text-center">Posicion</th>
-                            <th class="text-left">Equipo</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @for ($i = 0; $i < count($yellowcards); $i++) 
-                        <tr>
-                            <td class="text-center">{{ $i + 1 }}</td>
-                            <td>
-                                <a style="text-decoration: none; color: black;">
-                                    <img src="{{ $yellowcards[$i]['player']['photo'] }}" alt="" style="width: 35px; height: 35px;">
-                                    {{ $yellowcards[$i]['player']['name'] }}
-                                </a>
-                            </td>
-                            <th class="text-center">{{ $yellowcards[$i]['statistics'][0]['cards']['yellow'] }}</th>
-                            <td class="text-center">{{ $posicion[ $yellowcards[$i]['statistics'][0]['games']['position'] ] }}</td>
-                            <td>
-                                <a style="text-decoration: none; color: black;" href="/equipo/{{ $yellowcards[$i]['statistics'][0]['team']['id'] }}">
-                                    {{ $yellowcards[$i]['statistics'][0]['team']['name'] }}
-                                    <img src="{{ $yellowcards[$i]['statistics'][0]['team']['logo'] }}" alt="" style="width: 25px; height: 25px;">
-                                </a>
-                            </td>
-                        </tr>
-                        @endfor
-                    </tbody>
-                </table>
-            </div>
-            <div id="trojas" class="d-none">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th class="text-center"></th>
-                            <th class="text-left">Nombre</th>
-                            <th class="text-center">Rojas</th>
-                            <th class="text-center">Posicion</th>
-                            <th class="text-left">Equipo</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @for ($i = 0; $i < count($redcards); $i++) 
-                        <tr>
-                            <td class="text-center">{{ $i + 1 }}</td>
-                            <td>
-                                <a style="text-decoration: none; color: black;">
-                                    <img src="{{ $redcards[$i]['player']['photo'] }}" alt="" style="width: 35px; height: 35px;">
-                                    {{ $redcards[$i]['player']['name'] }}
-                                </a>
-                            </td>
-                            <th class="text-center">{{ $redcards[$i]['statistics'][0]['cards']['red'] }}</th>
-                            <td class="text-center">{{ $posicion[ $redcards[$i]['statistics'][0]['games']['position'] ] }}</td>
-                            <td>
-                                <a style="text-decoration: none; color: black;" href="/equipo/{{ $redcards[$i]['statistics'][0]['team']['id'] }}">
-                                    {{ $redcards[$i]['statistics'][0]['team']['name'] }}
-                                    <img src="{{ $redcards[$i]['statistics'][0]['team']['logo'] }}" alt="" style="width: 25px; height: 25px;">
-                                </a>
-                            </td>
-                        </tr>
-                        @endfor
-                    </tbody>
-                </table>
+            <?php
+            $posicion = ['Attacker' => 'Delantero', 'Defender' => 'Defensa', 'Midfielder' => 'Centrocampista', 'Goalkeeper' => 'Portero'];
+            ?>
+            <div class="card-body">
+                <div id="tgoles">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="text-center"></th>
+                                    <th class="text-left">Nombre</th>
+                                    <th class="text-center">Goles</th>
+                                    <th class="text-center">Posicion</th>
+                                    <th class="text-left">Equipo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @for ($i = 0; $i < count($goals); $i++) <tr>
+                                    <td class="text-center">{{ $i + 1 }}</td>
+                                    <td>
+                                        <a style="text-decoration: none; color: black;">
+                                            <img src="{{ $goals[$i]['player']['photo'] }}" alt="" style="width: 35px; height: 35px;">
+                                            {{ $goals[$i]['player']['name'] }}
+                                        </a>
+                                    </td>
+                                    <th class="text-center">{{ $goals[$i]['statistics'][0]['goals']['total'] }}</th>
+                                    <td class="text-center">{{ $posicion[ $goals[$i]['statistics'][0]['games']['position'] ] }}</td>
+                                    <td>
+                                        <a style="text-decoration: none; color: black;" href="/equipo/{{ $goals[$i]['statistics'][0]['team']['id'] }}">
+                                            {{ $goals[$i]['statistics'][0]['team']['name'] }}
+                                            <img src="{{ $goals[$i]['statistics'][0]['team']['logo'] }}" alt="" style="width: 25px; height: 25px;">
+                                        </a>
+                                    </td>
+                                    </tr>
+                                    @endfor
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="tasistencias" class="d-none">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="text-center"></th>
+                                    <th class="text-left">Nombre</th>
+                                    <th class="text-center">Asistencias</th>
+                                    <th class="text-center">Posicion</th>
+                                    <th class="text-left">Equipo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @for ($i = 0; $i < count($assists); $i++) <tr>
+                                    <td class="text-center">{{ $i + 1 }}</td>
+                                    <td>
+                                        <a style="text-decoration: none; color: black;">
+                                            <img src="{{ $assists[$i]['player']['photo'] }}" alt="" style="width: 35px; height: 35px;">
+                                            {{ $assists[$i]['player']['name'] }}
+                                        </a>
+                                    </td>
+                                    <th class="text-center">{{ $assists[$i]['statistics'][0]['goals']['assists'] }}</th>
+                                    <td class="text-center">{{ $posicion[ $assists[$i]['statistics'][0]['games']['position'] ] }}</td>
+                                    <td>
+                                        <a style="text-decoration: none; color: black;" href="/equipo/{{ $assists[$i]['statistics'][0]['team']['id'] }}">
+                                            {{ $assists[$i]['statistics'][0]['team']['name'] }}
+                                            <img src="{{ $assists[$i]['statistics'][0]['team']['logo'] }}" alt="" style="width: 25px; height: 25px;">
+                                        </a>
+                                    </td>
+                                    </tr>
+                                    @endfor
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="tamarillas" class="d-none">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="text-center"></th>
+                                    <th class="text-left">Nombre</th>
+                                    <th class="text-center">Amarillas</th>
+                                    <th class="text-center">Posicion</th>
+                                    <th class="text-left">Equipo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @for ($i = 0; $i < count($yellowcards); $i++) <tr>
+                                    <td class="text-center">{{ $i + 1 }}</td>
+                                    <td>
+                                        <a style="text-decoration: none; color: black;">
+                                            <img src="{{ $yellowcards[$i]['player']['photo'] }}" alt="" style="width: 35px; height: 35px;">
+                                            {{ $yellowcards[$i]['player']['name'] }}
+                                        </a>
+                                    </td>
+                                    <th class="text-center">{{ $yellowcards[$i]['statistics'][0]['cards']['yellow'] }}</th>
+                                    <td class="text-center">{{ $posicion[ $yellowcards[$i]['statistics'][0]['games']['position'] ] }}</td>
+                                    <td>
+                                        <a style="text-decoration: none; color: black;" href="/equipo/{{ $yellowcards[$i]['statistics'][0]['team']['id'] }}">
+                                            {{ $yellowcards[$i]['statistics'][0]['team']['name'] }}
+                                            <img src="{{ $yellowcards[$i]['statistics'][0]['team']['logo'] }}" alt="" style="width: 25px; height: 25px;">
+                                        </a>
+                                    </td>
+                                    </tr>
+                                    @endfor
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="trojas" class="d-none">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="text-center"></th>
+                                    <th class="text-left">Nombre</th>
+                                    <th class="text-center">Rojas</th>
+                                    <th class="text-center">Posicion</th>
+                                    <th class="text-left">Equipo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @for ($i = 0; $i < count($redcards); $i++) <tr>
+                                    <td class="text-center">{{ $i + 1 }}</td>
+                                    <td>
+                                        <a style="text-decoration: none; color: black;">
+                                            <img src="{{ $redcards[$i]['player']['photo'] }}" alt="" style="width: 35px; height: 35px;">
+                                            {{ $redcards[$i]['player']['name'] }}
+                                        </a>
+                                    </td>
+                                    <th class="text-center">{{ $redcards[$i]['statistics'][0]['cards']['red'] }}</th>
+                                    <td class="text-center">{{ $posicion[ $redcards[$i]['statistics'][0]['games']['position'] ] }}</td>
+                                    <td>
+                                        <a style="text-decoration: none; color: black;" href="/equipo/{{ $redcards[$i]['statistics'][0]['team']['id'] }}">
+                                            {{ $redcards[$i]['statistics'][0]['team']['name'] }}
+                                            <img src="{{ $redcards[$i]['statistics'][0]['team']['logo'] }}" alt="" style="width: 25px; height: 25px;">
+                                        </a>
+                                    </td>
+                                    </tr>
+                                    @endfor
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
 @endsection
 
 @section('js')

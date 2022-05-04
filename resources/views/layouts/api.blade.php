@@ -21,8 +21,8 @@
 			font-family: 'Roboto', 'Signika', sans-serif;
 		}
 		#content {
-			height: 75vh;
 			font-family: 'Signika', 'Roboto', sans-serif;
+			height: 720px;
 		}
 		#footer {
 			background-color: #010a0f;
@@ -38,8 +38,8 @@
 </head>
 
 <body>
-	<div class="row rounded" id="header">
-		<nav class="navbar navbar-expand-lg navbar-dark" style="margin: 0 auto; width: 75%;">
+	<div class="row" id="header">
+		<nav class="navbar navbar-expand-lg navbar-dark px-5">
 			<div class="container-fluid">
 				<a class="navbar-brand" href="/">App Name</a>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -74,10 +74,10 @@
 							</a>
 							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 								<li><a class="dropdown-item" href="/equipo/529">FC Barcelona</a></li>
-								<li><a class="dropdown-item" href="/equipo/529">Burgos CF</a></li>
-								<li><a class="dropdown-item" href="/equipo/529">Manchester City</a></li>
-								<li><a class="dropdown-item" href="/equipo/529">Villareal CF</a></li>
-								<li><a class="dropdown-item" href="/equipo/529">Bayern de Múnich</a></li>
+								<li><a class="dropdown-item" href="/equipo/9580">Burgos CF</a></li>
+								<li><a class="dropdown-item" href="/equipo/5">Manchester City</a></li>
+								<li><a class="dropdown-item" href="/equipo/533">Villareal CF</a></li>
+								<li><a class="dropdown-item" href="/equipo/157">Bayern de Múnich</a></li>
 							</ul>
 						</li>
 						<li class="nav-item">
@@ -117,14 +117,13 @@
 			</div>
 		</nav>
 	</div>
-	<div class="row rounded my-2" id="content">
-		<main style="margin: 0 auto; width: 75%;">
+	<div class="row" id="content">
+		<main class="px-3">
 			@yield('content')
 		</main>
 	</div>
-	<div class="row rounded" id="footer">
-		<footer style="margin: 0 auto; width: 75%; padding: 0 40px;">
-			<em>adri__16@hotmail.com</em>
+	<div class="row" id="footer">
+		<footer class="px-5">
 		</footer>
 	</div>
 	@yield('js')
