@@ -1,6 +1,6 @@
 @extends('layouts.api')
 
-@section('title', 'Equipos')
+@section('title', $team['name'])
 
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
@@ -12,6 +12,10 @@
     <div class="col-lg-10 my-4">
         <div class="card">
             <div class="card-header fs-2">
+                <a style="text-decoration: none; color: black;">
+                    <img src="{{ $team['logo'] }}" alt="" style="width: 75px; height: 75px;">
+                </a>
+                {{ $team['name'] }}
                 @auth
                 @if($favorito->count() == 0)
                 <div id="nofavorito" style="font-size: 1em; display: inline-block;">
@@ -48,7 +52,150 @@
     </div>
 
     <div class="col-lg-10 my-4">
+        <div class="card">
+            <div class="card-header">Plantilla del {{ $team['name'] }} en su liga</div>
 
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th colspan="9" class="fs-3">Porteros</th>
+                            </tr>
+                            <tr class="text-center" style="background-color: #eeeeee;">
+                                <td></td>
+                                <td>Nombre</td>
+                                <td>Edad</td>
+                                <td>Altura</td>
+                                <td>Peso</td>
+                                <td>Par. jugados</td>
+                                <td>Goles</td>
+                                <td>Tar. amarillas</td>
+                                <td>Tar. rojas</td>
+                            </tr>
+                            @foreach($porteros as $player)
+                            <tr class="text-center">
+                                <td>
+                                    <a style="text-decoration: none; color: black;">
+                                        <img src="{{ $player['player']['photo'] }}" alt="" style="width: 35px; height: 35px;">
+                                    </a>
+                                </td>
+                                <th>
+                                    {{ $player['player']['name'] }}
+                                </th>
+                                <td>{{ $player['player']['age'] }}</td>
+                                <td>{{ $player['player']['height'] }}</td>
+                                <td>{{ $player['player']['weight'] }}</td>
+                                <td>{{ $player['statistics'][0]['games']['appearences'] }}</td>
+                                <th>{{ $player['statistics'][0]['goals']['total'] }}</th>
+                                <td>{{ $player['statistics'][0]['cards']['yellow'] }}</td>
+                                <td>{{ $player['statistics'][0]['cards']['red'] }}</td>
+                            </tr>
+                            @endforeach
+                            <tr>
+                                <th colspan="9" class="fs-3">Defensas</th>
+                            </tr>
+                            <tr class="text-center" style="background-color: #eeeeee;">
+                                <td></td>
+                                <td>Nombre</td>
+                                <td>Edad</td>
+                                <td>Altura</td>
+                                <td>Peso</td>
+                                <td>Par. jugados</td>
+                                <td>Goles</td>
+                                <td>Tar. amarillas</td>
+                                <td>Tar. rojas</td>
+                            </tr>
+                            @foreach($defensas as $player)
+                            <tr class="text-center">
+                                <td>
+                                    <a style="text-decoration: none; color: black;">
+                                        <img src="{{ $player['player']['photo'] }}" alt="" style="width: 35px; height: 35px;">
+                                    </a>
+                                </td>
+                                <th>
+                                    {{ $player['player']['name'] }}
+                                </th>
+                                <td>{{ $player['player']['age'] }}</td>
+                                <td>{{ $player['player']['height'] }}</td>
+                                <td>{{ $player['player']['weight'] }}</td>
+                                <td>{{ $player['statistics'][0]['games']['appearences'] }}</td>
+                                <th>{{ $player['statistics'][0]['goals']['total'] }}</th>
+                                <td>{{ $player['statistics'][0]['cards']['yellow'] }}</td>
+                                <td>{{ $player['statistics'][0]['cards']['red'] }}</td>
+                            </tr>
+                            @endforeach
+                            <tr>
+                                <th colspan="9" class="fs-3">Centrocampistas</th>
+                            </tr>
+                            <tr class="text-center" style="background-color: #eeeeee;">
+                                <td></td>
+                                <td>Nombre</td>
+                                <td>Edad</td>
+                                <td>Altura</td>
+                                <td>Peso</td>
+                                <td>Par. jugados</td>
+                                <td>Goles</td>
+                                <td>Tar. amarillas</td>
+                                <td>Tar. rojas</td>
+                            </tr>
+                            @foreach($centrocampistas as $player)
+                            <tr class="text-center">
+                                <td>
+                                    <a style="text-decoration: none; color: black;">
+                                        <img src="{{ $player['player']['photo'] }}" alt="" style="width: 35px; height: 35px;">
+                                    </a>
+                                </td>
+                                <th>
+                                    {{ $player['player']['name'] }}
+                                </th>
+                                <td>{{ $player['player']['age'] }}</td>
+                                <td>{{ $player['player']['height'] }}</td>
+                                <td>{{ $player['player']['weight'] }}</td>
+                                <td>{{ $player['statistics'][0]['games']['appearences'] }}</td>
+                                <th>{{ $player['statistics'][0]['goals']['total'] }}</th>
+                                <td>{{ $player['statistics'][0]['cards']['yellow'] }}</td>
+                                <td>{{ $player['statistics'][0]['cards']['red'] }}</td>
+                            </tr>
+                            @endforeach
+                            <tr>
+                                <th colspan="9" class="fs-3">Delanteros</th>
+                            </tr>
+                            <tr class="text-center" style="background-color: #eeeeee;">
+                                <td></td>
+                                <td>Nombre</td>
+                                <td>Edad</td>
+                                <td>Altura</td>
+                                <td>Peso</td>
+                                <td>Par. jugados</td>
+                                <td>Goles</td>
+                                <td>Tar. amarillas</td>
+                                <td>Tar. rojas</td>
+                            </tr>
+                            @foreach($delanteros as $player)
+                            <tr class="text-center">
+                                <td>
+                                    <a style="text-decoration: none; color: black;">
+                                        <img src="{{ $player['player']['photo'] }}" alt="" style="width: 35px; height: 35px;">
+                                    </a>
+                                </td>
+                                <th>
+                                    {{ $player['player']['name'] }}
+                                </th>
+                                <td>{{ $player['player']['age'] }}</td>
+                                <td>{{ $player['player']['height'] }}</td>
+                                <td>{{ $player['player']['weight'] }}</td>
+                                <td>{{ $player['statistics'][0]['games']['appearences'] }}</td>
+                                <th>{{ $player['statistics'][0]['goals']['total'] }}</th>
+                                <td>{{ $player['statistics'][0]['cards']['yellow'] }}</td>
+                                <td>{{ $player['statistics'][0]['cards']['red'] }}</td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
