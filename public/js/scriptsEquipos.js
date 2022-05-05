@@ -18,7 +18,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     async function agregar() {
         let id = window.location.pathname.split('/');
-        let url = 'http://127.0.0.1:8000/save/'+id[2];
+        let protocol = window.location.protocol;
+        let path = window.location.hostname;
+        let port = window.location.port;
+        let url = protocol+'//'+path+':'+port+'/save/'+id[2];
 
         const response = await fetch(url, {
             method: 'GET',
@@ -37,7 +40,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     async function eliminar() {
         let id = window.location.pathname.split('/');
-        let url = 'http://127.0.0.1:8000/delete/'+id[2];
+        let protocol = window.location.protocol;
+        let path = window.location.hostname;
+        let port = window.location.port;
+        let url = protocol+'//'+path+':'+port+'/delete/'+id[2];
 
         const response = await fetch(url, {
             method: 'GET',
