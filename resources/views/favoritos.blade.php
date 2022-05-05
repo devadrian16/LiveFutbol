@@ -12,7 +12,7 @@
 $mes = ['-', 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
 ?>
 
-<div class="row justify-content-round">
+<div class="row justify-content-around">
     <div class="col-lg-10 mt-4 mb-3">
         @for ($i = 0; $i < count($favoritos); $i++) 
         <div class="card mb-1">
