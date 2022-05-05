@@ -22,7 +22,6 @@
 		}
 		#content {
 			font-family: 'Signika', 'Roboto', sans-serif;
-			height: 720px;
 		}
 		#footer {
 			background-color: #010a0f;
