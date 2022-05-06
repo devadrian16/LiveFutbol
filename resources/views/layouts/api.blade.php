@@ -26,8 +26,6 @@
 		#footer {
 			background-color: #010a0f;
 			font-family: 'Roboto', 'Signika', sans-serif;
-			height: 55px;
-			color: #878c8e;
 		}
 	</style>
 	@yield('css')
@@ -37,7 +35,7 @@
 </head>
 
 <body>
-	<div class="row" id="header">
+	<div class="row m-0" id="header">
 		<nav class="navbar navbar-expand-lg navbar-dark px-5">
 			<div class="container-fluid">
 				<a class="navbar-brand" href="/">App Name</a>
@@ -116,12 +114,12 @@
 			</div>
 		</nav>
 	</div>
-	<div class="row" id="content">
+	<div class="row m-0" id="content">
 		<main class="px-3">
 			@yield('content')
 		</main>
 	</div>
-	<div class="row" id="footer">
+	<div class="row m-0" id="footer">
 		<footer class="px-5">
 		</footer>
 	</div>
