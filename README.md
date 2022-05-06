@@ -4,7 +4,7 @@ Aplicacion sobre marcadores de futbol utilizando www.api-football.com para el pr
 
 ## Requisitos
 
-Laravel jetstream
+Laravel, composer, jetstream
 
 ## Descargar Dependencias del Proyecto
 
