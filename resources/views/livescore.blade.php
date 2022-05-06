@@ -23,8 +23,13 @@
 
             <div class="card-body">
                 @if(count($champions) != 0)
-                <div class="card">
-                    <div class="card-header">Champions League</div>
+                <div class="card mb-3">
+                    <div class="card-header fs-5">
+                        <img src="{{ $champions[0]['league']['flag'] }}" alt="" style="width: 25px; height: 25px;">
+                        <a style="text-decoration: none; color: black;" href="/liga/{{ $champions[0]['league']['id'] }}">
+                            {{ $champions[0]['league']['name'] }}
+                        </a>
+                    </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table style="width: 75%; margin: 0 auto;" class="table">
@@ -88,8 +93,13 @@
                 @endif
 
                 @if(count($laliga) != 0)
-                <div class="card">
-                    <div class="card-header">La Liga</div>
+                <div class="card mb-3">
+                    <div class="card-header fs-5">
+                        <img src="{{ $laliga[0]['league']['flag'] }}" alt="" style="width: 25px; height: 25px;">
+                        <a style="text-decoration: none; color: black;" href="/liga/{{ $laliga[0]['league']['id'] }}">
+                            {{ $laliga[0]['league']['name'] }}
+                        </a>
+                    </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table style="width: 75%; margin: 0 auto;" class="table">
@@ -120,7 +130,13 @@
                                     @else
                                     <tr>
                                         <td class="text-center">{{ date('H:i', strtotime($match['fixture']['date'])) }}</td>
-                                        <td>{{$match['fixture']['status']['short']}}</td>
+                                        <td>
+                                            @if($match['fixture']['status']['short'] == 'NS')
+                                            en {{ round( (strtotime( date('H:i', strtotime($match['fixture']['date'])) ) - strtotime($hora) ) / 3600, 0) }} h
+                                            @else
+                                            Finalizado
+                                            @endif
+                                        </td>
                                         <td class="text-end">
                                             <a style="text-decoration: none; color: black;" href="/equipo/{{ $match['teams']['home']['id'] }}">
                                                 {{ $match['teams']['home']['name'] }}
@@ -147,8 +163,13 @@
                 @endif
 
                 @if(count($segunda) != 0)
-                <div class="card">
-                    <div class="card-header">Segunda Division</div>
+                <div class="card mb-3">
+                    <div class="card-header fs-5">
+                        <img src="{{ $segunda[0]['league']['flag'] }}" alt="" style="width: 25px; height: 25px;">
+                        <a style="text-decoration: none; color: black;" href="/liga/{{ $segunda[0]['league']['id'] }}">
+                            {{ $segunda[0]['league']['name'] }}
+                        </a>
+                    </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table style="width: 75%; margin: 0 auto;" class="table">
@@ -179,7 +200,13 @@
                                     @else
                                     <tr>
                                         <td class="text-center">{{ date('H:i', strtotime($match['fixture']['date'])) }}</td>
-                                        <td></td>
+                                        <td>
+                                            @if($match['fixture']['status']['short'] == 'NS')
+                                            en {{ round( (strtotime( date('H:i', strtotime($match['fixture']['date'])) ) - strtotime($hora) ) / 3600, 0) }} h
+                                            @else
+                                            Finalizado
+                                            @endif
+                                        </td>
                                         <td class="text-end">
                                             <a style="text-decoration: none; color: black;" href="/equipo/{{ $match['teams']['home']['id'] }}">
                                                 {{ $match['teams']['home']['name'] }}
@@ -206,8 +233,13 @@
                 @endif
 
                 @if(count($premier) != 0)
-                <div class="card">
-                    <div class="card-header">Premier League</div>
+                <div class="card mb-3">
+                    <div class="card-header fs-5">
+                        <img src="{{ $premier[0]['league']['flag'] }}" alt="" style="width: 25px; height: 25px;">
+                        <a style="text-decoration: none; color: black;" href="/liga/{{ $premier[0]['league']['id'] }}">
+                            {{ $premier[0]['league']['name'] }}
+                        </a>
+                    </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table style="width: 75%; margin: 0 auto;" class="table">
@@ -238,7 +270,13 @@
                                     @else
                                     <tr>
                                         <td class="text-center">{{ date('H:i', strtotime($match['fixture']['date'])) }}</td>
-                                        <td></td>
+                                        <td>
+                                            @if($match['fixture']['status']['short'] == 'NS')
+                                            en {{ round( (strtotime( date('H:i', strtotime($match['fixture']['date'])) ) - strtotime($hora) ) / 3600, 0) }} h
+                                            @else
+                                            Finalizado
+                                            @endif
+                                        </td>
                                         <td class="text-end">
                                             <a style="text-decoration: none; color: black;" href="/equipo/{{ $match['teams']['home']['id'] }}">
                                                 {{ $match['teams']['home']['name'] }}

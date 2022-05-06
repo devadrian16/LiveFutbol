@@ -18,10 +18,10 @@ class LiveScoreController extends Controller
 
     public function verLiveScore() {
         //LiveScore
-        $champions = $this->api->getMatchesTodayLeague(2);
-        $laliga = $this->api->getMatchesTodayLeague(140);
-        $segunda = $this->api->getMatchesTodayLeague(141);
-        $premier = $this->api->getMatchesTodayLeague(39);
+        $champions = $this->api->getMatchesTodayLeague(78); //bundesliga
+        $laliga = $this->api->getMatchesTodayLeague(140);   
+        $segunda = $this->api->getMatchesTodayLeague(135); //seriea
+        $premier = $this->api->getMatchesTodayLeague(79); //bundesliga 2
 
         $now = Carbon::now();
 
