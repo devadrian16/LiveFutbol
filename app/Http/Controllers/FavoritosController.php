@@ -29,6 +29,9 @@ class FavoritosController extends Controller
       array_push($next, $nextMatches);
     }
 
-	  return view('favoritos', ['favoritos' => $favoritos, 'anteriores' => $last, 'siguientes' => $next]);
+    //Status
+    $status = $this->api->getStatus();
+
+	  return view('favoritos', ['status' => $status, 'favoritos' => $favoritos, 'anteriores' => $last, 'siguientes' => $next]);
   }
 }

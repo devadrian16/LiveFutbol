@@ -23,9 +23,12 @@ class LiveScoreController extends Controller
         $segunda = $this->api->getMatchesTodayLeague(135); //seriea
         $premier = $this->api->getMatchesTodayLeague(79); //bundesliga 2
 
+        //Status
+        $status = $this->api->getStatus();
+
         $now = Carbon::now();
 
-        return view('livescore', ['hora' => $now->format('H:i'), 'fecha' => $now->format('l, j F Y'), 'dia' => $now->format('j'), 'anno' => $now->format('Y'),
+        return view('livescore', ['status' => $status, 'hora' => $now->format('H:i'), 'fecha' => $now->format('l, j F Y'), 'dia' => $now->format('j'), 'anno' => $now->format('Y'),
             'laliga' => $laliga, 'segunda' => $segunda, 'premier' => $premier, 'champions' => $champions]);
     }
 }

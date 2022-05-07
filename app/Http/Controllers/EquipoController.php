@@ -57,13 +57,16 @@ class EquipoController extends Controller
             }
         }
 
+        //Status
+        $status = $this->api->getStatus();
+
         if (Auth::check()) {
             //Favoritos
             $favorito = Favorito::where('id_user', Auth::user()->id)->where('id_team', $id);
 
-            return view('equipo', ['team' => $team['team'], 'favorito' => $favorito, 'delanteros' => $delanteros, 'centrocampistas' => $centrocampistas, 'defensas' => $defensas, 'porteros' => $porteros]);
+            return view('equipo', ['status' => $status, 'team' => $team['team'], 'favorito' => $favorito, 'delanteros' => $delanteros, 'centrocampistas' => $centrocampistas, 'defensas' => $defensas, 'porteros' => $porteros]);
         } else {
-            return view('equipo', ['team' => $team['team'], 'delanteros' => $delanteros, 'centrocampistas' => $centrocampistas, 'defensas' => $defensas, 'porteros' => $porteros]);
+            return view('equipo', ['status' => $status, 'team' => $team['team'], 'delanteros' => $delanteros, 'centrocampistas' => $centrocampistas, 'defensas' => $defensas, 'porteros' => $porteros]);
         }
     }
 

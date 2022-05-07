@@ -16,6 +16,7 @@
 
 <div class="row justify-content-around">
     <div class="col-lg-10 my-4">
+        @if($status['response']['requests']['current'] <= 100)
         <div class="card">
             <div class="card-header fs-2 pb-0" style="border-bottom: none; background-color: white;">
                 Partidos {{ $semana[date('w', strtotime($fecha))] }}, {{ $dia }} {{ $mes[date('n', strtotime($fecha))] }} {{ $anno }}
@@ -303,6 +304,11 @@
                 @endif
             </div>
         </div>
+        @else
+        <div class="text-center fs-5">
+            <em>Ha consumido el 100% de la API para poder utilizar esta aplicacion. Porfavor vuelva mañana.</em>
+        </div>
+        @endif
     </div>
 </div>
 

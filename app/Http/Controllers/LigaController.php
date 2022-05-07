@@ -45,8 +45,11 @@ class LigaController extends Controller
 		$yellowcards = $this->api->getTopYellowCardsLeague($id);
 		$redcards = $this->api->getTopRedCardsLeague($id);
 
+		//Status
+		$status = $this->api->getStatus();
+
 		return view('liga', [
-			'league' => $league['league'], 'jornadas' => $jornadas, 'rounds' => $rounds, 'ranking' => $ranking['league']['standings'],
+			'status' => $status, 'league' => $league['league'], 'jornadas' => $jornadas, 'rounds' => $rounds, 'ranking' => $ranking['league']['standings'],
 			'goals' => $goals, 'assists' => $assists, 'yellowcards' => $yellowcards, 'redcards' => $redcards ]);
 	}
 }

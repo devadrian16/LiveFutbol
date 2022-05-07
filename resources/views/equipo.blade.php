@@ -9,6 +9,7 @@
 @section('content')
 
 <div class="row justify-content-around">
+    @if($status['response']['requests']['current'] <= 100)
     <div class="col-lg-10 my-4">
         <div class="card">
             <div class="card-header fs-2">
@@ -195,6 +196,11 @@
             </div>
         </div>
     </div>
+    @else
+        <div class="text-center fs-5 my-4">
+            <em>Ha consumido el 100% de la API para poder utilizar esta aplicacion. Porfavor vuelva mañana.</em>
+        </div>
+    @endif
 </div>
 
 @endsection

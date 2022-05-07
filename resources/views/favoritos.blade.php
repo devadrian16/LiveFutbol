@@ -13,6 +13,7 @@ $mes = ['-', 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Ag
 ?>
 
 <div class="row justify-content-around">
+    @if($status['response']['requests']['current'] <= 100)
     <div class="col-lg-10 my-4">
         @for ($i = 0; $i < count($favoritos); $i++) 
         <div class="card mb-3">
@@ -91,6 +92,11 @@ $mes = ['-', 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Ag
         </div>
         @endfor
     </div>
+    @else
+        <div class="text-center fs-5 my-4">
+            <em>Ha consumido el 100% de la API para poder utilizar esta aplicacion. Porfavor vuelva mañana.</em>
+        </div>
+    @endif
 </div>
 
 @endsection
