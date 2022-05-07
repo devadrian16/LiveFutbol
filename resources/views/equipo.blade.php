@@ -51,16 +51,16 @@
 
     <div class="col-lg-10 my-4">
         <div class="card">
-            <div class="card-header">Plantilla del {{ $team['name'] }} en su liga</div>
+            <div class="card-header fs-5 pb-0" style="border-bottom: none; background-color: white;">Plantilla {{ $team['name'] }} de liga</div>
 
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table">
                         <tbody>
                             <tr>
-                                <th colspan="9" class="fs-3">Porteros</th>
+                                <td colspan="9" class="fs-3" style="background-color: #eeeeee;">Porteros</td>
                             </tr>
-                            <tr class="text-center" style="background-color: #eeeeee;">
+                            <tr class="text-center">
                                 <td></td>
                                 <td>Nombre</td>
                                 <td>Edad</td>
@@ -78,9 +78,9 @@
                                         <img src="{{ $player['player']['photo'] }}" alt="" style="width: 35px; height: 35px;">
                                     </a>
                                 </td>
-                                <th>
+                                <td>
                                     {{ $player['player']['name'] }}
-                                </th>
+                                </td>
                                 <td>{{ $player['player']['age'] }}</td>
                                 <td>{{ $player['player']['height'] }}</td>
                                 <td>{{ $player['player']['weight'] }}</td>
@@ -91,9 +91,9 @@
                             </tr>
                             @endforeach
                             <tr>
-                                <th colspan="9" class="fs-3">Defensas</th>
+                                <td colspan="9" class="fs-3" style="background-color: #eeeeee;">Defensas</td>
                             </tr>
-                            <tr class="text-center" style="background-color: #eeeeee;">
+                            <tr class="text-center">
                                 <td></td>
                                 <td>Nombre</td>
                                 <td>Edad</td>
@@ -111,9 +111,9 @@
                                         <img src="{{ $player['player']['photo'] }}" alt="" style="width: 35px; height: 35px;">
                                     </a>
                                 </td>
-                                <th>
+                                <td>
                                     {{ $player['player']['name'] }}
-                                </th>
+                                </td>
                                 <td>{{ $player['player']['age'] }}</td>
                                 <td>{{ $player['player']['height'] }}</td>
                                 <td>{{ $player['player']['weight'] }}</td>
@@ -124,9 +124,9 @@
                             </tr>
                             @endforeach
                             <tr>
-                                <th colspan="9" class="fs-3">Centrocampistas</th>
+                                <td colspan="9" class="fs-3" style="background-color: #eeeeee;">Centrocampistas</td>
                             </tr>
-                            <tr class="text-center" style="background-color: #eeeeee;">
+                            <tr class="text-center">
                                 <td></td>
                                 <td>Nombre</td>
                                 <td>Edad</td>
@@ -144,9 +144,9 @@
                                         <img src="{{ $player['player']['photo'] }}" alt="" style="width: 35px; height: 35px;">
                                     </a>
                                 </td>
-                                <th>
+                                <td>
                                     {{ $player['player']['name'] }}
-                                </th>
+                                </td>
                                 <td>{{ $player['player']['age'] }}</td>
                                 <td>{{ $player['player']['height'] }}</td>
                                 <td>{{ $player['player']['weight'] }}</td>
@@ -157,9 +157,9 @@
                             </tr>
                             @endforeach
                             <tr>
-                                <th colspan="9" class="fs-3">Delanteros</th>
+                                <td colspan="9" class="fs-3" style="background-color: #eeeeee;">Delanteros</td>
                             </tr>
-                            <tr class="text-center" style="background-color: #eeeeee;">
+                            <tr class="text-center">
                                 <td></td>
                                 <td>Nombre</td>
                                 <td>Edad</td>
@@ -177,9 +177,9 @@
                                         <img src="{{ $player['player']['photo'] }}" alt="" style="width: 35px; height: 35px;">
                                     </a>
                                 </td>
-                                <th>
+                                <td>
                                     {{ $player['player']['name'] }}
-                                </th>
+                                </td>
                                 <td>{{ $player['player']['age'] }}</td>
                                 <td>{{ $player['player']['height'] }}</td>
                                 <td>{{ $player['player']['weight'] }}</td>

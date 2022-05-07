@@ -36,21 +36,23 @@ class EquipoController extends Controller
 
             foreach ($page['response'] as $player) {
 
-                switch ($player['statistics'][0]['games']['position']) {
-                    case 'Attacker':
-                        array_push($delanteros, $player);
-                        break;
-                    case 'Midfielder':
-                        array_push($centrocampistas, $player);
-                        break;
-                    case 'Defender':
-                        array_push($defensas, $player);
-                        break;
-                    case 'Goalkeeper':
-                        array_push($porteros, $player);
-                        break;
-                    default:
-                        break;
+                if($player['statistics'][0]['games']['appearences'] > 0) {
+                    switch ($player['statistics'][0]['games']['position']) {
+                        case 'Attacker':
+                            array_push($delanteros, $player);
+                            break;
+                        case 'Midfielder':
+                            array_push($centrocampistas, $player);
+                            break;
+                        case 'Defender':
+                            array_push($defensas, $player);
+                            break;
+                        case 'Goalkeeper':
+                            array_push($porteros, $player);
+                            break;
+                        default:
+                            break;
+                    }
                 }
             }
         }
