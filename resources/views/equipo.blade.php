@@ -12,9 +12,7 @@
     <div class="col-lg-10 my-4">
         <div class="card">
             <div class="card-header fs-2">
-                <a style="text-decoration: none; color: black;">
-                    <img src="{{ $team['logo'] }}" alt="" style="width: 75px; height: 75px;">
-                </a>
+                <img src="{{ $team['logo'] }}" alt="" style="width: 75px; height: 75px;">
                 {{ $team['name'] }}
                 @auth
                 @if($favorito->count() == 0)
