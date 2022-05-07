@@ -35,7 +35,7 @@
 
                         <div class="ms-2">
                             <div>
-                                {{ $session->agent->platform() ? $session->agent->platform() : 'Unknown' }} - {{ $session->agent->browser() ? $session->agent->browser() : 'Unknown' }}
+                                {{ $session->agent->platform() ? $session->agent->platform() : 'Desconocido' }} - {{ $session->agent->browser() ? $session->agent->browser() : 'Desconocido' }}
                             </div>
 
                             <div>
@@ -43,7 +43,7 @@
                                     {{ $session->ip_address }},
 
                                     @if ($session->is_current_device)
-                                        <span class="text-success font-weight-bold">{{ __('This device') }}</span>
+                                        <span class="text-success font-weight-bold">{{ __('Este dispositivo') }}</span>
                                     @else
                                         {{ __('Última activa') }} {{ $session->last_active }}
                                     @endif

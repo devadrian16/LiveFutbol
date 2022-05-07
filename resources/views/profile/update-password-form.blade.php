@@ -35,7 +35,7 @@
     <x-slot name="actions">
         <x-jet-button>
             <div wire:loading class="spinner-border spinner-border-sm" role="status">
-                <span class="visually-hidden">Loading...</span>
+                <span class="visually-hidden">Cargando...</span>
             </div>
 
             {{ __('Guardar') }}

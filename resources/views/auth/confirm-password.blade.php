@@ -16,7 +16,7 @@
                 @csrf
 
                 <div>
-                    <x-jet-label for="password" value="{{ __('Password') }}" />
+                    <x-jet-label for="password" value="{{ __('Contraseña') }}" />
                     <x-jet-input id="password" type="password" name="password" required autocomplete="current-password" autofocus />
                 </div>
 

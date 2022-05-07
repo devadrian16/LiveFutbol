@@ -36,7 +36,7 @@
 
 <body>
 	<div class="row m-0" id="header">
-		<nav class="navbar navbar-expand-lg navbar-dark px-5">
+		<nav class="navbar navbar-expand-lg navbar-dark">
 			<div class="container-fluid">
 				<a class="navbar-brand" href="/">App Name</a>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -115,12 +115,12 @@
 		</nav>
 	</div>
 	<div class="row m-0" id="content">
-		<main class="px-3">
+		<main>
 			@yield('content')
 		</main>
 	</div>
 	<div class="row m-0" id="footer">
-		<footer class="px-5">
+		<footer>
 		</footer>
 	</div>
 	@yield('js')
