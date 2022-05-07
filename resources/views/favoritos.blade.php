@@ -13,21 +13,27 @@ $mes = ['-', 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Ag
 ?>
 
 <div class="row justify-content-around">
-    <div class="col-lg-10 mt-4 mb-3">
+    <div class="col-lg-10 my-4">
         @for ($i = 0; $i < count($favoritos); $i++) 
-        <div class="card mb-1">
-            <div class="card-header">{{ Str::upper( $favoritos[$i]->name_team ) }}</div>
+        <div class="card mb-3">
+            <div class="card-header fs-5">{{ Str::upper( $favoritos[$i]->name_team ) }}</div>
 
             <div class="card-body">
                 <div class="table-responsive">
                     <table style="width: 75%; margin: 0 auto;" class="table">
                         <tbody>
                             <tr>
-                                <td colspan="5">Ultimos partidos</td>
+                                <th colspan="6">Últimos partidos</th>
                             </tr>
                             @foreach($anteriores[$i] as $match)
                             <tr>
                                 <td class="text-center">{{ date('j', strtotime($match['fixture']['date'])) }} {{ $mes[date('n', strtotime($match['fixture']['date']))] }}, {{ date('H:i', strtotime($match['fixture']['date'])) }}</td>
+                                <td class="text-center">
+                                    <a style="text-decoration: none; color: black;" href="/liga/{{ $match['league']['id'] }}">
+                                        {{ $match['league']['name'] }}   
+                                        <img src="{{ $match['league']['logo'] }}" alt="" style="width: 35px; height: 35px;">   
+                                    </a>        
+                                </td>
                                 <td class="text-end">
                                     <a style="text-decoration: none; color: black;" href="/equipo/{{ $match['teams']['home']['id'] }}">
                                         {{ $match['teams']['home']['name'] }}
@@ -50,11 +56,17 @@ $mes = ['-', 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Ag
                             </tr>
                             @endforeach
                             <tr>
-                                <td colspan="5">Proximos partidos</td>
+                                <th colspan="6">Próximos partidos</th>
                             </tr>
                             @foreach($siguientes[$i] as $match)
                             <tr>
                                 <td class="text-center">{{ date('j', strtotime($match['fixture']['date'])) }} {{ $mes[date('n', strtotime($match['fixture']['date']))] }}, {{ date('H:i', strtotime($match['fixture']['date'])) }}</td>
+                                <td class="text-center">
+                                    <a style="text-decoration: none; color: black;" href="/liga/{{ $match['league']['id'] }}">
+                                        {{ $match['league']['name'] }}   
+                                        <img src="{{ $match['league']['logo'] }}" alt="" style="width: 35px; height: 35px;">   
+                                    </a>        
+                                </td>
                                 <td class="text-end">
                                     <a style="text-decoration: none; color: black;" href="/equipo/{{ $match['teams']['home']['id'] }}">
                                         {{ $match['teams']['home']['name'] }}
