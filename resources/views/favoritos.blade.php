@@ -13,7 +13,7 @@ $mes = ['-', 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Ag
 ?>
 
 <div class="row justify-content-around">
-    @if($status['response']['requests']['current'] <= 100)
+    @if($status['response']['requests']['current'] < 100)
     <div class="col-lg-10 my-4">
         @for ($i = 0; $i < count($favoritos); $i++) 
         <div class="card mb-3">

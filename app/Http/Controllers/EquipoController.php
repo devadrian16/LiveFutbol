@@ -19,54 +19,66 @@ class EquipoController extends Controller
 
     public function verEquipo($id)
     {
-        //Equipo
-        $team = $this->api->getTeam($id);
-        $id_league = $this->api->getLeagueTeam($id);
-
-        //Jugadores
-        $porteros = [];
-        $defensas = [];
-        $centrocampistas = [];
-        $delanteros = [];
-
-        $players = $this->api->getPlayersTeam($id, $id_league['league']['id']);
-
-        for ($i = 1; $i <= $players['paging']['total']; $i++) {
-            $page = $this->api->getPlayersTeamPage($id, $id_league['league']['id'], $i);
-
-            foreach ($page['response'] as $player) {
-
-                if($player['statistics'][0]['games']['appearences'] > 0) {
-                    switch ($player['statistics'][0]['games']['position']) {
-                        case 'Attacker':
-                            array_push($delanteros, $player);
-                            break;
-                        case 'Midfielder':
-                            array_push($centrocampistas, $player);
-                            break;
-                        case 'Defender':
-                            array_push($defensas, $player);
-                            break;
-                        case 'Goalkeeper':
-                            array_push($porteros, $player);
-                            break;
-                        default:
-                            break;
-                    }
-                }
-            }
-        }
-
         //Status
         $status = $this->api->getStatus();
 
-        if (Auth::check()) {
-            //Favoritos
-            $favorito = Favorito::where('id_user', Auth::user()->id)->where('id_team', $id);
+        if ($status['response']['requests']['current'] < 100) {
 
-            return view('equipo', ['status' => $status, 'team' => $team['team'], 'favorito' => $favorito, 'delanteros' => $delanteros, 'centrocampistas' => $centrocampistas, 'defensas' => $defensas, 'porteros' => $porteros]);
+            //Equipo
+            $team = $this->api->getTeam($id);
+            $id_league = $this->api->getLeagueTeam($id);
+
+            //Jugadores
+            $porteros = [];
+            $defensas = [];
+            $centrocampistas = [];
+            $delanteros = [];
+
+            $players = $this->api->getPlayersTeam($id, $id_league['league']['id']);
+
+            for ($i = 1; $i <= $players['paging']['total']; $i++) {
+                $page = $this->api->getPlayersTeamPage($id, $id_league['league']['id'], $i);
+
+                foreach ($page['response'] as $player) {
+
+                    if ($player['statistics'][0]['games']['appearences'] > 0) {
+                        switch ($player['statistics'][0]['games']['position']) {
+                            case 'Attacker':
+                                array_push($delanteros, $player);
+                                break;
+                            case 'Midfielder':
+                                array_push($centrocampistas, $player);
+                                break;
+                            case 'Defender':
+                                array_push($defensas, $player);
+                                break;
+                            case 'Goalkeeper':
+                                array_push($porteros, $player);
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                }
+            }
+
+            if (Auth::check()) {
+                //Favoritos
+                $favorito = Favorito::where('id_user', Auth::user()->id)->where('id_team', $id);
+
+                return view('equipo', [
+                    'status' => $status, 'team' => $team['team'], 'favorito' => $favorito, 'delanteros' => $delanteros, 'centrocampistas' => $centrocampistas, 'defensas' => $defensas, 'porteros' => $porteros]);
+            } else {
+
+                return view('equipo', [
+                    'status' => $status, 'team' => $team['team'], 'delanteros' => $delanteros, 'centrocampistas' => $centrocampistas, 'defensas' => $defensas, 'porteros' => $porteros]);
+            }
+
         } else {
-            return view('equipo', ['status' => $status, 'team' => $team['team'], 'delanteros' => $delanteros, 'centrocampistas' => $centrocampistas, 'defensas' => $defensas, 'porteros' => $porteros]);
+
+            return view('equipo', [
+                'status' => $status
+            ]);
         }
     }
 
@@ -86,7 +98,7 @@ class EquipoController extends Controller
 
         $favorito->save();
 
-        return json_encode(['msg' => 'equipo agregado a favoritos, id: '.$id]);
+        return json_encode(['msg' => 'equipo agregado a favoritos, id: ' . $id]);
     }
 
     public function eliminarEquipoFav($id)
@@ -94,6 +106,6 @@ class EquipoController extends Controller
         $favorito = Favorito::where('id_user', Auth::user()->id)->where('id_team', $id);
         $favorito->delete();
 
-        return json_encode(['msg' => 'equipo eliminado de favoritos, id: '.$id]);
+        return json_encode(['msg' => 'equipo eliminado de favoritos, id: ' . $id]);
     }
 }

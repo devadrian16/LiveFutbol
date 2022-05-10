@@ -10,15 +10,19 @@ use Auth;
 
 class FavoritosController extends Controller
 {
-    private $api;
+  private $api;
 
-    public function __construct(Client $client)
-    {
-      $this->api = new ApiController($client);
-    }
+  public function __construct(Client $client)
+  {
+    $this->api = new ApiController($client);
+  }
 
-    public function verFavoritos()
-    {
+  public function verFavoritos()
+  {
+    //Status
+    $status = $this->api->getStatus();
+
+    if ($status['response']['requests']['current'] < 100) {
       //Equipos
       $last = [];
       $next = [];
@@ -30,10 +34,15 @@ class FavoritosController extends Controller
         array_push($next, $nextMatches);
       }
 
-      //Status
-      $status = $this->api->getStatus();
+      return view('favoritos', [
+        'status' => $status, 'favoritos' => $favoritos, 'anteriores' => $last, 'siguientes' => $next
+      ]);
+      
+    } else {
 
       return view('favoritos', [
-        'status' => $status, 'favoritos' => $favoritos, 'anteriores' => $last, 'siguientes' => $next]);
+        'status' => $status
+      ]);
     }
+  }
 }

@@ -9,7 +9,7 @@
 @section('content')
 
 <div class="row justify-content-around">
-    @if($status['response']['requests']['current'] <= 100)
+    @if($status['response']['requests']['current'] < 100)
     <div class="col-lg-10 my-4">
         <div class="card">
             <div class="card-header fs-2">

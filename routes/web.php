@@ -46,6 +46,7 @@ require_once __DIR__ . '/jetstream.php';
 
 //[--LIVESCORE--]
 Route::get('/livescore', [LiveScoreController::class, 'verLiveScore']);
+Route::get('/actualizar', [LiveScoreController::class, 'actualizarMarcador']);
 
 //[--FAVORITOS--]
 Route::get('/favoritos', [FavoritosController::class, 'verFavoritos']);

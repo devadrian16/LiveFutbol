@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>@yield('title') - App Name</title>
+	<title>@yield('title') - Resultados de Fútbol</title>
 
 	<!-- Bootstrap CSS -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -17,14 +17,16 @@
 	<!-- Styles -->
 	<style>
 		#header {
-			background-color: #010a0f;
+			/*background-color: #010a0f;*/
+			background-color: #404040;
 			font-family: 'Roboto', 'Signika', sans-serif;
 		}
 		#content {
 			font-family: 'Signika', 'Roboto', sans-serif;
 		}
 		#footer {
-			background-color: #010a0f;
+			/*background-color: #010a0f;*/
+			background-color: #404040;
 			font-family: 'Roboto', 'Signika', sans-serif;
 		}
 	</style>
@@ -38,7 +40,7 @@
 	<div class="row m-0" id="header">
 		<nav class="navbar navbar-expand-lg navbar-dark">
 			<div class="container-fluid">
-				<a class="navbar-brand" href="/">App Name</a>
+				<a class="navbar-brand" style="color: #2caff9;" href="/">RESULTADOS-FUTBOL</a>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>

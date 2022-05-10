@@ -12,11 +12,12 @@
     //header('Refresh: 240');
     $semana = ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'];
     $mes = ['-', 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+    $periodo = ['1H' => 'Primera Parte', 'HT' => 'Descanso', '2H' => 'Segunda Parte', 'ET' => 'Prórroga', 'P' => 'Penaltis'];
 ?>
 
 <div class="row justify-content-around">
+    @if($status['response']['requests']['current'] < 100)
     <div class="col-lg-10 my-4">
-        @if($status['response']['requests']['current'] <= 100)
         <div class="card">
             <div class="card-header fs-2 pb-0" style="border-bottom: none; background-color: white;">
                 Partidos {{ $semana[date('w', strtotime($fecha))] }}, {{ $dia }} {{ $mes[date('n', strtotime($fecha))] }} {{ $anno }}
@@ -38,7 +39,7 @@
                                     @foreach($champions as $match)
                                     @if($match['fixture']['status']['short'] == '1H' or $match['fixture']['status']['short'] == 'HT' or $match['fixture']['status']['short'] == '2H' || $match['fixture']['status']['short'] == 'ET' || $match['fixture']['status']['short'] == 'P')
                                     <tr>
-                                        <td class="text-center">{{ $match['fixture']['status']['long'] }}</td>
+                                        <td class="text-center">{{ $periodo[ $match['fixture']['status']['short'] ] }}</td>
                                         <td style="color: crimson;" class="parpadeo text-center">{{ $match['fixture']['status']['elapsed'] }}'</td>
                                         <td class="text-end">
                                             <a style="text-decoration: none; color: black;" href="/equipo/{{ $match['teams']['home']['id'] }}">
@@ -108,7 +109,7 @@
                                     @foreach($laliga as $match)
                                     @if($match['fixture']['status']['short'] == '1H' or $match['fixture']['status']['short'] == 'HT' or $match['fixture']['status']['short'] == '2H' || $match['fixture']['status']['short'] == 'ET' || $match['fixture']['status']['short'] == 'P')
                                     <tr>
-                                        <td class="text-center">{{ $match['fixture']['status']['long'] }}</td>
+                                        <td class="text-center">{{ $periodo[ $match['fixture']['status']['short'] ] }}</td>
                                         <td style="color: crimson;" class="parpadeo text-center">{{ $match['fixture']['status']['elapsed'] }}'</td>
                                         <td class="text-end">
                                             <a style="text-decoration: none; color: black;" href="/equipo/{{ $match['teams']['home']['id'] }}">
@@ -178,7 +179,7 @@
                                     @foreach($segunda as $match)
                                     @if($match['fixture']['status']['short'] == '1H' || $match['fixture']['status']['short'] == 'HT' || $match['fixture']['status']['short'] == '2H' || $match['fixture']['status']['short'] == 'ET' || $match['fixture']['status']['short'] == 'P')
                                     <tr>
-                                        <td class="text-center">{{ $match['fixture']['status']['long'] }}</td>
+                                        <td class="text-center">{{ $periodo[ $match['fixture']['status']['short'] ] }}</td>
                                         <td style="color: crimson;" class="parpadeo text-center">{{ $match['fixture']['status']['elapsed'] }}'</td>
                                         <td class="text-end">
                                             <a style="text-decoration: none; color: black;" href="/equipo/{{ $match['teams']['home']['id'] }}">
@@ -248,7 +249,7 @@
                                     @foreach($premier as $match)
                                     @if($match['fixture']['status']['short'] == '1H' || $match['fixture']['status']['short'] == 'HT' || $match['fixture']['status']['short'] == '2H' || $match['fixture']['status']['short'] == 'ET' || $match['fixture']['status']['short'] == 'P')
                                     <tr>
-                                        <td class="text-center">{{ $match['fixture']['status']['long'] }}</td>
+                                        <td class="text-center">{{ $periodo[ $match['fixture']['status']['short'] ] }}</td>
                                         <td style="color: crimson;" class="parpadeo text-center">{{ $match['fixture']['status']['elapsed'] }}'</td>
                                         <td class="text-end">
                                             <a style="text-decoration: none; color: black;" href="/equipo/{{ $match['teams']['home']['id'] }}">
@@ -304,12 +305,16 @@
                 @endif
             </div>
         </div>
-        @else
-        <div class="text-center fs-5">
+    </div>
+    @else
+        <div class="text-center fs-5 my-4">
             <em>Ha consumido el 100% de la API para poder utilizar esta aplicacion. Porfavor vuelva mañana.</em>
         </div>
-        @endif
-    </div>
+    @endif
 </div>
 
+@endsection
+
+@section('js')
+<script src="{{ asset('js/scriptsLivescore.js') }}"></script>
 @endsection
