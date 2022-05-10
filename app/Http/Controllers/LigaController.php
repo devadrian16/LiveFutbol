@@ -16,14 +16,12 @@ class LigaController extends Controller
 	}
 
 	public function verLiga($id) {
-		//Liga
-		$league = $this->api->getLeague($id);
-
 		//Jornadas
 		$jornadas = [];
 		$rounds = [];
 		$allRounds = $this->api->getRounds($id);
-		/*for($i = 0; $i < count($allRounds); $i++) {
+		/*Todas las jornadas
+		for($i = 0; $i < count($allRounds); $i++) {
 			$jornada = $this->api->getMatchesLeague($id, $allRounds[$i]);
 			array_push($jornadas, $jornada);
 			array_push($rounds, $i+1);
@@ -49,7 +47,7 @@ class LigaController extends Controller
 		$status = $this->api->getStatus();
 
 		return view('liga', [
-			'status' => $status, 'league' => $league['league'], 'jornadas' => $jornadas, 'rounds' => $rounds, 'ranking' => $ranking['league']['standings'],
+			'status' => $status, 'jornadas' => $jornadas, 'rounds' => $rounds, 'ranking' => $ranking['league']['standings'],
 			'goals' => $goals, 'assists' => $assists, 'yellowcards' => $yellowcards, 'redcards' => $redcards ]);
 	}
 }

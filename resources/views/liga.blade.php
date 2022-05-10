@@ -1,6 +1,6 @@
 @extends('layouts.api')
 
-@section('title', $league['name'])
+@section('title', 'Ligas')
 
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
