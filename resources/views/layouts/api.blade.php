@@ -77,9 +77,6 @@
 								<li><a class="dropdown-item" href="/equipo/157">Bayern de Múnich</a></li>
 							</ul>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="/pruebas">Pruebas</a>
-						</li>
 					</ul>
 				</div>
 				<div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
