@@ -18,10 +18,10 @@ class LiveScoreController extends Controller
 
     public function verLiveScore() {
         //LiveScore
-        $champions = $this->api->getMatchesTodayLeague(78); //bundesliga
+        $champions = $this->api->getMatchesTodayLeague(83); //Regionalliga - Bayern
         $laliga = $this->api->getMatchesTodayLeague(140);   
-        $segunda = $this->api->getMatchesTodayLeague(135); //seriea
-        $premier = $this->api->getMatchesTodayLeague(79); //bundesliga 2
+        $segunda = $this->api->getMatchesTodayLeague(88); //eredivisie holanda
+        $premier = $this->api->getMatchesTodayLeague(39); 
 
         //Status
         $status = $this->api->getStatus();
