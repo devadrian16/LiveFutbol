@@ -33,7 +33,7 @@
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table style="width: 75%; margin: 0 auto;" class="table">
+                            <table class="table">
                                 <tbody>
                                     @foreach($champions as $match)
                                     @if($match['fixture']['status']['short'] == '1H' or $match['fixture']['status']['short'] == 'HT' or $match['fixture']['status']['short'] == '2H' || $match['fixture']['status']['short'] == 'ET' || $match['fixture']['status']['short'] == 'P')
@@ -103,7 +103,7 @@
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table style="width: 75%; margin: 0 auto;" class="table">
+                            <table class="table">
                                 <tbody>
                                     @foreach($laliga as $match)
                                     @if($match['fixture']['status']['short'] == '1H' or $match['fixture']['status']['short'] == 'HT' or $match['fixture']['status']['short'] == '2H' || $match['fixture']['status']['short'] == 'ET' || $match['fixture']['status']['short'] == 'P')
@@ -173,7 +173,7 @@
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table style="width: 75%; margin: 0 auto;" class="table">
+                            <table class="table">
                                 <tbody>
                                     @foreach($segunda as $match)
                                     @if($match['fixture']['status']['short'] == '1H' || $match['fixture']['status']['short'] == 'HT' || $match['fixture']['status']['short'] == '2H' || $match['fixture']['status']['short'] == 'ET' || $match['fixture']['status']['short'] == 'P')
@@ -243,7 +243,7 @@
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table style="width: 75%; margin: 0 auto;" class="table">
+                            <table class="table">
                                 <tbody>
                                     @foreach($premier as $match)
                                     @if($match['fixture']['status']['short'] == '1H' || $match['fixture']['status']['short'] == 'HT' || $match['fixture']['status']['short'] == '2H' || $match['fixture']['status']['short'] == 'ET' || $match['fixture']['status']['short'] == 'P')

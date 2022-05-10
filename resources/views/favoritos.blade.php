@@ -21,7 +21,7 @@ $mes = ['-', 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Ag
 
             <div class="card-body">
                 <div class="table-responsive">
-                    <table style="width: 75%; margin: 0 auto;" class="table">
+                    <table class="table">
                         <tbody>
                             <tr>
                                 <th colspan="6">Últimos partidos</th>
