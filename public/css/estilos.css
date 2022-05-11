@@ -14,7 +14,7 @@ li:hover, a:hover {
     }
 }
 
-@media only screen and (max-device-width: 480px) {
+@media only screen and (max-device-width: 576px) {
     body {
       font-size: x-small;
     }

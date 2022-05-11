@@ -19,15 +19,16 @@
 		#header {
 			/*background-color: #010a0f;*/
 			background-color: #404040;
-			font-family: 'Roboto', 'Signika', sans-serif;
+			font-family: 'Roboto', 'Signika', 'sans-serif';
 		}
 		#content {
-			font-family: 'Signika', 'Roboto', sans-serif;
+			font-family: 'Signika', 'Roboto', 'sans-serif';
+			margin: 70px 0 0 0;
 		}
 		#footer {
 			/*background-color: #010a0f;*/
 			background-color: #404040;
-			font-family: 'Roboto', 'Signika', sans-serif;
+			font-family: 'Roboto', 'Signika', 'sans-serif';
 		}
 	</style>
 	@yield('css')
@@ -37,7 +38,7 @@
 </head>
 
 <body>
-	<div class="row m-0" id="header">
+	<div class="row m-0 fixed-top" id="header">
 		<nav class="navbar navbar-expand-lg navbar-dark">
 			<div class="container-fluid">
 				<a class="navbar-brand" style="color: #2caff9;" href="/">RESULTADOS-FUTBOL</a>
@@ -113,7 +114,7 @@
 			</div>
 		</nav>
 	</div>
-	<div class="row m-0" id="content">
+	<div class="row" id="content">
 		<main>
 			@yield('content')
 		</main>
