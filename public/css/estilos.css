@@ -24,6 +24,18 @@ li:hover, a:hover {
     }
 }
 
+.card-header {
+    background-color: #fff2ce;
+    /*background-color: #eeeeee;*/
+
+    /*background-color: #3b4247;
+    color : white;*/
+}
+
+.card-body {
+    background-color: white;
+}
+
 /* LIGAS */
 .redondeo {
     border-radius: 5px;

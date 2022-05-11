@@ -17,17 +17,16 @@
 	<!-- Styles -->
 	<style>
 		#header {
-			/*background-color: #010a0f;*/
-			background-color: #404040;
+			background-color: #001e28;
 			font-family: 'Roboto', 'Signika', 'sans-serif';
 		}
 		#content {
+			background-color: #eeeeee;
 			font-family: 'Signika', 'Roboto', 'sans-serif';
-			margin: 70px 0 0 0;
+			margin: 57px 0 0 0;
 		}
 		#footer {
-			/*background-color: #010a0f;*/
-			background-color: #404040;
+			background-color: #001e28;
 			font-family: 'Roboto', 'Signika', 'sans-serif';
 		}
 	</style>
@@ -41,7 +40,7 @@
 	<div class="row m-0 fixed-top" id="header">
 		<nav class="navbar navbar-expand-lg navbar-dark">
 			<div class="container-fluid">
-				<a class="navbar-brand" style="color: #2caff9;" href="/">RESULTADOS-FUTBOL</a>
+				<a class="navbar-brand" style="color: white;" href="/">RESULTADOS-FUTBOL</a>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
