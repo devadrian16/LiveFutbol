@@ -14,7 +14,7 @@ $mes = ['-', 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Ag
 
 <div class="row justify-content-around">
     @if($status['response']['requests']['current'] < 100)
-    <div class="col-lg-5 mt-4 mb-3">
+    <div class="col-lg-6 mt-4 mb-3">
         @for($i = 0; $i < count($jornadas); $i++) 
         <div class="card mb-3">
             <div class="card-header fs-5">Jornada {{ $rounds[$i] }}</div>
@@ -49,7 +49,7 @@ $mes = ['-', 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Ag
         @endfor
     </div>
 
-    <div class="col-lg-5 my-4">
+    <div class="col-lg-6 my-4">
         <div class="card">
             <div class="card-header fs-3">CLASIFICACION</div>
 
