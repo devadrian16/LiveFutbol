@@ -3,6 +3,18 @@ li:hover, a:hover {
     cursor: pointer;	
 }
 
+@media (max-width: 770px) {
+    body {
+      font-size: small;
+    }
+}
+
+@media (max-width: 440) {
+    body {
+      font-size: x-small;
+    }
+}
+
 /* LIGAS */
 .redondeo {
     border-radius: 5px;
