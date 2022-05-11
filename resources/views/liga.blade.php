@@ -29,13 +29,13 @@ $mes = ['-', 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Ag
                                 <td class="text-end">
                                     <a style="text-decoration: none; color: black;" href="/equipo/{{ $match['teams']['home']['id'] }}">
                                         {{ $match['teams']['home']['name'] }}
-                                        <img src="{{ $match['teams']['home']['logo'] }}" alt="" style="width: 25px; height: 25px;">
+                                        <img id="logo" src="{{ $match['teams']['home']['logo'] }}" alt="">
                                     </a>
                                 </td>
                                 <td class="text-center">{{ $match['goals']['home'] }} - {{ $match['goals']['away'] }}</td>
                                 <td class="text-left">
                                     <a style="text-decoration: none; color: black;" href="/equipo/{{ $match['teams']['away']['id'] }}">
-                                        <img src="{{ $match['teams']['away']['logo'] }}" alt="" style="width: 25px; height: 25px;">
+                                        <img id="logo" src="{{ $match['teams']['away']['logo'] }}" alt="">
                                         {{ $match['teams']['away']['name'] }}
                                     </a>
                                 </td>
@@ -108,7 +108,7 @@ $mes = ['-', 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Ag
 
                                 <td class="text-left">
                                     <a style="text-decoration: none; color: black;" href="/equipo/{{ $team['team']['id'] }}">
-                                        <img src="{{ $team['team']['logo'] }}" alt="" style="width: 25px; height: 25px;">
+                                        <img id="logo" src="{{ $team['team']['logo'] }}" alt="">
                                         {{ $team['team']['name'] }}
                                     </a>
                                 </td>
@@ -182,7 +182,7 @@ $mes = ['-', 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Ag
                                     <td>
                                         <a style="text-decoration: none; color: black;" href="/equipo/{{ $goals[$i]['statistics'][0]['team']['id'] }}">
                                             {{ $goals[$i]['statistics'][0]['team']['name'] }}
-                                            <img src="{{ $goals[$i]['statistics'][0]['team']['logo'] }}" alt="" style="width: 25px; height: 25px;">
+                                            <img id="logo" src="{{ $goals[$i]['statistics'][0]['team']['logo'] }}" alt="">
                                         </a>
                                     </td>
                                     </tr>
@@ -217,7 +217,7 @@ $mes = ['-', 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Ag
                                     <td>
                                         <a style="text-decoration: none; color: black;" href="/equipo/{{ $assists[$i]['statistics'][0]['team']['id'] }}">
                                             {{ $assists[$i]['statistics'][0]['team']['name'] }}
-                                            <img src="{{ $assists[$i]['statistics'][0]['team']['logo'] }}" alt="" style="width: 25px; height: 25px;">
+                                            <img id="logo" src="{{ $assists[$i]['statistics'][0]['team']['logo'] }}" alt="">
                                         </a>
                                     </td>
                                     </tr>
@@ -252,7 +252,7 @@ $mes = ['-', 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Ag
                                     <td>
                                         <a style="text-decoration: none; color: black;" href="/equipo/{{ $yellowcards[$i]['statistics'][0]['team']['id'] }}">
                                             {{ $yellowcards[$i]['statistics'][0]['team']['name'] }}
-                                            <img src="{{ $yellowcards[$i]['statistics'][0]['team']['logo'] }}" alt="" style="width: 25px; height: 25px;">
+                                            <img id="logo" src="{{ $yellowcards[$i]['statistics'][0]['team']['logo'] }}" alt="">
                                         </a>
                                     </td>
                                     </tr>
@@ -287,7 +287,7 @@ $mes = ['-', 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Ag
                                     <td>
                                         <a style="text-decoration: none; color: black;" href="/equipo/{{ $redcards[$i]['statistics'][0]['team']['id'] }}">
                                             {{ $redcards[$i]['statistics'][0]['team']['name'] }}
-                                            <img src="{{ $redcards[$i]['statistics'][0]['team']['logo'] }}" alt="" style="width: 25px; height: 25px;">
+                                            <img id="logo" src="{{ $redcards[$i]['statistics'][0]['team']['logo'] }}" alt="">
                                         </a>
                                     </td>
                                     </tr>

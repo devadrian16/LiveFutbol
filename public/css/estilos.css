@@ -3,21 +3,24 @@ li:hover, a:hover {
     cursor: pointer;	
 }
 
-@media (max-width: 770px) {
+#logo {
+    width: 25px;
+    height: 25px;
+}
+
+@media only screen and (max-device-width: 768px) {
     body {
       font-size: small;
     }
 }
 
-@media (max-width: 440) {
+@media only screen and (max-device-width: 480px) {
     body {
       font-size: x-small;
     }
-}
-
-@media (max-width: 220) {
-    body {
-      font-size: xx-small;
+    #logo {
+        width: 15px;
+        height: 15px;
     }
 }
 

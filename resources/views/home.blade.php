@@ -9,7 +9,7 @@
 @section('content')
 
 <div class="row justify-content-around">
-    
+
 </div>
 
 @endsection
