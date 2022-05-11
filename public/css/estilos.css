@@ -15,6 +15,12 @@ li:hover, a:hover {
     }
 }
 
+@media (max-width: 220) {
+    body {
+      font-size: xx-small;
+    }
+}
+
 /* LIGAS */
 .redondeo {
     border-radius: 5px;
