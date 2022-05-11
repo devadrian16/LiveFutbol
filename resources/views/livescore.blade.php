@@ -24,6 +24,7 @@
             </div>
 
             <div class="card-body">
+            @if(count($champions) != 0 || count($laliga) != 0 || count($segunda) != 0 || count($premier))
                 @if(count($champions) != 0)
                 <div class="card mb-3">
                     <div class="card-header fs-5">
@@ -303,6 +304,9 @@
                     </div>
                 </div>
                 @endif
+            @else
+                Hoy no hay partidos.
+            @endif
             </div>
         </div>
     </div>
