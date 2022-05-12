@@ -32,7 +32,7 @@ $mes = ['-', 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Ag
                                         <img id="logo" src="{{ $match['teams']['home']['logo'] }}" alt="">
                                     </a>
                                 </td>
-                                <td class="text-center">{{ $match['goals']['home'] }} - {{ $match['goals']['away'] }}</td>
+                                <td class="text-center">{{ $match['goals']['home'] }} : {{ $match['goals']['away'] }}</td>
                                 <td class="text-left">
                                     <a style="text-decoration: none; color: black;" href="/equipo/{{ $match['teams']['away']['id'] }}">
                                         <img id="logo" src="{{ $match['teams']['away']['logo'] }}" alt="">
