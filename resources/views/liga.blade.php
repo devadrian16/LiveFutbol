@@ -133,20 +133,20 @@ $mes = ['-', 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Ag
         <div class="card">
             <div class="card-header fs-3">
                 DESTACADOS
-                <nav class="navbar navbar-expand-lg navbar-light bg-light my-0 fs-6">
+                <nav class="navbar navbar-expand-lg navbar-light bg-transparent my-0 fs-6">
                     <div>
                         <ul class="nav">
                             <li id="goles" class="nav-item activo">
-                                <a style="color: black;" class="nav-link" href="#">GOLES</a>
+                                <a style="color: white;" class="nav-link" href="#">GOLES</a>
                             </li>
                             <li id="asistencias" class="nav-item">
-                                <a style="color: black;" class="nav-link" href="#">ASISTENCIAS</a>
+                                <a style="color: white;" class="nav-link" href="#">ASISTENCIAS</a>
                             </li>
                             <li id="amarillas" class="nav-item">
-                                <a style="color: black;" class="nav-link" href="#">TAR. AMARILLAS</a>
+                                <a style="color: white;" class="nav-link" href="#">TAR. AMARILLAS</a>
                             </li>
                             <li id="rojas" class="nav-item">
-                                <a style="color: black;" class="nav-link" href="#">TAR. ROJAS</a>
+                                <a style="color: white;" class="nav-link" href="#">TAR. ROJAS</a>
                             </li>
                         </ul>
                     </div>
