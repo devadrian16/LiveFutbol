@@ -41,7 +41,7 @@
                                     @if($match['fixture']['status']['short'] == '1H' or $match['fixture']['status']['short'] == 'HT' or $match['fixture']['status']['short'] == '2H' || $match['fixture']['status']['short'] == 'ET' || $match['fixture']['status']['short'] == 'P')
                                     <tr>
                                         <td class="text-center">{{ $periodo[ $match['fixture']['status']['short'] ] }}</td>
-                                        <td style="color: crimson;" class="parpadeo text-center">{{ $match['fixture']['status']['elapsed'] }}'</td>
+                                        <td class="parpadeo text-center">{{ $match['fixture']['status']['elapsed'] }}'</td>
                                         <td class="text-end">
                                             <a style="text-decoration: none; color: black;" href="/equipo/{{ $match['teams']['home']['id'] }}">
                                                 {{ $match['teams']['home']['name'] }}
@@ -65,7 +65,7 @@
                                         <td style="width: 125px;" class="text-center">{{ date('H:i', strtotime($match['fixture']['date'])) }}</td>
                                         <td style="width: 125px;" class="text-center">
                                             @if($match['fixture']['status']['short'] == 'NS')
-                                            en {{ round( (strtotime( date('H:i', strtotime($match['fixture']['date'])) ) - strtotime($hora) ) / 3600, 0) }} h
+                                            en {{ round( (strtotime( date('H:i', strtotime($match['fixture']['date'])) ) - strtotime($hora) ) / 3600, 0) }}h
                                             @else
                                             Finalizado
                                             @endif
@@ -111,7 +111,7 @@
                                     @if($match['fixture']['status']['short'] == '1H' or $match['fixture']['status']['short'] == 'HT' or $match['fixture']['status']['short'] == '2H' || $match['fixture']['status']['short'] == 'ET' || $match['fixture']['status']['short'] == 'P')
                                     <tr>
                                         <td class="text-center">{{ $periodo[ $match['fixture']['status']['short'] ] }}</td>
-                                        <td style="color: crimson;" class="parpadeo text-center">{{ $match['fixture']['status']['elapsed'] }}'</td>
+                                        <td class="parpadeo text-center">{{ $match['fixture']['status']['elapsed'] }}'</td>
                                         <td class="text-end">
                                             <a style="text-decoration: none; color: black;" href="/equipo/{{ $match['teams']['home']['id'] }}">
                                                 {{ $match['teams']['home']['name'] }}
@@ -135,7 +135,7 @@
                                         <td style="width: 125px;" class="text-center">{{ date('H:i', strtotime($match['fixture']['date'])) }}</td>
                                         <td style="width: 125px;" class="text-center">
                                             @if($match['fixture']['status']['short'] == 'NS')
-                                            en {{ round( (strtotime( date('H:i', strtotime($match['fixture']['date'])) ) - strtotime($hora) ) / 3600, 0) }} h
+                                            en {{ round( (strtotime( date('H:i', strtotime($match['fixture']['date'])) ) - strtotime($hora) ) / 3600, 0) }}h
                                             @else
                                             Finalizado
                                             @endif
@@ -181,7 +181,7 @@
                                     @if($match['fixture']['status']['short'] == '1H' || $match['fixture']['status']['short'] == 'HT' || $match['fixture']['status']['short'] == '2H' || $match['fixture']['status']['short'] == 'ET' || $match['fixture']['status']['short'] == 'P')
                                     <tr>
                                         <td class="text-center">{{ $periodo[ $match['fixture']['status']['short'] ] }}</td>
-                                        <td style="color: crimson;" class="parpadeo text-center">{{ $match['fixture']['status']['elapsed'] }}'</td>
+                                        <td class="parpadeo text-center">{{ $match['fixture']['status']['elapsed'] }}'</td>
                                         <td class="text-end">
                                             <a style="text-decoration: none; color: black;" href="/equipo/{{ $match['teams']['home']['id'] }}">
                                                 {{ $match['teams']['home']['name'] }}
@@ -205,7 +205,7 @@
                                         <td style="width: 125px;" class="text-center">{{ date('H:i', strtotime($match['fixture']['date'])) }}</td>
                                         <td style="width: 125px;" class="text-center">
                                             @if($match['fixture']['status']['short'] == 'NS')
-                                            en {{ round( (strtotime( date('H:i', strtotime($match['fixture']['date'])) ) - strtotime($hora) ) / 3600, 0) }} h
+                                            en {{ round( (strtotime( date('H:i', strtotime($match['fixture']['date'])) ) - strtotime($hora) ) / 3600, 0) }}h
                                             @else
                                             Finalizado
                                             @endif
@@ -251,7 +251,7 @@
                                     @if($match['fixture']['status']['short'] == '1H' || $match['fixture']['status']['short'] == 'HT' || $match['fixture']['status']['short'] == '2H' || $match['fixture']['status']['short'] == 'ET' || $match['fixture']['status']['short'] == 'P')
                                     <tr>
                                         <td class="text-center">{{ $periodo[ $match['fixture']['status']['short'] ] }}</td>
-                                        <td style="color: crimson;" class="parpadeo text-center">{{ $match['fixture']['status']['elapsed'] }}'</td>
+                                        <td class="parpadeo text-center">{{ $match['fixture']['status']['elapsed'] }}'</td>
                                         <td class="text-end">
                                             <a style="text-decoration: none; color: black;" href="/equipo/{{ $match['teams']['home']['id'] }}">
                                                 {{ $match['teams']['home']['name'] }}
@@ -275,7 +275,7 @@
                                         <td style="width: 125px;" class="text-center">{{ date('H:i', strtotime($match['fixture']['date'])) }}</td>
                                         <td style="width: 125px;" class="text-center">
                                             @if($match['fixture']['status']['short'] == 'NS')
-                                            en {{ round( (strtotime( date('H:i', strtotime($match['fixture']['date'])) ) - strtotime($hora) ) / 3600, 0) }} h
+                                            en {{ round( (strtotime( date('H:i', strtotime($match['fixture']['date'])) ) - strtotime($hora) ) / 3600, 0) }}h
                                             @else
                                             Finalizado
                                             @endif
