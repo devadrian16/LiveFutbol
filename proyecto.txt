@@ -17,6 +17,10 @@ Base de datos: 9322689_proyecto_
 Usuario: devadrian
 Contraseña: *Y58hyv3
 
+FTP: 82.194.68.78
+Usuario: user-9322689
+Contraseña: Kzle37@0
+
 PRESENTACION:
 
 La API me devuelve los datos en un json y yo los parseo para mostrarlos, no me devuelve un html en nigun momento.
