@@ -17,13 +17,13 @@
 	<!-- Styles -->
 	<style>
 		#header {
-			background-color: #001e28;
+			background-color: #0f2d37;
 			font-family: 'Roboto', 'Signika', 'sans-serif';
 		}
 		#content {
-			background-color: #eeeeee;
+			background-color: #c1c1c1;
 			font-family: 'Signika', 'Roboto', 'sans-serif';
-			margin: 57px 0 0 0;
+			margin: 56px 0 0 0;
 		}
 		#footer {
 			background-color: #001e28;
