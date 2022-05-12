@@ -9,13 +9,13 @@ li:hover, a:hover {
 }
 
 @media (max-width: 768px) {
-    body {
+    #content {
       font-size: small;
     }
 }
 
 @media (max-width: 576px) {
-    body {
+    #content {
       font-size: small;
     }
     #logo {
