@@ -19,7 +19,7 @@
     @if($status['response']['requests']['current'] < 100)
     <div class="col-lg-10 my-4">
         <div class="card">
-            <div class="card-header fs-2 pb-0" style="border-bottom: none; background-color: white;">
+            <div class="card-header fs-2 pb-0" style="border-bottom: none;">
                 Partidos {{ $semana[date('w', strtotime($fecha))] }}, {{ $dia }} {{ $mes[date('n', strtotime($fecha))] }} {{ $anno }}
             </div>
 
@@ -29,7 +29,7 @@
                 <div class="card mb-3">
                     <div class="card-header fs-5">
                         <img src="{{ $champions[0]['league']['flag'] }}" alt="" style="width: 25px; height: 25px;">
-                        <a style="text-decoration: none; color: black;" href="/liga/{{ $champions[0]['league']['id'] }}">
+                        <a style="text-decoration: none;" href="/liga/{{ $champions[0]['league']['id'] }}">
                             {{ $champions[0]['league']['name'] }}
                         </a>
                     </div>
@@ -99,7 +99,7 @@
                 <div class="card mb-3">
                     <div class="card-header fs-5">
                         <img src="{{ $laliga[0]['league']['flag'] }}" alt="" style="width: 25px; height: 25px;">
-                        <a style="text-decoration: none; color: black;" href="/liga/{{ $laliga[0]['league']['id'] }}">
+                        <a style="text-decoration: none;" href="/liga/{{ $laliga[0]['league']['id'] }}">
                             {{ $laliga[0]['league']['name'] }}
                         </a>
                     </div>
@@ -169,7 +169,7 @@
                 <div class="card mb-3">
                     <div class="card-header fs-5">
                         <img src="{{ $segunda[0]['league']['flag'] }}" alt="" style="width: 25px; height: 25px;">
-                        <a style="text-decoration: none; color: black;" href="/liga/{{ $segunda[0]['league']['id'] }}">
+                        <a style="text-decoration: none;" href="/liga/{{ $segunda[0]['league']['id'] }}">
                             {{ $segunda[0]['league']['name'] }}
                         </a>
                     </div>
@@ -239,7 +239,7 @@
                 <div class="card mb-3">
                     <div class="card-header fs-5">
                         <img src="{{ $premier[0]['league']['flag'] }}" alt="" style="width: 25px; height: 25px;">
-                        <a style="text-decoration: none; color: black;" href="/liga/{{ $premier[0]['league']['id'] }}">
+                        <a style="text-decoration: none;" href="/liga/{{ $premier[0]['league']['id'] }}">
                             {{ $premier[0]['league']['name'] }}
                         </a>
                     </div>
