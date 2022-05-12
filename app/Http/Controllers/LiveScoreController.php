@@ -23,9 +23,11 @@ class LiveScoreController extends Controller
 
         if($status['response']['requests']['current'] < 100) {
             //LiveScore
-            $champions = $this->api->getMatchesTodayLeague(83); //Regionalliga - Bayern
+            //$champions = $this->api->getMatchesTodayLeague(2); 
+            $champions = $this->api->getMatchesTodayLeague(135); // Serie A
+            //$champions = $this->api->getMatchesTodayLeague(78); // Bundesliga
             $laliga = $this->api->getMatchesTodayLeague(140);   
-            $segunda = $this->api->getMatchesTodayLeague(88); //eredivisie holanda
+            $segunda = $this->api->getMatchesTodayLeague(141); 
             $premier = $this->api->getMatchesTodayLeague(39); 
 
             return view('livescore', [
