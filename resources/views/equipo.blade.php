@@ -52,7 +52,7 @@
 
     <div class="col-lg-10 my-4">
         <div class="card">
-            <div class="card-header fs-5 pb-0" style="border-bottom: none; background-color: white;">Plantilla {{ $team['name'] }} de liga</div>
+            <div class="card-header fs-5" style="border-bottom: none;">Plantilla {{ $team['name'] }}</div>
 
             <div class="card-body">
                 <div class="table-responsive">
