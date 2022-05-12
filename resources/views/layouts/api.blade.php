@@ -21,7 +21,7 @@
 			font-family: 'Roboto', 'Signika', 'sans-serif';
 		}
 		#content {
-			background-color: #c1c1c1;
+			background-color: #e2e2e2;
 			font-family: 'Signika', 'Roboto', 'sans-serif';
 			margin: 56px 0 0 0;
 		}
