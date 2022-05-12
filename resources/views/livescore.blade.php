@@ -40,20 +40,20 @@
                                     @foreach($champions as $match)
                                     @if($match['fixture']['status']['short'] == '1H' or $match['fixture']['status']['short'] == 'HT' or $match['fixture']['status']['short'] == '2H' || $match['fixture']['status']['short'] == 'ET' || $match['fixture']['status']['short'] == 'P')
                                     <tr>
-                                        <td class="text-center">{{ $periodo[ $match['fixture']['status']['short'] ] }}</td>
-                                        <td class="parpadeo text-center">{{ $match['fixture']['status']['elapsed'] }}'</td>
-                                        <td class="text-end">
+                                        <td style="width: 125px;" class="text-center">{{ $periodo[ $match['fixture']['status']['short'] ] }}</td>
+                                        <td style="width: 125px;" class="parpadeo text-center">{{ $match['fixture']['status']['elapsed'] }}'</td>
+                                        <td style="width: 250px;" class="text-end">
                                             <a style="text-decoration: none; color: black;" href="/equipo/{{ $match['teams']['home']['id'] }}">
                                                 {{ $match['teams']['home']['name'] }}
                                                 <img id="logo" src="{{ $match['teams']['home']['logo'] }}" alt="">
                                             </a>
                                         </td>
-                                        <td class="text-center">
+                                        <td style="width: 125px;" class="text-center">
                                             <div class="livescore">
                                                 {{ $match['goals']['home'] }} : {{ $match['goals']['away'] }}
                                             </div>
                                         </td>
-                                        <td>
+                                        <td style="width: 250px;">
                                             <a style="text-decoration: none; color: black;" href="/equipo/{{ $match['teams']['away']['id'] }}">
                                                 <img id="logo" src="{{ $match['teams']['away']['logo'] }}" alt="">
                                                 {{ $match['teams']['away']['name'] }}
@@ -110,20 +110,20 @@
                                     @foreach($laliga as $match)
                                     @if($match['fixture']['status']['short'] == '1H' or $match['fixture']['status']['short'] == 'HT' or $match['fixture']['status']['short'] == '2H' || $match['fixture']['status']['short'] == 'ET' || $match['fixture']['status']['short'] == 'P')
                                     <tr>
-                                        <td class="text-center">{{ $periodo[ $match['fixture']['status']['short'] ] }}</td>
-                                        <td class="parpadeo text-center">{{ $match['fixture']['status']['elapsed'] }}'</td>
-                                        <td class="text-end">
+                                        <td style="width: 125px;" class="text-center">{{ $periodo[ $match['fixture']['status']['short'] ] }}</td>
+                                        <td style="width: 125px;" class="parpadeo text-center">{{ $match['fixture']['status']['elapsed'] }}'</td>
+                                        <td style="width: 250px;" class="text-end">
                                             <a style="text-decoration: none; color: black;" href="/equipo/{{ $match['teams']['home']['id'] }}">
                                                 {{ $match['teams']['home']['name'] }}
                                                 <img id="logo" src="{{ $match['teams']['home']['logo'] }}" alt="">
                                             </a>
                                         </td>
-                                        <td class="text-center">
+                                        <td style="width: 125px;" class="text-center">
                                             <div class="livescore">
                                                 {{ $match['goals']['home'] }} : {{ $match['goals']['away'] }}
                                             </div>
                                         </td>
-                                        <td>
+                                        <td style="width: 250px;">
                                             <a style="text-decoration: none; color: black;" href="/equipo/{{ $match['teams']['away']['id'] }}">
                                                 <img id="logo" src="{{ $match['teams']['away']['logo'] }}" alt="">
                                                 {{ $match['teams']['away']['name'] }}
@@ -180,20 +180,20 @@
                                     @foreach($segunda as $match)
                                     @if($match['fixture']['status']['short'] == '1H' || $match['fixture']['status']['short'] == 'HT' || $match['fixture']['status']['short'] == '2H' || $match['fixture']['status']['short'] == 'ET' || $match['fixture']['status']['short'] == 'P')
                                     <tr>
-                                        <td class="text-center">{{ $periodo[ $match['fixture']['status']['short'] ] }}</td>
-                                        <td class="parpadeo text-center">{{ $match['fixture']['status']['elapsed'] }}'</td>
-                                        <td class="text-end">
+                                        <td style="width: 125px;" class="text-center">{{ $periodo[ $match['fixture']['status']['short'] ] }}</td>
+                                        <td style="width: 125px;" class="parpadeo text-center">{{ $match['fixture']['status']['elapsed'] }}'</td>
+                                        <td style="width: 250px;" class="text-end">
                                             <a style="text-decoration: none; color: black;" href="/equipo/{{ $match['teams']['home']['id'] }}">
                                                 {{ $match['teams']['home']['name'] }}
                                                 <img id="logo" src="{{ $match['teams']['home']['logo'] }}" alt="">
                                             </a>
                                         </td>
-                                        <td class="text-center">
+                                        <td style="width: 125px;" class="text-center">
                                             <div class="livescore">
                                                 {{ $match['goals']['home'] }} : {{ $match['goals']['away'] }}
                                             </div>
                                         </td>
-                                        <td>
+                                        <td style="width: 250px;">
                                             <a style="text-decoration: none; color: black;" href="/equipo/{{ $match['teams']['away']['id'] }}">
                                                 <img id="logo" src="{{ $match['teams']['away']['logo'] }}" alt="">
                                                 {{ $match['teams']['away']['name'] }}
@@ -250,20 +250,20 @@
                                     @foreach($premier as $match)
                                     @if($match['fixture']['status']['short'] == '1H' || $match['fixture']['status']['short'] == 'HT' || $match['fixture']['status']['short'] == '2H' || $match['fixture']['status']['short'] == 'ET' || $match['fixture']['status']['short'] == 'P')
                                     <tr>
-                                        <td class="text-center">{{ $periodo[ $match['fixture']['status']['short'] ] }}</td>
-                                        <td class="parpadeo text-center">{{ $match['fixture']['status']['elapsed'] }}'</td>
-                                        <td class="text-end">
+                                        <td style="width: 125px;" class="text-center">{{ $periodo[ $match['fixture']['status']['short'] ] }}</td>
+                                        <td style="width: 125px;" class="parpadeo text-center">{{ $match['fixture']['status']['elapsed'] }}'</td>
+                                        <td style="width: 250px;" class="text-end">
                                             <a style="text-decoration: none; color: black;" href="/equipo/{{ $match['teams']['home']['id'] }}">
                                                 {{ $match['teams']['home']['name'] }}
                                                 <img id="logo" src="{{ $match['teams']['home']['logo'] }}" alt="">
                                             </a>
                                         </td>
-                                        <td class="text-center">
+                                        <td style="width: 125px;" class="text-center">
                                             <div class="livescore">
                                                 {{ $match['goals']['home'] }} : {{ $match['goals']['away'] }}
                                             </div>
                                         </td>
-                                        <td>
+                                        <td style="width: 250px;">
                                             <a style="text-decoration: none; color: black;" href="/equipo/{{ $match['teams']['away']['id'] }}">
                                                 <img id="logo" src="{{ $match['teams']['away']['logo'] }}" alt="">
                                                 {{ $match['teams']['away']['name'] }}
