@@ -25,7 +25,6 @@
 		}
 		#content {
 			font-family: 'Roboto', 'sans-serif';
-			margin: 56px 0 0 0;
 		}
 		#footer {
 			background-color: #0f2d37;
@@ -39,8 +38,8 @@
 </head>
 
 <body>
-	<div class="row m-0 fixed-top" id="header">
-		<nav class="navbar navbar-expand-lg navbar-dark">
+	<div class="row" id="header">
+		<nav class="navbar navbar-expand-md navbar-dark">
 			<div class="container-fluid">
 				<a class="navbar-brand" style="color: white;" href="/">
 					RESULTADOS-FUTBOL
@@ -122,7 +121,7 @@
 			@yield('content')
 		</main>
 	</div>
-	<div class="row m-0" id="footer">
+	<div class="row" id="footer">
 		<footer>
 		</footer>
 	</div>
