@@ -19,11 +19,11 @@
     @if($status['response']['requests']['current'] < 100)
     <div class="col-lg-10 my-4">
         <div class="card">
-            <div class="card-header fs-2 pb-0" style="border-bottom: none;">
+            <div class="card-header fs-4 rounded">
                 Partidos {{ $semana[date('w', strtotime($fecha))] }}, {{ $dia }} {{ $mes[date('n', strtotime($fecha))] }} {{ $anno }}
             </div>
 
-            <div class="card-body">
+            <div class="card-body" style="border: none;">
             @if(count($champions) != 0 || count($laliga) != 0 || count($segunda) != 0 || count($premier))
                 @if(count($champions) != 0)
                 <div class="card mb-3">
