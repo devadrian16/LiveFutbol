@@ -9,6 +9,9 @@
 
 	<!-- Bootstrap CSS -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	
+	<!-- Iconos equipos -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 	<!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css2?family=Signika&display=swap" rel="stylesheet">
@@ -18,16 +21,15 @@
 	<style>
 		#header {
 			background-color: #0f2d37;
-			font-family: 'Roboto', 'Signika', 'sans-serif';
+			/*font-family: 'Roboto', 'Signika', 'sans-serif';*/
 		}
 		#content {
-			background-color: #e2e2e2;
-			font-family: 'Signika', 'Roboto', 'sans-serif';
+			/*font-family: 'Signika', 'Roboto', 'sans-serif';*/
 			margin: 56px 0 0 0;
 		}
 		#footer {
-			background-color: #001e28;
-			font-family: 'Roboto', 'Signika', 'sans-serif';
+			background-color: #0f2d37;
+			/*font-family: 'Roboto', 'Signika', 'sans-serif';*/
 		}
 	</style>
 	@yield('css')
