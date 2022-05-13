@@ -12,7 +12,7 @@
     @if($status['response']['requests']['current'] < 100)
     <div class="col-lg-10 my-4">
         <div class="card">
-            <div class="card-header fs-2">
+            <div class="card-header fs-2 rounded">
                 <img src="{{ $team['logo'] }}" alt="" style="width: 75px; height: 75px;">
                 {{ $team['name'] }}
                 @auth
@@ -43,41 +43,49 @@
                 @endif
                 @endauth
             </div>
-
-            <div class="card-body">
-
-            </div>
         </div>
     </div>
 
-    <div class="col-lg-10 my-4">
+    <div class="col-lg-10">
         <div class="card">
-            <div class="card-header fs-5" style="border-bottom: none;">Plantilla {{ $team['name'] }}</div>
+            <div class="card-header fs-5" style="border-bottom: none;">Plantilla</div>
 
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table">
                         <tbody>
                             <tr>
-                                <td colspan="9" class="fs-3" style="background-color: #eeeeee;">Porteros</td>
+                                <td colspan="9" class="fs-3" style="background-color: #0f2d37; border-radius: 5px; color: white;">Porteros</td>
                             </tr>
-                            <tr class="text-center">
+                            <tr class="text-center" style="font-size: 14px;">
                                 <td></td>
-                                <td>Nombre</td>
-                                <td>Edad</td>
-                                <td>Altura</td>
-                                <td>Peso</td>
-                                <td>Par. jugados</td>
-                                <td>Goles</td>
-                                <td>Tar. amarillas</td>
-                                <td>Tar. rojas</td>
+                                <td>NOMBRE</td>
+                                <td>EDAD</td>
+                                <td>ALTURA</td>
+                                <td>PESO</td>
+                                <td>
+                                    PAR. JUGADOS
+                                </td>
+                                <td>
+                                    <i class="fa fa-soccer-ball-o" title="Goles"></i>
+                                </td>
+                                <td>
+                                    <svg aria-labelledby="yellowcard" role="img" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffcd00" class="bi bi-file-fill" viewBox="0 0 16 16">
+                                        <title id="yellowcard">Tarjetas amarillas</title>    
+                                        <path fill-rule="evenodd" d="M4 0h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z"/>
+                                    </svg>
+                                </td>
+                                <td>
+                                    <svg aria-labelledby="redcard" role="img" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#dc0000" class="bi bi-file-fill" viewBox="0 0 16 16">
+                                        <title id="redcard">Tarjetas rojas</title>    
+                                        <path fill-rule="evenodd" d="M4 0h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z"/>
+                                    </svg>
+                                </td>
                             </tr>
                             @foreach($porteros as $player)
                             <tr class="text-center">
                                 <td>
-                                    <a style="text-decoration: none; color: black;">
-                                        <img src="{{ $player['player']['photo'] }}" alt="" style="width: 35px; height: 35px;">
-                                    </a>
+                                    <img src="{{ $player['player']['photo'] }}" alt="" style="width: 35px; height: 35px;">
                                 </td>
                                 <td>
                                     {{ $player['player']['name'] }}
@@ -92,25 +100,37 @@
                             </tr>
                             @endforeach
                             <tr>
-                                <td colspan="9" class="fs-3" style="background-color: #eeeeee;">Defensas</td>
+                                <td colspan="9" class="fs-3" style="background-color: #0f2d37; border-radius: 5px; color: white;">Defensas</td>
                             </tr>
-                            <tr class="text-center">
+                            <tr class="text-center" style="font-size: 14px;">
                                 <td></td>
-                                <td>Nombre</td>
-                                <td>Edad</td>
-                                <td>Altura</td>
-                                <td>Peso</td>
-                                <td>Par. jugados</td>
-                                <td>Goles</td>
-                                <td>Tar. amarillas</td>
-                                <td>Tar. rojas</td>
+                                <td>NOMBRE</td>
+                                <td>EDAD</td>
+                                <td>ALTURA</td>
+                                <td>PESO</td>
+                                <td>
+                                    PAR. JUGADOS
+                                </td>
+                                <td>
+                                    <i class="fa fa-soccer-ball-o" title="Goles"></i>
+                                </td>
+                                <td>
+                                    <svg aria-labelledby="yellowcard" role="img" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffcd00" class="bi bi-file-fill" viewBox="0 0 16 16">
+                                        <title id="yellowcard">Tarjetas amarillas</title>    
+                                        <path fill-rule="evenodd" d="M4 0h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z"/>
+                                    </svg>
+                                </td>
+                                <td>
+                                    <svg aria-labelledby="redcard" role="img" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#dc0000" class="bi bi-file-fill" viewBox="0 0 16 16">
+                                        <title id="redcard">Tarjetas rojas</title>    
+                                        <path fill-rule="evenodd" d="M4 0h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z"/>
+                                    </svg>
+                                </td>
                             </tr>
                             @foreach($defensas as $player)
                             <tr class="text-center">
                                 <td>
-                                    <a style="text-decoration: none; color: black;">
-                                        <img src="{{ $player['player']['photo'] }}" alt="" style="width: 35px; height: 35px;">
-                                    </a>
+                                    <img src="{{ $player['player']['photo'] }}" alt="" style="width: 35px; height: 35px;">
                                 </td>
                                 <td>
                                     {{ $player['player']['name'] }}
@@ -125,25 +145,37 @@
                             </tr>
                             @endforeach
                             <tr>
-                                <td colspan="9" class="fs-3" style="background-color: #eeeeee;">Centrocampistas</td>
+                                <td colspan="9" class="fs-3" style="background-color: #0f2d37; border-radius: 5px; color: white;">Centrocampistas</td>
                             </tr>
-                            <tr class="text-center">
+                            <tr class="text-center" style="font-size: 14px;">
                                 <td></td>
-                                <td>Nombre</td>
-                                <td>Edad</td>
-                                <td>Altura</td>
-                                <td>Peso</td>
-                                <td>Par. jugados</td>
-                                <td>Goles</td>
-                                <td>Tar. amarillas</td>
-                                <td>Tar. rojas</td>
+                                <td>NOMBRE</td>
+                                <td>EDAD</td>
+                                <td>ALTURA</td>
+                                <td>PESO</td>
+                                <td>
+                                    PAR. JUGADOS
+                                </td>
+                                <td>
+                                    <i class="fa fa-soccer-ball-o" title="Goles"></i>
+                                </td>
+                                <td>
+                                    <svg aria-labelledby="yellowcard" role="img" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffcd00" class="bi bi-file-fill" viewBox="0 0 16 16">
+                                        <title id="yellowcard">Tarjetas amarillas</title>    
+                                        <path fill-rule="evenodd" d="M4 0h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z"/>
+                                    </svg>
+                                </td>
+                                <td>
+                                    <svg aria-labelledby="redcard" role="img" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#dc0000" class="bi bi-file-fill" viewBox="0 0 16 16">
+                                        <title id="redcard">Tarjetas rojas</title>    
+                                        <path fill-rule="evenodd" d="M4 0h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z"/>
+                                    </svg>
+                                </td>
                             </tr>
                             @foreach($centrocampistas as $player)
                             <tr class="text-center">
                                 <td>
-                                    <a style="text-decoration: none; color: black;">
-                                        <img src="{{ $player['player']['photo'] }}" alt="" style="width: 35px; height: 35px;">
-                                    </a>
+                                    <img src="{{ $player['player']['photo'] }}" alt="" style="width: 35px; height: 35px;">
                                 </td>
                                 <td>
                                     {{ $player['player']['name'] }}
@@ -158,25 +190,37 @@
                             </tr>
                             @endforeach
                             <tr>
-                                <td colspan="9" class="fs-3" style="background-color: #eeeeee;">Delanteros</td>
+                                <td colspan="9" class="fs-3" style="background-color: #0f2d37; border-radius: 5px; color: white;">Delanteros</td>
                             </tr>
-                            <tr class="text-center">
+                            <tr class="text-center" style="font-size: 14px;">
                                 <td></td>
-                                <td>Nombre</td>
-                                <td>Edad</td>
-                                <td>Altura</td>
-                                <td>Peso</td>
-                                <td>Par. jugados</td>
-                                <td>Goles</td>
-                                <td>Tar. amarillas</td>
-                                <td>Tar. rojas</td>
+                                <td>NOMBRE</td>
+                                <td>EDAD</td>
+                                <td>ALTURA</td>
+                                <td>PESO</td>
+                                <td>
+                                    PAR. JUGADOS
+                                </td>
+                                <td>
+                                    <i class="fa fa-soccer-ball-o" title="Goles"></i>
+                                </td>
+                                <td>
+                                    <svg aria-labelledby="yellowcard" role="img" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffcd00" class="bi bi-file-fill" viewBox="0 0 16 16">
+                                        <title id="yellowcard">Tarjetas amarillas</title>    
+                                        <path fill-rule="evenodd" d="M4 0h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z"/>
+                                    </svg>
+                                </td>
+                                <td>
+                                    <svg aria-labelledby="redcard" role="img" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#dc0000" class="bi bi-file-fill" viewBox="0 0 16 16">
+                                        <title id="redcard">Tarjetas rojas</title>    
+                                        <path fill-rule="evenodd" d="M4 0h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z"/>
+                                    </svg>
+                                </td>
                             </tr>
                             @foreach($delanteros as $player)
                             <tr class="text-center">
                                 <td>
-                                    <a style="text-decoration: none; color: black;">
-                                        <img src="{{ $player['player']['photo'] }}" alt="" style="width: 35px; height: 35px;">
-                                    </a>
+                                    <img src="{{ $player['player']['photo'] }}" alt="" style="width: 35px; height: 35px;">
                                 </td>
                                 <td>
                                     {{ $player['player']['name'] }}

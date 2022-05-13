@@ -3,18 +3,22 @@ document.addEventListener("DOMContentLoaded", function () {
     let nofavorito = document.getElementById("nofavorito");
     let favorito = document.getElementById("favorito");
 
-    nofavorito.addEventListener("click", function (e) {
-        agregar();
-        favorito.classList.remove("d-none");
-        e.currentTarget.classList.add("d-none");
-        
-    });
-
-    favorito.addEventListener("click", function (e) {
-        eliminar();
-        nofavorito.classList.remove("d-none");
-        e.currentTarget.classList.add("d-none");
-    });
+    if(nofavorito != null) {
+        nofavorito.addEventListener("click", function (e) {
+            agregar();
+            favorito.classList.remove("d-none");
+            e.currentTarget.classList.add("d-none");
+            
+        });
+    }
+    
+    if(favorito != null) {
+        favorito.addEventListener("click", function (e) {
+            eliminar();
+            nofavorito.classList.remove("d-none");
+            e.currentTarget.classList.add("d-none");
+        });
+    }
 
     async function agregar() {
         let id = window.location.pathname.split('/');
