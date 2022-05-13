@@ -14,22 +14,22 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 	<!-- Fonts -->
-	<link href="https://fonts.googleapis.com/css2?family=Signika&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Roboto&family=Signika&display=swap" rel="stylesheet">
-
+	<link href="https://fonts.googleapis.com/css2?family=Signika:wght@400&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">	
+	
 	<!-- Styles -->
 	<style>
 		#header {
 			background-color: #0f2d37;
-			/*font-family: 'Roboto', 'Signika', 'sans-serif';*/
+			font-family: 'Signika', 'sans-serif';
 		}
 		#content {
-			/*font-family: 'Signika', 'Roboto', 'sans-serif';*/
+			font-family: 'Roboto', 'sans-serif';
 			margin: 56px 0 0 0;
 		}
 		#footer {
 			background-color: #0f2d37;
-			/*font-family: 'Roboto', 'Signika', 'sans-serif';*/
+			font-family: 'Signika', 'sans-serif';
 		}
 	</style>
 	@yield('css')
@@ -42,7 +42,9 @@
 	<div class="row m-0 fixed-top" id="header">
 		<nav class="navbar navbar-expand-lg navbar-dark">
 			<div class="container-fluid">
-				<a class="navbar-brand" style="color: white;" href="/">RESULTADOS-FUTBOL</a>
+				<a class="navbar-brand" style="color: white;" href="/">
+					RESULTADOS-FUTBOL
+				</a>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
