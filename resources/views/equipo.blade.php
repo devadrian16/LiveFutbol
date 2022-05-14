@@ -52,7 +52,7 @@
 
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table">
+                    <table class="table table-striped">
                         <tbody>
                             <tr>
                                 <td colspan="9" class="fs-3" style="background-color: #0f2d37; border-radius: 5px; color: white;">Porteros</td>
