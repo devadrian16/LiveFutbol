@@ -1,6 +1,6 @@
 /* MEDIA QUERY */
-@media (min-width: 992px) {
-    body {
+@media (min-width: 1200px) {
+    .nav-content, .main-content, .footer-content {
         width: 75%;
         margin: 0 auto;
     }
@@ -9,6 +9,9 @@
 @media (max-width: 768px) {
     #content {
         font-size: small;
+    }
+    td {
+        padding: 0.5rem 0!important;
     }
 }
 
@@ -40,13 +43,16 @@ li:hover, a:hover {
 }
 
 .card-header, .card-header a {
-    background-color: #0f2d37;
+    background-color: #255e50; /* Verde */
+	/*background-color: #0f2d37;*/ /* Azul */
     color: white;
 }
 
 .card-body {
-    background-color: white;
-    border: #0f2d37 1px solid;
+    background-color: #a6b7bb; /* Verdes */
+    /*background-color: #eeeeee;*/ /* Azules */
+    border: #255e50 1px solid; /* Verdes */
+    /*border: #0f2d37 1px solid;*/ /* Azules */
     padding-bottom: 0;
 }
 
@@ -64,10 +70,10 @@ li:hover, a:hover {
 
 /* LIVESCORE */
 .livescore {
-    background-color: forestgreen;
+    background-color: #52a331;
     color: white;
     border-radius: 5px;
-    width: 50px;
+    width: 45px;
     margin: 0 auto;
 }
 

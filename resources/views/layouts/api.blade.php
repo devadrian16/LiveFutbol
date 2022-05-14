@@ -20,14 +20,18 @@
 	<!-- Styles -->
 	<style>
 		#header {
-			background-color: #0f2d37;
+			background-color: #255e50; /* Verde */
+			/*background-color: #0f2d37;*/ /* Azul */
 			font-family: 'Signika', 'sans-serif';
 		}
 		#content {
+			background-color: #a6b7bb; /* Verdes */
+    		/*background-color: #eeeeee;*/ /* Azules */
 			font-family: 'Roboto', 'sans-serif';
 		}
 		#footer {
-			background-color: #0f2d37;
+			background-color: #255e50; /* Verde */
+			/*background-color: #0f2d37;*/ /* Azul */
 			font-family: 'Signika', 'sans-serif';
 		}
 	</style>
@@ -38,9 +42,9 @@
 </head>
 
 <body>
-	<div class="row" id="header">
+	<div class="row m-0" id="header">
 		<nav class="navbar navbar-expand-md navbar-dark">
-			<div class="container-fluid">
+			<div class="container-fluid nav-content">
 				<a class="navbar-brand" style="color: white;" href="/">
 					RESULTADOS-FUTBOL
 				</a>
@@ -116,13 +120,18 @@
 			</div>
 		</nav>
 	</div>
-	<div class="row" id="content">
+	<div class="row m-0" id="content">
 		<main>
-			@yield('content')
+			<div class="main-content">
+				@yield('content')
+			</div>
 		</main>
 	</div>
-	<div class="row" id="footer">
+	<div class="row m-0" id="footer">
 		<footer>
+			<div class="footer-content">
+
+			</div>
 		</footer>
 	</div>
 	@yield('js')
