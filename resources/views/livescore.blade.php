@@ -19,7 +19,7 @@
     @if($status['response']['requests']['current'] < 100)
     <div class="col-lg-10 my-4">
         <div class="card">
-            <div class="card-header fs-4 rounded">
+            <div class="card-header fs-4">
                 Partidos {{ $semana[date('w', strtotime($fecha))] }}, {{ $dia }} {{ $mes[date('n', strtotime($fecha))] }} {{ $anno }}
             </div>
 
@@ -35,13 +35,13 @@
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table">
+                            <table class="table table-striped">
                                 <tbody>
                                     @foreach($champions as $match)
                                     @if($match['fixture']['status']['short'] == '1H' or $match['fixture']['status']['short'] == 'HT' or $match['fixture']['status']['short'] == '2H' || $match['fixture']['status']['short'] == 'ET' || $match['fixture']['status']['short'] == 'P')
                                     <tr>
-                                        <td style="width: 125px;" class="text-center">{{ $periodo[ $match['fixture']['status']['short'] ] }}</td>
-                                        <td style="width: 125px;" class="parpadeo text-center">{{ $match['fixture']['status']['elapsed'] }}'</td>
+                                        <td style="width: 150px;" class="text-center">{{ $periodo[ $match['fixture']['status']['short'] ] }}</td>
+                                        <td style="width: 100px;" class="parpadeo text-center">{{ $match['fixture']['status']['elapsed'] }}'</td>
                                         <td style="width: 250px;" class="text-end">
                                             <a style="text-decoration: none; color: black;" href="/equipo/{{ $match['teams']['home']['id'] }}">
                                                 {{ $match['teams']['home']['name'] }}
@@ -105,7 +105,7 @@
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table">
+                            <table class="table table-striped">
                                 <tbody>
                                     @foreach($laliga as $match)
                                     @if($match['fixture']['status']['short'] == '1H' or $match['fixture']['status']['short'] == 'HT' or $match['fixture']['status']['short'] == '2H' || $match['fixture']['status']['short'] == 'ET' || $match['fixture']['status']['short'] == 'P')
@@ -175,7 +175,7 @@
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table">
+                            <table class="table table-striped">
                                 <tbody>
                                     @foreach($segunda as $match)
                                     @if($match['fixture']['status']['short'] == '1H' || $match['fixture']['status']['short'] == 'HT' || $match['fixture']['status']['short'] == '2H' || $match['fixture']['status']['short'] == 'ET' || $match['fixture']['status']['short'] == 'P')
@@ -245,7 +245,7 @@
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table">
+                            <table class="table table-striped">
                                 <tbody>
                                     @foreach($premier as $match)
                                     @if($match['fixture']['status']['short'] == '1H' || $match['fixture']['status']['short'] == 'HT' || $match['fixture']['status']['short'] == '2H' || $match['fixture']['status']['short'] == 'ET' || $match['fixture']['status']['short'] == 'P')
