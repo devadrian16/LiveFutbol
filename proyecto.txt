@@ -1,8 +1,8 @@
 --FOOTER--
 
---MAQUETAR, COLORES, RETOQUES EN GENERAL--
+--COLUMNAS class="col-3"--
 
-?¿--ATRIBUTO ALT DE LAS IMAGENES--?¿
+--ALT EN LAS IMAGENES--
 
 Hosting: Hostalia.com
 
