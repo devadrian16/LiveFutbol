@@ -25,15 +25,15 @@ $mes = ['-', 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Ag
                         <tbody>
                             @foreach($jornadas[$i] as $match)
                             <tr>
-                                <td class="text-center">{{ date('j', strtotime($match['fixture']['date'])) }} {{ $mes[date('n', strtotime($match['fixture']['date']))] }} {{ date('Y', strtotime($match['fixture']['date'])) }}</td>
-                                <td class="text-end">
+                                <td class="col-3 text-center">{{ date('j', strtotime($match['fixture']['date'])) }} {{ $mes[date('n', strtotime($match['fixture']['date']))] }} {{ date('Y', strtotime($match['fixture']['date'])) }}</td>
+                                <td class="col-3 text-end">
                                     <a style="text-decoration: none; color: black;" href="/equipo/{{ $match['teams']['home']['id'] }}">
                                         {{ $match['teams']['home']['name'] }}
                                         <img id="logo" src="{{ $match['teams']['home']['logo'] }}" alt="">
                                     </a>
                                 </td>
-                                <td class="text-center">{{ $match['goals']['home'] }} : {{ $match['goals']['away'] }}</td>
-                                <td class="text-left">
+                                <td class="col-2 text-center">{{ $match['goals']['home'] }} : {{ $match['goals']['away'] }}</td>
+                                <td class="col-3 text-left">
                                     <a style="text-decoration: none; color: black;" href="/equipo/{{ $match['teams']['away']['id'] }}">
                                         <img id="logo" src="{{ $match['teams']['away']['logo'] }}" alt="">
                                         {{ $match['teams']['away']['name'] }}
