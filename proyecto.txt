@@ -1,7 +1,5 @@
 --FOOTER--
 
---COLUMNAS class="col-3"--
-
 --ALT EN LAS IMAGENES--
 
 Hosting: Hostalia.com
