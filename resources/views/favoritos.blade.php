@@ -29,7 +29,7 @@ $mes = ['-', 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Ag
                             @foreach($anteriores[$i] as $match)
                             <tr>
                                 <td class="col-2 text-center">{{ date('j', strtotime($match['fixture']['date'])) }} {{ $mes[date('n', strtotime($match['fixture']['date']))] }}, {{ date('H:i', strtotime($match['fixture']['date'])) }}</td>
-                                <td class="col-2 text-center">
+                                <td class="col-3 text-center">
                                     <a style="text-decoration: none; color: black;" href="/liga/{{ $match['league']['id'] }}">
                                         {{ $match['league']['name'] }}   
                                         <img id="logo" src="{{ $match['league']['logo'] }}" alt="">   
@@ -41,7 +41,7 @@ $mes = ['-', 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Ag
                                         <img id="logo" src="{{ $match['teams']['home']['logo'] }}" alt="">
                                     </a>
                                 </td>
-                                <td class="col-2 text-center">
+                                <td class="col-1 text-center">
                                     @if( $match['teams']['home']['name'] == $favoritos[$i]->name_team )
                                     <b>{{ $match['goals']['home'] }}</b> : {{ $match['goals']['away'] }}
                                     @else
