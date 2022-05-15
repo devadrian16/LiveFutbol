@@ -55,7 +55,7 @@
                     <table class="table table-striped">
                         <tbody>
                             <tr>
-                                <td colspan="9" class="fs-3" style="background-color: #0f2d37; border-radius: 5px; color: white;">Porteros</td>
+                                <td colspan="9" class="fs-3" style="background-color: #255e50; border-radius: 5px; color: white;">Porteros</td>
                             </tr>
                             <tr class="text-center" style="font-size: 14px;">
                                 <td></td>
@@ -100,7 +100,7 @@
                             </tr>
                             @endforeach
                             <tr>
-                                <td colspan="9" class="fs-3" style="background-color: #0f2d37; border-radius: 5px; color: white;">Defensas</td>
+                                <td colspan="9" class="fs-3" style="background-color: #255e50; border-radius: 5px; color: white;">Defensas</td>
                             </tr>
                             <tr class="text-center" style="font-size: 14px;">
                                 <td></td>
@@ -145,7 +145,7 @@
                             </tr>
                             @endforeach
                             <tr>
-                                <td colspan="9" class="fs-3" style="background-color: #0f2d37; border-radius: 5px; color: white;">Centrocampistas</td>
+                                <td colspan="9" class="fs-3" style="background-color: #255e50; border-radius: 5px; color: white;">Centrocampistas</td>
                             </tr>
                             <tr class="text-center" style="font-size: 14px;">
                                 <td></td>
@@ -190,7 +190,7 @@
                             </tr>
                             @endforeach
                             <tr>
-                                <td colspan="9" class="fs-3" style="background-color: #0f2d37; border-radius: 5px; color: white;">Delanteros</td>
+                                <td colspan="9" class="fs-3" style="background-color: #255e50; border-radius: 5px; color: white;">Delanteros</td>
                             </tr>
                             <tr class="text-center" style="font-size: 14px;">
                                 <td></td>
