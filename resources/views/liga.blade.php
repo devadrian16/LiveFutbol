@@ -172,10 +172,8 @@ $mes = ['-', 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Ag
                                 @for ($i = 0; $i < count($goals); $i++) <tr>
                                     <td class="text-center">{{ $i + 1 }}</td>
                                     <td>
-                                        <a style="text-decoration: none; color: black;">
-                                            <img src="{{ $goals[$i]['player']['photo'] }}" alt="" style="width: 35px; height: 35px;">
-                                            {{ $goals[$i]['player']['name'] }}
-                                        </a>
+                                        <img src="{{ $goals[$i]['player']['photo'] }}" alt="" style="width: 35px; height: 35px;">
+                                        {{ $goals[$i]['player']['name'] }}
                                     </td>
                                     <th class="text-center">{{ $goals[$i]['statistics'][0]['goals']['total'] }}</th>
                                     <td class="text-center">{{ $posicion[ $goals[$i]['statistics'][0]['games']['position'] ] }}</td>
@@ -207,10 +205,8 @@ $mes = ['-', 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Ag
                                 @for ($i = 0; $i < count($assists); $i++) <tr>
                                     <td class="text-center">{{ $i + 1 }}</td>
                                     <td>
-                                        <a style="text-decoration: none; color: black;">
-                                            <img src="{{ $assists[$i]['player']['photo'] }}" alt="" style="width: 35px; height: 35px;">
-                                            {{ $assists[$i]['player']['name'] }}
-                                        </a>
+                                        <img src="{{ $assists[$i]['player']['photo'] }}" alt="" style="width: 35px; height: 35px;">
+                                        {{ $assists[$i]['player']['name'] }}
                                     </td>
                                     <th class="text-center">{{ $assists[$i]['statistics'][0]['goals']['assists'] }}</th>
                                     <td class="text-center">{{ $posicion[ $assists[$i]['statistics'][0]['games']['position'] ] }}</td>
@@ -242,10 +238,8 @@ $mes = ['-', 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Ag
                                 @for ($i = 0; $i < count($yellowcards); $i++) <tr>
                                     <td class="text-center">{{ $i + 1 }}</td>
                                     <td>
-                                        <a style="text-decoration: none; color: black;">
-                                            <img src="{{ $yellowcards[$i]['player']['photo'] }}" alt="" style="width: 35px; height: 35px;">
-                                            {{ $yellowcards[$i]['player']['name'] }}
-                                        </a>
+                                        <img src="{{ $yellowcards[$i]['player']['photo'] }}" alt="" style="width: 35px; height: 35px;">
+                                        {{ $yellowcards[$i]['player']['name'] }}
                                     </td>
                                     <th class="text-center">{{ $yellowcards[$i]['statistics'][0]['cards']['yellow'] }}</th>
                                     <td class="text-center">{{ $posicion[ $yellowcards[$i]['statistics'][0]['games']['position'] ] }}</td>
@@ -277,10 +271,8 @@ $mes = ['-', 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Ag
                                 @for ($i = 0; $i < count($redcards); $i++) <tr>
                                     <td class="text-center">{{ $i + 1 }}</td>
                                     <td>
-                                        <a style="text-decoration: none; color: black;">
-                                            <img src="{{ $redcards[$i]['player']['photo'] }}" alt="" style="width: 35px; height: 35px;">
-                                            {{ $redcards[$i]['player']['name'] }}
-                                        </a>
+                                        <img src="{{ $redcards[$i]['player']['photo'] }}" alt="" style="width: 35px; height: 35px;">
+                                        {{ $redcards[$i]['player']['name'] }}
                                     </td>
                                     <th class="text-center">{{ $redcards[$i]['statistics'][0]['cards']['red'] }}</th>
                                     <td class="text-center">{{ $posicion[ $redcards[$i]['statistics'][0]['games']['position'] ] }}</td>
