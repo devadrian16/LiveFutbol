@@ -49,7 +49,7 @@
 				<a class="navbar-brand" style="color: white;" href="/">
 					RESULTADOS-FUTBOL
 				</a>
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -82,7 +82,7 @@
 							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 								<li><a class="dropdown-item" href="/equipo/529">FC Barcelona</a></li>
 								<li><a class="dropdown-item" href="/equipo/9580">Burgos CF</a></li>
-								<li><a class="dropdown-item" href="/equipo/5">Manchester City</a></li>
+								<li><a class="dropdown-item" href="/equipo/50">Manchester City</a></li>
 								<li><a class="dropdown-item" href="/equipo/533">Villareal CF</a></li>
 								<li><a class="dropdown-item" href="/equipo/157">Bayern de Múnich</a></li>
 							</ul>
