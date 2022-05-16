@@ -46,7 +46,7 @@
         </div>
     </div>
 
-    <div class="col-lg-10">
+    <div class="col-lg-10 mb-4">
         <div class="card">
             <div class="card-header fs-5" style="border-bottom: none;">Plantilla</div>
 
