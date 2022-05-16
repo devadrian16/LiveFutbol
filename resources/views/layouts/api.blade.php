@@ -33,6 +33,7 @@
 			background-color: #255e50; /* Verde */
 			/*background-color: #0f2d37;*/ /* Azul */
 			font-family: 'Signika', 'sans-serif';
+			color: white;
 		}
 	</style>
 	@yield('css')
@@ -127,10 +128,17 @@
 			</div>
 		</main>
 	</div>
-	<div class="row m-0" id="footer">
+	<div class="row m-0 p-3" id="footer">
 		<footer>
 			<div class="footer-content">
-
+				<div class="row">
+					<div class="col">
+						Contacto: adri__16@hotmail.com
+					</div>
+					<div class="col text-end">
+						2021 | 2022
+					</div>
+				</div>
 			</div>
 		</footer>
 	</div>
