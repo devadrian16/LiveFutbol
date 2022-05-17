@@ -17,7 +17,7 @@
       <div class="modal-body">
         <div id="wg-api-football-fixture"
             data-host="v3.football.api-sports.io"
-            data-refresh="60"
+            data-refresh="0"
             data-id="718243"
             data-key="{{ env('ApiFootball_API_KEY') }}"
             data-theme=""
