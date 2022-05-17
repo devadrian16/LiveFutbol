@@ -28,6 +28,7 @@
 /* COMUN */
 td {
     font-size: inherit!important;
+    line-height: none!important;
 }
 
 li:hover, a:hover {
