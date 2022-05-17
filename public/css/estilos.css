@@ -26,6 +26,10 @@
 }
 
 /* COMUN */
+td {
+    font-size: inherit!important;
+}
+
 li:hover, a:hover {
     cursor: pointer;	
 }
