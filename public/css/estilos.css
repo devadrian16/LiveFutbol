@@ -58,6 +58,13 @@ li:hover, a:hover {
     padding-bottom: 0;
 }
 
+/* MODALES */
+#fixture, #fixtures, #livescore, #standings, 
+#fixture_modal, #fixture_events, #fixture_statistics, 
+#fixture_lineups, #fixture_players {
+    text-align: -webkit-auto;
+}
+
 /* LIGAS */
 .redondeo {
     border-radius: 5px;
