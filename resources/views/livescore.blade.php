@@ -98,7 +98,7 @@
                                     <tr>
                                         <td class="col-2 text-center">{{ date('H:i', strtotime($match['fixture']['date'])) }}</td>
                                         <td class="col-2 text-center">
-                                            @if($match['fixture']['status']['short'] != 'NS')
+                                            @if($match['fixture']['status']['short'] == 'NS')
                                             en {{ round( (strtotime( date('H:i', strtotime($match['fixture']['date'])) ) - strtotime($hora) ) / 3600, 0) }}h
                                             @else
                                             Finalizado
