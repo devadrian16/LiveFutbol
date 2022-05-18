@@ -61,11 +61,12 @@
                                         </td>
                                         <td class="col-1 text-end">
                                             <!-- Modal -->
-                                            <div class="modal fade" id="estadisticas{{ $match['fixture']['id'] }}" tabindex="-1" role="dialog" aria-hidden="true">
-                                                <div class="modal-dialog" role="document">
+                                            <div class="modal fade" id="estadisticas{{ $match['fixture']['id'] }}" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="modalTitle" data-bs-backdrop="static">
+                                                <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
-                                                            
+                                                            <h4 class="modal-title" id="modalTitle">Estadísticas</h4>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                         </div>
                                                         <div class="modal-body">
                                                             <div id="wg-api-football-fixture"
@@ -121,11 +122,12 @@
                                         <td class="col-1 text-end">
                                         @if($match['fixture']['status']['short'] != 'NS')
                                             <!-- Modal -->
-                                            <div class="modal fade" id="estadisticas{{ $match['fixture']['id'] }}" tabindex="-1" role="dialog" aria-hidden="true">
-                                                <div class="modal-dialog" role="document">
+                                            <div class="modal fade" id="estadisticas{{ $match['fixture']['id'] }}" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="modalTitle" data-bs-backdrop="static">
+                                                <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
-                                                            
+                                                            <h4 class="modal-title" id="modalTitle">Estadísticas</h4>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                         </div>
                                                         <div class="modal-body">
                                                             <div id="wg-api-football-fixture"
@@ -199,11 +201,12 @@
                                         </td>
                                         <td class="col-1 text-end">
                                             <!-- Modal -->
-                                            <div class="modal fade" id="estadisticas{{ $match['fixture']['id'] }}" tabindex="-1" role="dialog" aria-hidden="true">
-                                                <div class="modal-dialog" role="document">
+                                            <div class="modal fade" id="estadisticas{{ $match['fixture']['id'] }}" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="modalTitle" data-bs-backdrop="static">
+                                                <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
-                                                            
+                                                            <h4 class="modal-title" id="modalTitle">Estadísticas</h4>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                         </div>
                                                         <div class="modal-body">
                                                             <div id="wg-api-football-fixture"
@@ -259,11 +262,12 @@
                                         <td class="col-1 text-end">
                                         @if($match['fixture']['status']['short'] != 'NS')
                                             <!-- Modal -->
-                                            <div class="modal fade" id="estadisticas{{ $match['fixture']['id'] }}" tabindex="-1" role="dialog" aria-hidden="true">
-                                                <div class="modal-dialog" role="document">
+                                            <div class="modal fade" id="estadisticas{{ $match['fixture']['id'] }}" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="modalTitle" data-bs-backdrop="static">
+                                                <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
-                                                            
+                                                            <h4 class="modal-title" id="modalTitle">Estadísticas</h4>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                         </div>
                                                         <div class="modal-body">
                                                             <div id="wg-api-football-fixture"
@@ -337,11 +341,12 @@
                                         </td>
                                         <td class="col-1 text-end">
                                             <!-- Modal -->
-                                            <div class="modal fade" id="estadisticas{{ $match['fixture']['id'] }}" tabindex="-1" role="dialog" aria-hidden="true">
-                                                <div class="modal-dialog" role="document">
+                                            <div class="modal fade" id="estadisticas{{ $match['fixture']['id'] }}" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="modalTitle" data-bs-backdrop="static">
+                                                <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
-                                                            
+                                                            <h4 class="modal-title" id="modalTitle">Estadísticas</h4>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                         </div>
                                                         <div class="modal-body">
                                                             <div id="wg-api-football-fixture"
@@ -397,11 +402,12 @@
                                         <td class="col-1 text-end">
                                         @if($match['fixture']['status']['short'] != 'NS')
                                             <!-- Modal -->
-                                            <div class="modal fade" id="estadisticas{{ $match['fixture']['id'] }}" tabindex="-1" role="dialog" aria-hidden="true">
-                                                <div class="modal-dialog" role="document">
+                                            <div class="modal fade" id="estadisticas{{ $match['fixture']['id'] }}" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="modalTitle" data-bs-backdrop="static">
+                                                <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
-                                                            
+                                                            <h4 class="modal-title" id="modalTitle">Estadísticas</h4>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                         </div>
                                                         <div class="modal-body">
                                                             <div id="wg-api-football-fixture"
@@ -475,11 +481,12 @@
                                         </td>
                                         <td class="col-1 text-end">
                                             <!-- Modal -->
-                                            <div class="modal fade" id="estadisticas{{ $match['fixture']['id'] }}" tabindex="-1" role="dialog" aria-hidden="true">
-                                                <div class="modal-dialog" role="document">
+                                            <div class="modal fade" id="estadisticas{{ $match['fixture']['id'] }}" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="modalTitle" data-bs-backdrop="static">
+                                                <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
-                                                            
+                                                            <h4 class="modal-title" id="modalTitle">Estadísticas</h4>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                         </div>
                                                         <div class="modal-body">
                                                             <div id="wg-api-football-fixture"
@@ -535,11 +542,12 @@
                                         <td class="col-1 text-end">
                                         @if($match['fixture']['status']['short'] != 'NS')
                                             <!-- Modal -->
-                                            <div class="modal fade" id="estadisticas{{ $match['fixture']['id'] }}" tabindex="-1" role="dialog" aria-hidden="true">
-                                                <div class="modal-dialog" role="document">
+                                            <div class="modal fade" id="estadisticas{{ $match['fixture']['id'] }}" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="modalTitle" data-bs-backdrop="static">
+                                                <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
-                                                            
+                                                            <h4 class="modal-title" id="modalTitle">Estadísticas</h4>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                         </div>
                                                         <div class="modal-body">
                                                             <div id="wg-api-football-fixture"
