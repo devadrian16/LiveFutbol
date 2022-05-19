@@ -99,7 +99,11 @@
                                         <td class="col-2 text-center">{{ date('H:i', strtotime($match['fixture']['date'])) }}</td>
                                         <td class="col-2 text-center">
                                             @if($match['fixture']['status']['short'] == 'NS')
-                                            en {{ round( (strtotime( date('H:i', strtotime($match['fixture']['date'])) ) - strtotime($hora) ) / 3600, 0) }}h
+                                                @if( \Carbon\Carbon::parse( date('H:i', strtotime($match['fixture']['date'])) )->diffInMinutes($hora) <= 60)
+                                                en {{ \Carbon\Carbon::parse( date('H:i', strtotime($match['fixture']['date'])) )->diffInMinutes($hora) }}min
+                                                @else
+                                                en {{ \Carbon\Carbon::parse( date('H:i', strtotime($match['fixture']['date'])) )->diffInHours($hora) + 1 }}h
+                                                @endif
                                             @else
                                             Finalizado
                                             @endif
@@ -239,7 +243,11 @@
                                         <td class="col-2 text-center">{{ date('H:i', strtotime($match['fixture']['date'])) }}</td>
                                         <td class="col-2 text-center">
                                             @if($match['fixture']['status']['short'] == 'NS')
-                                            en {{ round( (strtotime( date('H:i', strtotime($match['fixture']['date'])) ) - strtotime($hora) ) / 3600, 0) }}h
+                                                @if( \Carbon\Carbon::parse( date('H:i', strtotime($match['fixture']['date'])) )->diffInMinutes($hora) <= 60)
+                                                en {{ \Carbon\Carbon::parse( date('H:i', strtotime($match['fixture']['date'])) )->diffInMinutes($hora) }}min
+                                                @else
+                                                en {{ \Carbon\Carbon::parse( date('H:i', strtotime($match['fixture']['date'])) )->diffInHours($hora) + 1 }}h
+                                                @endif
                                             @else
                                             Finalizado
                                             @endif
@@ -379,7 +387,11 @@
                                         <td class="col-2 text-center">{{ date('H:i', strtotime($match['fixture']['date'])) }}</td>
                                         <td class="col-2 text-center">
                                             @if($match['fixture']['status']['short'] == 'NS')
-                                            en {{ round( (strtotime( date('H:i', strtotime($match['fixture']['date'])) ) - strtotime($hora) ) / 3600, 0) }}h
+                                                @if( \Carbon\Carbon::parse( date('H:i', strtotime($match['fixture']['date'])) )->diffInMinutes($hora) <= 60)
+                                                en {{ \Carbon\Carbon::parse( date('H:i', strtotime($match['fixture']['date'])) )->diffInMinutes($hora) }}min
+                                                @else
+                                                en {{ \Carbon\Carbon::parse( date('H:i', strtotime($match['fixture']['date'])) )->diffInHours($hora) + 1 }}h
+                                                @endif
                                             @else
                                             Finalizado
                                             @endif
@@ -519,7 +531,11 @@
                                         <td class="col-2 text-center">{{ date('H:i', strtotime($match['fixture']['date'])) }}</td>
                                         <td class="col-2 text-center">
                                             @if($match['fixture']['status']['short'] == 'NS')
-                                            en {{ round( (strtotime( date('H:i', strtotime($match['fixture']['date'])) ) - strtotime($hora) ) / 3600, 0) }}h
+                                                @if( \Carbon\Carbon::parse( date('H:i', strtotime($match['fixture']['date'])) )->diffInMinutes($hora) <= 60)
+                                                en {{ \Carbon\Carbon::parse( date('H:i', strtotime($match['fixture']['date'])) )->diffInMinutes($hora) }}min
+                                                @else
+                                                en {{ \Carbon\Carbon::parse( date('H:i', strtotime($match['fixture']['date'])) )->diffInHours($hora) + 1 }}h
+                                                @endif
                                             @else
                                             Finalizado
                                             @endif
