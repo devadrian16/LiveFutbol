@@ -20,13 +20,13 @@ class EquipoController extends Controller
     public function verEquipo($id)
     {
         //Status
-        $status = $this->api->getStatus();
+        $status = $this->status();
 
         if ($status['response']['requests']['current'] < 100) {
 
             //Equipo
-            $team = $this->api->getTeam($id);
-            $id_league = $this->api->getLeagueTeam($id);
+            $team = $this->obtenerEquipo($id);
+            $id_league = $this->obtenerEquipoLiga($id);
 
             //Jugadores
             $porteros = [];
@@ -34,10 +34,10 @@ class EquipoController extends Controller
             $centrocampistas = [];
             $delanteros = [];
 
-            $players = $this->api->getPlayersTeam($id, $id_league['league']['id']);
+            $players = $this->obtenerJugadores($id, $id_league['league']['id']);
 
             for ($i = 1; $i <= $players['paging']['total']; $i++) {
-                $page = $this->api->getPlayersTeamPage($id, $id_league['league']['id'], $i);
+                $page = $this->obtenerPaginaJugadores($id, $id_league['league']['id'], $i);
 
                 foreach ($page['response'] as $player) {
 
@@ -107,5 +107,25 @@ class EquipoController extends Controller
         $favorito->delete();
 
         return json_encode(['msg' => 'equipo eliminado de favoritos, id: ' . $id]);
+    }
+
+    public function obtenerJugadores($idTeam, $idLeague) {
+        return $this->api->getPlayersTeam($idTeam, $idLeague);
+    }
+
+    public function obtenerPaginaJugadores($idTeam, $idLeague, $page) {
+        return $this->api->getPlayersTeamPage($idTeam, $idLeague, $page);
+    }
+
+    public function obtenerEquipo($idTeam) {
+        return $this->api->getTeam($idTeam);
+    }
+
+    public function obtenerEquipoLiga($idTeam) {
+        return $this->api->getLeagueTeam($idTeam);
+    }
+
+    public function status() {
+        return $this->api->getStatus();
     }
 }

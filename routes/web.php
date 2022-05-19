@@ -5,7 +5,7 @@ use App\Http\Controllers\LigaController;
 use App\Http\Controllers\LiveScoreController;
 use App\Http\Controllers\EquipoController;
 use App\Http\Controllers\PruebasController;
-use App\Http\Controllers\FavoritosController;
+use App\Http\Controllers\FavoritoController;
 
 
 /*
@@ -46,7 +46,6 @@ require_once __DIR__ . '/jetstream.php';
 
 //[--LIVESCORE--]
 Route::get('/livescore', [LiveScoreController::class, 'verLiveScore']);
-Route::get('/actualizar', [LiveScoreController::class, 'actualizarMarcador']);
 
 //[--FAVORITOS--]
 Route::get('/favoritos', [FavoritosController::class, 'verFavoritos']);

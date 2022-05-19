@@ -18,19 +18,19 @@ class LiveScoreController extends Controller
 
     public function verLiveScore() {
         //Status
-        $status = $this->api->getStatus();
+        $status = $this->status();
         $now = Carbon::now();
 
         if($status['response']['requests']['current'] < 100) {
-            //LiveScore
-            $champions = $this->api->getMatchesTodayLeague(2); 
-            //$champions = $this->api->getMatchesTodayLeague(3); // Europa League
-            //$champions = $this->api->getMatchesTodayLeague(135); // Serie A
-            //$champions = $this->api->getMatchesTodayLeague(78); // Bundesliga
-            //$champions = $this->api->getMatchesTodayLeague(88); // Eredivise
-            $laliga = $this->api->getMatchesTodayLeague(140);   
-            $segunda = $this->api->getMatchesTodayLeague(141); 
-            $premier = $this->api->getMatchesTodayLeague(39); 
+
+            $champions = $this->obtenerPartidos(2); 
+            //$champions = obtenerPartidos(3); // Europa League
+            //$champions = obtenerPartidos(135); // Serie A
+            //$champions = obtenerPartidos(78); // Bundesliga
+            //$champions = obtenerPartidos(88); // Eredivise
+            $laliga = $this->obtenerPartidos(140);   
+            $segunda = $this->obtenerPartidos(141); 
+            $premier = $this->obtenerPartidos(39); 
 
             return view('livescore', [
                 'status' => $status, 'hora' => $now->format('H:i'), 'fecha' => $now->format('l, j F Y'), 'dia' => $now->format('j'), 'anno' => $now->format('Y'),
@@ -43,7 +43,11 @@ class LiveScoreController extends Controller
         }
     }
 
-    public function actualizarMarcador() {
-        return json_encode(['msg' => 'marcador actualizado']);
+    public function obtenerPartidos($idLeague) {
+        return $this->api->getMatchesTodayLeague($idLeague); 
+    }
+
+    public function status() {
+        return $this->api->getStatus();
     }
 }

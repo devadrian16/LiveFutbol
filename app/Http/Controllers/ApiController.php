@@ -14,12 +14,12 @@ class ApiController extends Controller
 
 	public function __construct(Client $client) 
     {	
-		$this->client = $client;
+		$this->client = $client;	
 	}
 
-	public function run($uri, $type = 'GET') 
+	public function run($url, $type = 'GET') 
     {
-		return json_decode( $this->client->request($type, $uri)->getBody(), true);
+		return json_decode( $this->client->request($type, $url)->getBody(), true);
 	}
 
 	public function getStatus() 

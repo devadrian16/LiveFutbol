@@ -20,7 +20,7 @@ class FavoritosController extends Controller
   public function verFavoritos()
   {
     //Status
-    $status = $this->api->getStatus();
+    $status = $this->status();
 
     if ($status['response']['requests']['current'] < 100) {
       //Equipos
@@ -28,8 +28,8 @@ class FavoritosController extends Controller
       $next = [];
       $favoritos = Favorito::where('id_user', Auth::user()->id)->get();
       foreach ($favoritos as $favorito) {
-        $lastMatches = $this->api->getLastMatchesTeam($favorito->id_team, 2);
-        $nextMatches = $this->api->getNextMatchesTeam($favorito->id_team, 4);
+        $lastMatches = $this->obtenerPartidosPasados($favorito->id_team, 2);
+        $nextMatches = $this->obtenerPartidosProximos($favorito->id_team, 4);
         array_push($last, $lastMatches);
         array_push($next, $nextMatches);
       }
@@ -44,5 +44,17 @@ class FavoritosController extends Controller
         'status' => $status
       ]);
     }
+  }
+
+  public function obtenerPartidosPasados($idTeam, $num) {
+    return $this->api->getLastMatchesTeam($idTeam, $num);
+  }
+
+  public function obtenerPartidosProximos($idTeam, $num) {
+    return $this->api->getNextMatchesTeam($idTeam, $num);
+  }
+
+  public function status() {
+    return $this->api->getStatus();
   }
 }

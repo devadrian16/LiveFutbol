@@ -18,13 +18,13 @@ class LigaController extends Controller
 	public function verLiga($id)
 	{
 		//Status
-		$status = $this->api->getStatus();
+		$status = $this->status();
 
 		if ($status['response']['requests']['current'] < 100) {
 			//Jornadas
 			$jornadas = [];
 			$rounds = [];
-			$allRounds = $this->api->getRounds($id);
+			$allRounds = $this->obtenerRondas($id);
 			/*Todas las jornadas
 			for($i = 0; $i < count($allRounds); $i++) {
 				$jornada = $this->api->getMatchesLeague($id, $allRounds[$i]);
@@ -40,13 +40,13 @@ class LigaController extends Controller
 			}
 
 			//Clasificacion
-			$ranking = $this->api->getRanking($id);
+			$ranking = $this->obtenerRanking($id);
 
 			//Destacados
-			$goals = $this->api->getTopScorerLeague($id);
-			$assists = $this->api->getTopAssistsLeague($id);
-			$yellowcards = $this->api->getTopYellowCardsLeague($id);
-			$redcards = $this->api->getTopRedCardsLeague($id);
+			$goals = $this->topGoles($id);
+			$assists = $this->topAsistencias($id);
+			$yellowcards = $this->topAmarillas($id);
+			$redcards = $this->topRojas($id);
 
 			return view('liga', [
 				'status' => $status, 'jornadas' => $jornadas, 'rounds' => $rounds, 'ranking' => $ranking['league']['standings'],
@@ -60,4 +60,33 @@ class LigaController extends Controller
 			]);
 		}
 	}
+
+	public function obtenerRondas($idLeague) {
+        return $this->api->getRounds($id);
+    }
+
+	public function obtenerRanking($idLeague) {
+        return $this->api->getRanking($idLeague);
+    }
+
+	public function topGoles($idLeague) {
+        return $this->api->getTopScorerLeague($idLeague);
+    }
+
+	public function topAsistencias($idLeague) {
+        return $this->api->getTopAssistsLeague($idLeague);
+    }
+
+	public function topAmarillas($idLeague) {
+        return $this->api->getTopYellowCardsLeague($idLeague);
+    }
+
+	public function topRojas($idLeague) {
+        return $this->api->getTopRedCardsLeague($idLeague);
+    }
+
+	public function status() {
+        return $this->api->getStatus();
+    }
+
 }
