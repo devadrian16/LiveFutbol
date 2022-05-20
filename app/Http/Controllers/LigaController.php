@@ -62,7 +62,7 @@ class LigaController extends Controller
 	}
 
 	public function obtenerRondas($idLeague) {
-        return $this->api->getRounds($id);
+        return $this->api->getRounds($idLeague);
     }
 
 	public function obtenerRanking($idLeague) {
