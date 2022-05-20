@@ -10,7 +10,7 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav me-auto">
                 <x-jet-nav-link href="{{ route('home') }}" :active="request()->routeIs('dashboard')">
-                    APP-NAME
+                    LIVEFÚTBOL
                 </x-jet-nav-link>
             </ul>
 
@@ -79,8 +79,8 @@
                                 {{ __('Administrar Cuenta') }}
                             </h6>
 
-                            <x-jet-dropdown-link href="{{ route('profile.show') }}">
-                                {{ __('Perfil') }}
+                            <x-jet-dropdown-link href="{{ route('home') }}">
+                                {{ __('Volver a LiveFútbol') }}
                             </x-jet-dropdown-link>
 
                             @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
@@ -88,8 +88,6 @@
                                     {{ __('API Tokens') }}
                                 </x-jet-dropdown-link>
                             @endif
-
-                            <hr class="dropdown-divider">
 
                             <!-- Authentication -->
                             <x-jet-dropdown-link href="{{ route('logout') }}"
