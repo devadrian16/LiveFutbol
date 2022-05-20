@@ -8,7 +8,7 @@ use GuzzleHttp\Client;
 use App\Models\Favorito;
 use Auth;
 
-class FavoritosController extends Controller
+class FavoritoController extends Controller
 {
   private $api;
 
