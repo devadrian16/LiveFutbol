@@ -1,5 +1,5 @@
 /* MEDIA QUERY */
-@media (min-width: 1200px) {
+@media (min-width: 1400px) {
     .nav-content, .main-content, .footer-content {
         width: 75%;
         margin: 0 auto;
