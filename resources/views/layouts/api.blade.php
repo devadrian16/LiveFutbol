@@ -20,8 +20,8 @@
 	<!-- Styles -->
 	<style>
 		#header {
-			background-color: #255e50; /* Verde */
-			/*background-color: #0f2d37;*/ /* Azul */
+			background-color: #255e50; /* Verdes */
+			/*background-color: #0f2d37;*/ /* Azules */
 			font-family: 'Signika', 'sans-serif';
 		}
 		#content {
@@ -30,8 +30,8 @@
 			font-family: 'Roboto', 'sans-serif';
 		}
 		#footer {
-			background-color: #255e50; /* Verde */
-			/*background-color: #0f2d37;*/ /* Azul */
+			background-color: #255e50; /* Verdes */
+			/*background-color: #0f2d37;*/ /* Azules */
 			font-family: 'Signika', 'sans-serif';
 			color: white;
 		}
