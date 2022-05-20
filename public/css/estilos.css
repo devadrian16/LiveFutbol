@@ -45,8 +45,8 @@ li:hover, a:hover {
 }
 
 .card-header, .card-header a {
-    background-color: #255e50; /* Verde */
-	/*background-color: #0f2d37;*/ /* Azul */
+    background-color: #255e50; /* Verdes */
+	/*background-color: #0f2d37;*/ /* Azules */
     color: white;
 }
 
@@ -79,15 +79,14 @@ li:hover, a:hover {
 
 /* LIVESCORE */
 .livescore {
-    background-color: #52a331;
+    background-color: #4e0a17;
     color: white;
-    border-radius: 5px;
-    width: 45px;
+    width: 50px;
     margin: 0 auto;
 }
 
 .parpadeo {
-    color: crimson;
+    color: #4e0a17;
     animation: parpadeo 2s linear infinite;
 }
 
