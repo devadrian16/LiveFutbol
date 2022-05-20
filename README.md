@@ -18,7 +18,7 @@ La configuración del entorno se hace en el archivo .env pero esé archivo no se
 
 > cp .env.example .env
  
-Luego es necesario modificar los valores de las variables de entorno para adecuar la configuración a nuestro entorno de desarrollo, por ejemplo los parámetros de conexión a la base de datos.
+Luego es necesario modificar los valores de las variables de entorno (.env) para adecuar la configuración a nuestro entorno de desarrollo, los parámetros de conexión a la base de datos, servidor de correo electrónico y la key de la API.
  
 ## Generar Clave de Seguridad de la Aplicación
 
