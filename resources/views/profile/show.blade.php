@@ -18,11 +18,11 @@
             <x-jet-section-border />
         @endif
 
-        @if (Laravel\Fortify\Features::canManageTwoFactorAuthentication())
+        {{-- @if (Laravel\Fortify\Features::canManageTwoFactorAuthentication())
             @livewire('profile.two-factor-authentication-form')
 
             <x-jet-section-border />
-        @endif
+        @endif --}}
 
         @livewire('profile.logout-other-browser-sessions-form')
 
