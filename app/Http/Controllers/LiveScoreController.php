@@ -25,7 +25,7 @@ class LiveScoreController extends Controller
 
             //$champions = $this->obtenerPartidos(2); 
             //$champions = obtenerPartidos(3); // Europa League
-            $champions = obtenerPartidos(135); // Serie A
+            $champions = $this->obtenerPartidos(135); // Serie A
             //$champions = obtenerPartidos(78); // Bundesliga
             //$champions = obtenerPartidos(88); // Eredivise
             $laliga = $this->obtenerPartidos(140);   
