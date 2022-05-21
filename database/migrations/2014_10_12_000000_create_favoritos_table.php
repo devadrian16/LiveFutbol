@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     /**
-     * Run the migrations.
+     * Run the migrations, create table favoritos.
      *
      * @return void
      */
@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('favoritos', function (Blueprint $table) {
             $table->id('id_favorito');
-            $table->integer('id_user');
+            $table->foreignId('id_user')->index();
             $table->integer('id_team');
             $table->string('name_team')->nullable();
             $table->integer('id_league');
