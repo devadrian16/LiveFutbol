@@ -23,15 +23,15 @@ class LiveScoreController extends Controller
 
         if($status['response']['requests']['current'] < 100) {
 
-            //$champions = $this->obtenerPartidos(2); 
+            $champions = $this->obtenerPartidos(2); 
             //$champions = obtenerPartidos(3); // Europa League
-            $champions = $this->obtenerPartidos(135); // Serie A
+            //$champions = $this->obtenerPartidos(135); // Serie A
             //$champions = obtenerPartidos(78); // Bundesliga
             //$champions = obtenerPartidos(88); // Eredivise
             $laliga = $this->obtenerPartidos(140);   
             $segunda = $this->obtenerPartidos(141); 
-            //$premier = $this->obtenerPartidos(39); 
-            $premier = $this->obtenerPartidos(61); // Ligue 1 
+            $premier = $this->obtenerPartidos(39); 
+            //$premier = $this->obtenerPartidos(61); // Ligue 1 
 
             return view('livescore', [
                 'status' => $status, 'hora' => $now->format('H:i'), 'fecha' => $now->format('l, j F Y'), 'dia' => $now->format('j'), 'anno' => $now->format('Y'),
