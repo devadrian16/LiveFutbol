@@ -28,7 +28,7 @@ use App\Http\Controllers\FavoritoController;
 */
 
 //[--HOME--]
-Route::get('/', function () { return redirect()->route('home'); });
+Route::get('/', function () { return view('home'); } )->name('home');
 
 //[--JETSTREAM--]
 Route::middleware([
@@ -44,7 +44,7 @@ Route::middleware([
 require_once __DIR__ . '/jetstream.php';
 
 //[--LIVESCORE--]
-Route::get('/livescore', [LiveScoreController::class, 'verLiveScore'])->name('home');
+Route::get('/livescore', [LiveScoreController::class, 'verLiveScore']);
 
 //[--FAVORITOS--]
 Route::get('/favoritos', [FavoritoController::class, 'verFavoritos']);
