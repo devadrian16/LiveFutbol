@@ -28,7 +28,6 @@
 			background-color: #a6b7bb; /* Verdes */
     		/*background-color: #eeeeee;*/ /* Azules */
 			font-family: 'Roboto', 'sans-serif';
-			height: 500px;
 		}
 		#footer {
 			background-color: #255e50; /* Verdes */
