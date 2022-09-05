@@ -8,7 +8,7 @@ use GuzzleHttp\Client;
 class ApiController extends Controller
 {
     protected $client;
-	const SEASON = 2021;
+	const SEASON = 2022;
 	const CUP = 'cup';
 	const LEAGUE = 'league';
 
